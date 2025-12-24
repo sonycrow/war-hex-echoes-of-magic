@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
-import { X, Sparkles, Loader2 } from 'lucide-react';
+import { X } from 'lucide-react';
 
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   imageUrl: string;
   title: string;
-  onGenerate: () => void;
-  isGenerating: boolean;
   lang: 'es' | 'en';
 }
 
@@ -15,9 +13,7 @@ const Modal: React.FC<ModalProps> = ({
   isOpen, 
   onClose, 
   imageUrl, 
-  title, 
-  onGenerate, 
-  isGenerating,
+  title,
   lang 
 }) => {
   useEffect(() => {
@@ -31,57 +27,44 @@ const Modal: React.FC<ModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm" onClick={onClose}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/20 backdrop-blur-md animate-in fade-in duration-300" onClick={onClose}>
       <div 
-        className="relative bg-white rounded-xl shadow-2xl max-w-4xl w-full overflow-hidden animate-in fade-in zoom-in duration-200 border border-slate-100"
+        className="relative bg-white rounded-[2rem] shadow-2xl max-w-4xl w-full overflow-hidden animate-in zoom-in duration-300 border border-white/50"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex justify-between items-center p-4 border-b border-slate-100">
-          <h3 className="text-xl font-bold text-slate-800">{title}</h3>
-          <div className="flex items-center gap-2">
-            <button
-              onClick={onGenerate}
-              disabled={isGenerating}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-bold transition-all ${
-                isGenerating 
-                  ? 'bg-slate-100 text-slate-400 cursor-not-allowed' 
-                  : 'bg-amber-100 text-amber-700 hover:bg-amber-200 hover:text-amber-900'
-              }`}
-            >
-              {isGenerating ? (
-                <>
-                  <Loader2 size={16} className="animate-spin" />
-                  {lang === 'es' ? 'Generando...' : 'Generating...'}
-                </>
-              ) : (
-                <>
-                  <Sparkles size={16} />
-                  {lang === 'es' ? 'Generar Arte IA' : 'Magic Paint'}
-                </>
-              )}
-            </button>
+        <div className="flex justify-between items-center px-10 py-6 border-b border-slate-50">
+          <div>
+            <h3 className="text-2xl font-black text-slate-900 tracking-tight">{title}</h3>
+            <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+              {lang === 'es' ? 'Inspección de Registro' : 'Entry Inspection'}
+            </span>
+          </div>
+          
+          <div className="flex items-center gap-4">
             <button 
               onClick={onClose}
-              className="text-slate-400 hover:text-slate-700 transition-colors p-1 rounded-full hover:bg-slate-100"
+              className="text-slate-300 hover:text-slate-900 transition-colors p-2 rounded-xl hover:bg-slate-50"
             >
-              <X size={24} />
+              <X size={24} strokeWidth={3} />
             </button>
           </div>
         </div>
-        <div className="p-6 flex justify-center bg-slate-50 min-h-[400px] relative">
-           {isGenerating && (
-             <div className="absolute inset-0 z-10 bg-white/60 flex flex-col items-center justify-center backdrop-blur-sm">
-                <Loader2 size={48} className="text-amber-500 animate-spin mb-4" />
-                <p className="text-slate-600 font-medium animate-pulse">
-                  {lang === 'es' ? 'Invocando al artista...' : 'Summoning the artist...'}
-                </p>
-             </div>
-           )}
-          <img 
-            src={imageUrl} 
-            alt={title} 
-            className="max-h-[70vh] object-contain rounded-lg shadow-md bg-white"
-          />
+        
+        <div className="p-10 flex justify-center bg-slate-50/50 min-h-[500px] relative overflow-hidden">
+           <div className="relative group">
+              <div className="absolute -inset-4 bg-slate-900/5 rounded-[2.5rem] blur-xl group-hover:bg-slate-900/10 transition-all duration-500"></div>
+              <img 
+                src={imageUrl} 
+                alt={title} 
+                className="relative max-h-[65vh] object-contain rounded-[2rem] shadow-2xl bg-white border border-white"
+              />
+           </div>
+        </div>
+        
+        <div className="px-10 py-6 bg-white border-t border-slate-50 text-center">
+          <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest">
+            War-Hex Codex Artifact Preservation System
+          </p>
         </div>
       </div>
     </div>

@@ -15,8 +15,6 @@ interface DataTableProps<T> {
   searchKeys: (keyof T)[];
   title: string;
   lang: 'es' | 'en';
-  onGenerate: (item: T) => void;
-  generatingId: string | null;
 }
 
 function DataTable<T extends { id: string | number, imageUrl: string, name: string }>({ 
@@ -24,9 +22,7 @@ function DataTable<T extends { id: string | number, imageUrl: string, name: stri
   columns, 
   searchKeys, 
   title, 
-  lang,
-  onGenerate,
-  generatingId
+  lang
 }: DataTableProps<T>) {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortConfig, setSortConfig] = useState<{ key: keyof T; direction: 'asc' | 'desc' } | null>(null);
@@ -65,61 +61,67 @@ function DataTable<T extends { id: string | number, imageUrl: string, name: stri
   }, [filteredData, sortConfig]);
 
   return (
-    <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-      {/* Header Controls */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-        <h2 className="text-2xl font-extrabold text-slate-800 uppercase tracking-tight">{title}</h2>
-        <div className="relative w-full md:w-72">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
-          <input
-            type="text"
-            placeholder={lang === 'es' ? "Buscar..." : "Search..."}
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 text-slate-700 placeholder-slate-400 transition-all"
-          />
+    <div className="space-y-8 animate-in fade-in slide-in-from-bottom-6 duration-700">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div>
+          <h2 className="text-4xl font-black text-slate-900 tracking-tight mb-2 uppercase">{title}</h2>
+          <p className="text-slate-400 font-medium text-sm">{filteredData.length} {lang === 'es' ? 'entradas encontradas en el archivo' : 'entries found in archives'}</p>
+        </div>
+        
+        <div className="flex flex-wrap items-center gap-3">
+          <div className="relative w-full md:w-64">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-300" size={18} />
+            <input
+              type="text"
+              placeholder={lang === 'es' ? "Filtro de búsqueda..." : "Filter search..."}
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full pl-12 pr-6 py-3 bg-white border border-slate-100 rounded-xl focus:outline-none focus:ring-4 focus:ring-slate-100 text-sm text-slate-600 font-medium placeholder-slate-300 transition-all shadow-sm"
+            />
+          </div>
         </div>
       </div>
 
-      {/* Table */}
-      <div className="overflow-x-auto rounded-xl border border-slate-200 shadow-sm bg-white">
+      <div className="rounded-2xl border border-slate-100 overflow-hidden bg-white shadow-xl shadow-slate-200/50">
         <table className="w-full text-left border-collapse">
-          <thead className="bg-slate-50 text-slate-500 uppercase text-xs font-bold tracking-wider border-b border-slate-200">
+          <thead className="bg-slate-50/50 text-slate-400 uppercase text-[10px] font-black tracking-[0.2em] border-b border-slate-100">
             <tr>
-              <th className="p-4 w-20 text-center">Img</th>
+              <th className="p-6 w-24 text-center">Visual</th>
               {columns.map((col) => (
                 <th
                   key={String(col.key)}
-                  className={`p-4 ${col.sortable ? 'cursor-pointer hover:text-slate-800 transition-colors' : ''}`}
+                  className={`p-6 ${col.sortable ? 'cursor-pointer hover:text-slate-900 transition-colors' : ''}`}
                   onClick={() => col.sortable && handleSort(col.key)}
                 >
-                  <div className="flex items-center gap-1">
+                  <div className="flex items-center gap-1.5">
                     {col.label}
                     {sortConfig?.key === col.key && (
-                      sortConfig.direction === 'asc' ? <ChevronUp size={14} /> : <ChevronDown size={14} />
+                      <div className="text-slate-900">
+                        {sortConfig.direction === 'asc' ? <ChevronUp size={12} strokeWidth={3} /> : <ChevronDown size={12} strokeWidth={3} />}
+                      </div>
                     )}
                   </div>
                 </th>
               ))}
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-100">
+          <tbody className="divide-y divide-slate-50">
             {sortedData.length > 0 ? (
-              sortedData.map((item, idx) => (
-                <tr key={item.id} className="hover:bg-slate-50/80 transition-colors">
-                  <td className="p-4 text-center">
+              sortedData.map((item) => (
+                <tr key={item.id} className="hover:bg-slate-50/40 transition-colors group">
+                  <td className="p-6 text-center">
                     <button
                       onClick={() => setModalState({ isOpen: true, item })}
-                      className="group relative inline-block w-12 h-12 rounded-lg overflow-hidden border border-slate-200 shadow-sm hover:border-amber-400 hover:shadow-md transition-all"
+                      className="relative inline-block w-14 h-14 rounded-2xl overflow-hidden border border-slate-100 shadow-sm group-hover:shadow-md transition-all group-hover:-translate-y-0.5"
                     >
-                      <img src={item.imageUrl} alt={item.name} className="w-full h-full object-cover" />
-                      <div className="absolute inset-0 bg-slate-900/20 hidden group-hover:flex items-center justify-center backdrop-blur-[1px]">
-                         <Eye size={18} className="text-white drop-shadow-md" />
+                      <img src={item.imageUrl} alt={item.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                      <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                         <Eye size={20} className="text-white" />
                       </div>
                     </button>
                   </td>
                   {columns.map((col) => (
-                    <td key={String(col.key)} className="p-4 text-sm text-slate-600 align-middle font-medium">
+                    <td key={String(col.key)} className="p-6 text-sm text-slate-600 align-middle font-medium">
                       {col.render ? col.render(item) : String(item[col.key])}
                     </td>
                   ))}
@@ -127,8 +129,8 @@ function DataTable<T extends { id: string | number, imageUrl: string, name: stri
               ))
             ) : (
               <tr>
-                <td colSpan={columns.length + 1} className="p-12 text-center text-slate-400 italic">
-                  {lang === 'es' ? "No se encontraron resultados" : "No results found"}
+                <td colSpan={columns.length + 1} className="p-20 text-center text-slate-300 italic font-medium">
+                  {lang === 'es' ? "No se han encontrado registros en el Codex" : "No records found in the Codex"}
                 </td>
               </tr>
             )}
@@ -142,8 +144,6 @@ function DataTable<T extends { id: string | number, imageUrl: string, name: stri
           imageUrl={modalState.item.imageUrl}
           title={modalState.item.name}
           onClose={() => setModalState({ ...modalState, isOpen: false })}
-          onGenerate={() => modalState.item && onGenerate(modalState.item)}
-          isGenerating={generatingId === String(modalState.item.id)}
           lang={lang}
         />
       )}
