@@ -1,0 +1,37 @@
+[
+    {
+        "code": "light",
+        "name": {
+            "en": "Light",
+            "es": "Ligera"
+        }
+    },
+    {
+        "code": "medium",
+        "name": {
+            "en": "Medium",
+            "es": "Media"
+        }
+    },
+    {
+        "code": "heavy",
+        "name": {
+            "en": "Heavy",
+            "es": "Pesada"
+        }
+    },
+    {
+        "code": "elite",
+        "name": {
+            "en": "Elite",
+            "es": "Elite"
+        }
+    },
+    {
+        "code": "structure",
+        "name": {
+            "en": "Structure",
+            "es": "Estructura"
+        }
+    }
+]

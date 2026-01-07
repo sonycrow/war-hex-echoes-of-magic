@@ -1,0 +1,84 @@
+{
+    "common": {
+        "title": "WAR-HEX",
+        "codexVersion": "CODEX v1.4",
+        "loading": "Cargando Codex...",
+        "errorLoading": "Error cargando el Codex. Por favor verifique los archivos JSON.",
+        "noData": "No se pudieron cargar los datos."
+    },
+    "definitions": {
+        "factions": {
+            "amazons": "Amazonas",
+            "barbarians": "Bárbaros",
+            "daemons": "Demonios",
+            "dwarves": "Enanos",
+            "elves": "Elfos",
+            "orcs": "Orcos",
+            "undead": "No Muertos",
+            "mercenaries": "Mercenarios",
+            "titans": "Titanes",
+            "inferno": "Infierno",
+            "neutral": "Neutral"
+        },
+        "unitTypes": {
+            "light": "Ligera",
+            "medium": "Media",
+            "heavy": "Pesada",
+            "elite": "Élite",
+            "structure": "Estructura"
+        },
+        "unitSubtypes": {
+            "unit": "Unidad",
+            "hero": "Héroe",
+            "titan": "Titán"
+        },
+        "categories": {
+            "Section": "Sección",
+            "Tactics": "Táctica",
+            "Spell": "Hechizo"
+        },
+        "difficulty": {
+            "Easy": "Fácil",
+            "Medium": "Media",
+            "Hard": "Difícil"
+        }
+    },
+    "nav": {
+        "units": "Unidades",
+        "cards": "Cartas",
+        "terrain": "Terreno",
+        "scenarios": "Escenarios",
+        "rules": "Reglamento"
+    },
+    "views": {
+        "units": {
+            "title": "Unidades de Batalla",
+            "faction": "Facción",
+            "name": "Nombre",
+            "type": "Tipo",
+            "subtype": "Subtipo",
+            "strength": "Fuerza",
+            "cost": "Coste",
+            "special": "Especial"
+        },
+        "cards": {
+            "title": "Mazo de Mando",
+            "category": "Categoría",
+            "name": "Nombre",
+            "effectA": "Efecto A",
+            "effectB": "Efecto B"
+        },
+        "terrain": {
+            "title": "Terreno",
+            "name": "Nombre",
+            "movement": "Movimiento",
+            "combat": "Combate"
+        },
+        "scenarios": {
+            "title": "Escenarios",
+            "name": "Escenario",
+            "difficulty": "Dificultad",
+            "description": "Descripción"
+        }
+    }
+}

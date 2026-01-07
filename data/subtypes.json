@@ -1,0 +1,23 @@
+[
+    {
+        "code": "unit",
+        "name": {
+            "en": "Unit",
+            "es": "Unidad"
+        }
+    },
+    {
+        "code": "hero",
+        "name": {
+            "en": "Hero",
+            "es": "Héroe"
+        }
+    },
+    {
+        "code": "titan",
+        "name": {
+            "en": "Titan",
+            "es": "Titán"
+        }
+    }
+]

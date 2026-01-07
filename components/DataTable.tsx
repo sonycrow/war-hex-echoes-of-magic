@@ -17,11 +17,11 @@ interface DataTableProps<T> {
   lang: 'es' | 'en';
 }
 
-function DataTable<T extends { id: string | number, imageUrl: string, name: string }>({ 
-  data, 
-  columns, 
-  searchKeys, 
-  title, 
+function DataTable<T extends { id: string | number, imageUrl: string }>({
+  data,
+  columns,
+  searchKeys,
+  title,
   lang
 }: DataTableProps<T>) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -40,25 +40,40 @@ function DataTable<T extends { id: string | number, imageUrl: string, name: stri
   };
 
   const filteredData = useMemo(() => {
+    const search = searchTerm.toLowerCase();
     return data.filter((item) =>
-      searchKeys.some((key) =>
-        String(item[key]).toLowerCase().includes(searchTerm.toLowerCase())
-      )
+      searchKeys.some((key) => {
+        const val = item[key];
+        if (typeof val === 'object' && val !== null) {
+          // It's a LocalizedString
+          return Object.values(val).some(v => String(v).toLowerCase().includes(search));
+        }
+        return String(val).toLowerCase().includes(search);
+      })
     );
   }, [data, searchTerm, searchKeys]);
 
   const sortedData = useMemo(() => {
     if (!sortConfig) return filteredData;
     return [...filteredData].sort((a, b) => {
-      if (a[sortConfig.key] < b[sortConfig.key]) {
+      let valA = a[sortConfig.key];
+      let valB = b[sortConfig.key];
+
+      // Handle localized strings for sorting (use current lang)
+      if (typeof valA === 'object' && valA !== null && (valA as any)[lang]) {
+        valA = (valA as any)[lang];
+        valB = (valB as any)[lang];
+      }
+
+      if (valA < valB) {
         return sortConfig.direction === 'asc' ? -1 : 1;
       }
-      if (a[sortConfig.key] > b[sortConfig.key]) {
+      if (valA > valB) {
         return sortConfig.direction === 'asc' ? 1 : -1;
       }
       return 0;
     });
-  }, [filteredData, sortConfig]);
+  }, [filteredData, sortConfig, lang]);
 
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-6 duration-700">
@@ -67,7 +82,7 @@ function DataTable<T extends { id: string | number, imageUrl: string, name: stri
           <h2 className="text-4xl font-black text-slate-900 tracking-tight mb-2 uppercase">{title}</h2>
           <p className="text-slate-400 font-medium text-sm">{filteredData.length} {lang === 'es' ? 'entradas encontradas en el archivo' : 'entries found in archives'}</p>
         </div>
-        
+
         <div className="flex flex-wrap items-center gap-3">
           <div className="relative w-full md:w-64">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-300" size={18} />
@@ -114,9 +129,9 @@ function DataTable<T extends { id: string | number, imageUrl: string, name: stri
                       onClick={() => setModalState({ isOpen: true, item })}
                       className="relative inline-block w-14 h-14 rounded-2xl overflow-hidden border border-slate-100 shadow-sm group-hover:shadow-md transition-all group-hover:-translate-y-0.5"
                     >
-                      <img src={item.imageUrl} alt={item.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                      <img src={item.imageUrl} alt="Item" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                       <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                         <Eye size={20} className="text-white" />
+                        <Eye size={20} className="text-white" />
                       </div>
                     </button>
                   </td>
@@ -142,7 +157,7 @@ function DataTable<T extends { id: string | number, imageUrl: string, name: stri
         <Modal
           isOpen={modalState.isOpen}
           imageUrl={modalState.item.imageUrl}
-          title={modalState.item.name}
+          title={(modalState.item as any).name?.[lang] || (modalState.item as any).id}
           onClose={() => setModalState({ ...modalState, isOpen: false })}
           lang={lang}
         />

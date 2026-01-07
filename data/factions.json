@@ -1,0 +1,79 @@
+[
+    {
+        "code": "neutral",
+        "name": {
+            "es": "Neutral",
+            "en": "Neutral"
+        }
+    },
+    {
+        "code": "amazons",
+        "name": {
+            "es": "Amazonas",
+            "en": "Amazons"
+        }
+    },
+    {
+        "code": "barbarians",
+        "name": {
+            "es": "Barbaros",
+            "en": "Barbarians"
+        }
+    },
+    {
+        "code": "daemons",
+        "name": {
+            "es": "Demonios",
+            "en": "Daemons"
+        }
+    },
+    {
+        "code": "dwarves",
+        "name": {
+            "es": "Enanos",
+            "en": "Dwarves"
+        }
+    },
+    {
+        "code": "elves",
+        "name": {
+            "es": "Elfos",
+            "en": "Elves"
+        }
+    },
+    {
+        "code": "orcs",
+        "name": {
+            "es": "Orcos",
+            "en": "Orcs"
+        }
+    },
+    {
+        "code": "undead",
+        "name": {
+            "es": "No muertos",
+            "en": "Undead"
+        }
+    },
+    {
+        "code": "mercenaries",
+        "name": {
+            "es": "Mercenarios",
+            "en": "Mercenaries"
+        }
+    },
+    {
+        "code": "titans",
+        "name": {
+            "es": "Titanes",
+            "en": "Titans"
+        }
+    },
+    {
+        "code": "inferno",
+        "name": {
+            "es": "Infierno",
+            "en": "Inferno"
+        }
+    }
+]

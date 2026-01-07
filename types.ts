@@ -1,55 +1,71 @@
-export enum Faction {
-  Humanos = "Humanos",
-  Elfos = "Elfos",
-  Orcos = "Orcos",
-  NoMuertos = "No Muertos",
-  Neutral = "Neutral"
-}
+export type LocalizedString = {
+  es: string;
+  en: string;
+};
 
-export enum UnitType {
-  Ligera = "Ligera",
-  Media = "Media",
-  Pesada = "Pesada",
-  Elite = "Élite"
-}
+export type FactionCode =
+  | "amazons"
+  | "barbarians"
+  | "daemons"
+  | "dwarves"
+  | "elves"
+  | "orcs"
+  | "undead"
+  | "mercenaries"
+  | "titans"
+  | "inferno"
+  | "neutral";
+
+export type UnitType =
+  | "light"
+  | "medium"
+  | "heavy"
+  | "elite"
+  | "structure";
+
+export type UnitSubtype =
+  | "unit"
+  | "hero"
+  | "titan";
 
 export interface Unit {
   id: string;
-  faction: Faction;
-  name: string;
+  faction: FactionCode;
+  name: LocalizedString;
   type: UnitType;
+  subtype: UnitSubtype;
   strength: number;
   movement: number;
   range: number;
-  special: string;
-  cost: number;
+  special: LocalizedString;
+  cost: number | string;
   imageUrl: string;
 }
 
 export interface Card {
   id: string;
-  category: "Sección" | "Táctica" | "Hechizo";
-  name: string;
+  category: LocalizedString;
+  name: LocalizedString;
   count: number;
-  effectA: string;
-  effectB: string;
+  effectA: LocalizedString;
+  effectB: LocalizedString;
   imageUrl: string;
 }
 
 export interface Terrain {
   id: string;
-  name: string;
-  effectMovement: string;
-  effectCombat: string;
+  name: LocalizedString;
+  effectMovement: LocalizedString;
+  effectCombat: LocalizedString;
   imageUrl: string;
 }
 
 export interface Scenario {
   id: string;
-  name: string;
-  difficulty: "Fácil" | "Media" | "Difícil";
-  description: string;
-  setup: string;
+  name: LocalizedString;
+  difficulty: LocalizedString;
+  description: LocalizedString;
+  setup: LocalizedString;
   imageUrl: string;
 }
 

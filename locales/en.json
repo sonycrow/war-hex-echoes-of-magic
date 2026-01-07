@@ -1,0 +1,84 @@
+{
+    "common": {
+        "title": "WAR-HEX",
+        "codexVersion": "CODEX v1.4",
+        "loading": "Loading Codex...",
+        "errorLoading": "Error loading Codex. Please check JSON files.",
+        "noData": "Data could not be loaded."
+    },
+    "definitions": {
+        "factions": {
+            "amazons": "Amazons",
+            "barbarians": "Barbarians",
+            "daemons": "Daemons",
+            "dwarves": "Dwarves",
+            "elves": "Elves",
+            "orcs": "Orcs",
+            "undead": "Undead",
+            "mercenaries": "Mercenaries",
+            "titans": "Titans",
+            "inferno": "Inferno",
+            "neutral": "Neutral"
+        },
+        "unitTypes": {
+            "light": "Light",
+            "medium": "Medium",
+            "heavy": "Heavy",
+            "elite": "Elite",
+            "structure": "Structure"
+        },
+        "unitSubtypes": {
+            "unit": "Unit",
+            "hero": "Hero",
+            "titan": "Titan"
+        },
+        "categories": {
+            "Section": "Section",
+            "Tactics": "Tactics",
+            "Spell": "Spell"
+        },
+        "difficulty": {
+            "Easy": "Easy",
+            "Medium": "Medium",
+            "Hard": "Hard"
+        }
+    },
+    "nav": {
+        "units": "Units",
+        "cards": "Cards",
+        "terrain": "Terrain",
+        "scenarios": "Scenarios",
+        "rules": "Rulebook"
+    },
+    "views": {
+        "units": {
+            "title": "Battle Units",
+            "faction": "Faction",
+            "name": "Name",
+            "type": "Type",
+            "subtype": "Subtype",
+            "strength": "STR",
+            "cost": "Cost",
+            "special": "Special"
+        },
+        "cards": {
+            "title": "Command Deck",
+            "category": "Category",
+            "name": "Name",
+            "effectA": "Effect A",
+            "effectB": "Effect B"
+        },
+        "terrain": {
+            "title": "Terrain",
+            "name": "Name",
+            "movement": "Movement",
+            "combat": "Combat"
+        },
+        "scenarios": {
+            "title": "Scenarios",
+            "name": "Scenario",
+            "difficulty": "Difficulty",
+            "description": "Description"
+        }
+    }
+}
