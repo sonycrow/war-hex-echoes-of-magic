@@ -7,16 +7,16 @@ interface StickerProps {
 }
 
 const factionColors: Record<FactionCode, { bg: string; text: string; accent: string; border: string }> = {
-    amazons: { bg: '#FFF7ED', text: '#9A3412', accent: '#EA580C', border: '#FB923C' },
-    barbarians: { bg: '#FEF2F2', text: '#991B1B', accent: '#DC2626', border: '#F87171' },
-    daemons: { bg: '#FAF5FF', text: '#6B21A8', accent: '#9333EA', border: '#C084FC' },
-    dwarves: { bg: '#EEF2FF', text: '#3730A3', accent: '#4F46E5', border: '#818CF8' },
-    elves: { bg: '#F0FDF4', text: '#166534', accent: '#16A34A', border: '#4ADE80' },
-    orcs: { bg: '#FFFBEB', text: '#92400E', accent: '#D97706', border: '#FBBF24' },
-    undead: { bg: '#F8FAFC', text: '#1E293B', accent: '#475569', border: '#94A3B8' },
-    mercenaries: { bg: '#EFF6FF', text: '#1E40AF', accent: '#2563EB', border: '#60A5FA' },
-    titans: { bg: '#FFFBEB', text: '#78350F', accent: '#B45309', border: '#F59E0B' },
-    inferno: { bg: '#FFF1F2', text: '#9F1239', accent: '#E11D48', border: '#FB7185' },
+    amazons: { bg: '#FFFED4', text: '#D3CD3A', accent: '#D3CD3A', border: '#D3CD3A' },
+    barbarians: { bg: '#F0F9FF', text: '#2C7CB6', accent: '#2C7CB6', border: '#2C7CB6' },
+    daemons: { bg: '#FEF2F2', text: '#BD2E2E', accent: '#BD2E2E', border: '#BD2E2E' },
+    dwarves: { bg: '#FAF5FF', text: '#9141BB', accent: '#9141BB', border: '#9141BB' },
+    elves: { bg: '#F0FDF4', text: '#439D41', accent: '#439D41', border: '#439D41' },
+    orcs: { bg: '#FFFBEB', text: '#D0691C', accent: '#D0691C', border: '#D0691C' },
+    undead: { bg: '#F8FAFC', text: '#3A3A3A', accent: '#3A3A3A', border: '#3A3A3A' },
+    mercenaries: { bg: '#FEFCE8', text: '#593A02', accent: '#593A02', border: '#593A02' },
+    titans: { bg: '#FFFFFF', text: '#1F2937', accent: '#EFEFEF', border: '#EFEFEF' },
+    inferno: { bg: '#FEF2F2', text: '#750808', accent: '#750808', border: '#750808' },
     neutral: { bg: '#F9FAFB', text: '#374151', accent: '#6B7280', border: '#D1D5DB' },
 };
 
@@ -35,7 +35,7 @@ const Sticker: React.FC<StickerProps> = ({ unit, lang }) => {
             className="relative w-[512px] h-[512px] shadow-2xl overflow-hidden select-none"
             style={{
                 backgroundColor: colors.bg,
-                border: `12px solid ${colors.text}`,
+                border: `12px solid ${colors.border}`,
                 fontFamily: "'Outfit', 'Inter', sans-serif"
             }}
         >
@@ -63,7 +63,7 @@ const Sticker: React.FC<StickerProps> = ({ unit, lang }) => {
             </div>
 
             {/* Center: Unit Image */}
-            <div className="absolute inset-0 flex items-center justify-center p-20 mt-4">
+            <div className="absolute inset-0 flex items-center justify-center p-10 mt-4">
                 <img
                     src={imageUrl}
                     alt={unit.name.en}

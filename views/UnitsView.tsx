@@ -21,7 +21,7 @@ const UnitsView: React.FC<UnitsViewProps> = ({ lang, data, t }) => {
 
             return {
                 ...u,
-                imageUrl: `/assets/blocks/units/${u.expansion}/${u.expansion}_${u.faction}_${nameEn}.png`
+                imageUrl: `/assets/game/units/${u.expansion}/${u.expansion}_${u.faction}_${nameEn}.png`
             };
         });
     }, [data]);
