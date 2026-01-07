@@ -48,7 +48,8 @@
         "cards": "Cartas",
         "terrain": "Terreno",
         "scenarios": "Escenarios",
-        "rules": "Reglamento"
+        "rules": "Reglamento",
+        "stickers": "Pegatinas"
     },
     "views": {
         "units": {
@@ -79,6 +80,14 @@
             "name": "Escenario",
             "difficulty": "Dificultad",
             "description": "Descripción"
+        },
+        "stickers": {
+            "title": "Generador de Pegatinas",
+            "description": "Genera pegatinas de estilo Columbia Games para tus bloques.",
+            "download": "Descargar Imagen",
+            "downloadAll": "Descargar Todas",
+            "allExpansions": "Todas las Expansiones",
+            "allFactions": "Todas las Facciones"
         }
     }
 }

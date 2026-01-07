@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Swords, ScrollText, Map, BookOpen, Layers } from 'lucide-react';
+import { X, Swords, ScrollText, Map, BookOpen, Layers, Layout } from 'lucide-react';
 import NavLink from './NavLink';
 import LanguageSelector from './LanguageSelector';
 import { ViewState } from '../types';
@@ -53,6 +53,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                     <NavLink icon={ScrollText} label={t.nav.cards} active={currentView === 'cards'} onClick={() => onNav('cards')} />
                     <NavLink icon={Map} label={t.nav.terrain} active={currentView === 'terrain'} onClick={() => onNav('terrain')} />
                     <NavLink icon={Layers} label={t.nav.scenarios} active={currentView === 'scenarios'} onClick={() => onNav('scenarios')} />
+                    <NavLink icon={Layout} label={t.nav.stickers} active={currentView === 'stickers'} onClick={() => onNav('stickers')} />
                     <div className="my-6 border-t border-slate-100"></div>
                     <NavLink icon={BookOpen} label={t.nav.rules} active={currentView === 'rules'} onClick={() => onNav('rules')} />
                 </nav>

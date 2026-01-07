@@ -48,7 +48,8 @@
         "cards": "Cards",
         "terrain": "Terrain",
         "scenarios": "Scenarios",
-        "rules": "Rulebook"
+        "rules": "Rulebook",
+        "stickers": "Stickers"
     },
     "views": {
         "units": {
@@ -79,6 +80,14 @@
             "name": "Scenario",
             "difficulty": "Difficulty",
             "description": "Description"
+        },
+        "stickers": {
+            "title": "Sticker Generator",
+            "description": "Generate Columbia Games style stickers for your blocks.",
+            "download": "Download Image",
+            "downloadAll": "Download All",
+            "allExpansions": "All Expansions",
+            "allFactions": "All Factions"
         }
     }
 }
