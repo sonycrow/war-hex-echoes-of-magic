@@ -13,11 +13,24 @@ const UnitsView: React.FC<UnitsViewProps> = ({ lang, data, t }) => {
     const viewsT = t.views.units;
     const defs = t.definitions;
 
+    const processedData = React.useMemo(() => {
+        return data.map(u => {
+            const nameEn = u.name.en.toLowerCase()
+                .replace(/\s+/g, '-')     // spaces to hyphens
+                .replace(/[^\w-]/g, ''); // remove non-word chars except hyphens
+
+            return {
+                ...u,
+                imageUrl: `/assets/blocks/units/${u.expansion}/${u.expansion}_${u.faction}_${nameEn}.png`
+            };
+        });
+    }, [data]);
+
     return (
-        <DataTable<Unit>
+        <DataTable<Unit & { imageUrl: string }>
             lang={lang}
             title={viewsT.title}
-            data={data}
+            data={processedData}
             searchKeys={['id', 'faction', 'type', 'subtype']}
             columns={[
                 {
@@ -56,7 +69,7 @@ const UnitsView: React.FC<UnitsViewProps> = ({ lang, data, t }) => {
                 { key: 'movement', label: 'MOV', sortable: true },
                 { key: 'range', label: 'RNG', sortable: true },
                 { key: 'cost', label: viewsT.cost, sortable: true, render: (u) => <GoldCoin value={u.cost} /> },
-                { key: 'special', label: viewsT.special, render: (u) => <span className="text-xs text-slate-500 font-medium leading-relaxed">{u.special[lang]}</span> },
+                { key: 'rules', label: viewsT.special, render: (u) => <span className="text-xs text-slate-500 font-medium leading-relaxed">{u.rules[lang]}</span> },
             ]}
         />
     );

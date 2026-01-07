@@ -127,7 +127,7 @@ function DataTable<T extends { id: string | number, imageUrl: string }>({
                   <td className="p-6 text-center">
                     <button
                       onClick={() => setModalState({ isOpen: true, item })}
-                      className="relative inline-block w-14 h-14 rounded-2xl overflow-hidden border border-slate-100 shadow-sm group-hover:shadow-md transition-all group-hover:-translate-y-0.5"
+                      className="relative inline-block w-14 h-14 rounded overflow-hidden border border-slate-100 shadow-sm group-hover:shadow-md transition-all group-hover:-translate-y-0.5"
                     >
                       <img src={item.imageUrl} alt="Item" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                       <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">

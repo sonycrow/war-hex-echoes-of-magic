@@ -34,12 +34,14 @@ export interface Unit {
   name: LocalizedString;
   type: UnitType;
   subtype: UnitSubtype;
+  expansion: string;
   strength: number;
   movement: number;
   range: number;
-  special: LocalizedString;
+  rules: LocalizedString;
   cost: number | string;
-  imageUrl: string;
+  version?: number;
+  date?: string;
 }
 
 export interface Card {

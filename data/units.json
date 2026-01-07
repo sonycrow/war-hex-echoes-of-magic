@@ -1,1484 +1,1661 @@
 [
-  {
-    "id": "am1",
-    "faction": "amazons",
-    "name": {
-      "en": "Guardian",
-      "es": "Guardiana"
-    },
-    "type": "medium",
-    "subtype": "unit",
-    "strength": 3,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Plains Bonus: +1 die.",
-      "es": "Bono en Llanura: +1 dado."
-    },
-    "cost": 2,
-    "imageUrl": "https://picsum.photos/400/400?random=0"
-  },
-  {
-    "id": "am2",
-    "faction": "amazons",
-    "name": {
-      "en": "Javelin",
-      "es": "Jabalina"
-    },
-    "type": "medium",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 1,
-    "special": {
-      "en": "Plains Bonus: +1 die.",
-      "es": "Bono en Llanura: +1 dado."
-    },
-    "cost": 4,
-    "imageUrl": "https://picsum.photos/400/400?random=1"
-  },
-  {
-    "id": "am3",
-    "faction": "amazons",
-    "name": {
-      "en": "Warlike",
-      "es": "Belicosa"
-    },
-    "type": "medium",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Plains Bonus: +1 die.",
-      "es": "Bono en Llanura: +1 dado."
-    },
-    "cost": 3,
-    "imageUrl": "https://picsum.photos/400/400?random=2"
-  },
-  {
-    "id": "am4",
-    "faction": "amazons",
-    "name": {
-      "en": "Druid",
-      "es": "Druida"
-    },
-    "type": "light",
-    "subtype": "unit",
-    "strength": 3,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Generates 1 Mana at the start of the turn.",
-      "es": "Genera 1 Maná al inicio del turno."
-    },
-    "cost": 4,
-    "imageUrl": "https://picsum.photos/400/400?random=3"
-  },
-  {
-    "id": "am5",
-    "faction": "amazons",
-    "name": {
-      "en": "Falcon",
-      "es": "Halcón"
-    },
-    "type": "light",
-    "subtype": "unit",
-    "strength": 3,
-    "movement": 3,
-    "range": 1,
-    "special": {
-      "en": "Flight: Ignores terrain and units.",
-      "es": "Vuelo: Ignora terreno y unidades."
-    },
-    "cost": 5,
-    "imageUrl": "https://picsum.photos/400/400?random=4"
-  },
-  {
-    "id": "am6",
-    "faction": "amazons",
-    "name": {
-      "en": "Tigress",
-      "es": "Tigresa"
-    },
-    "type": "heavy",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 3,
-    "range": 0,
-    "special": {
-      "en": "Forest Bonus: +1 defense die.",
-      "es": "Bonus en Bosque: +1 dado defensa."
-    },
-    "cost": 4,
-    "imageUrl": "https://picsum.photos/400/400?random=5"
-  },
-  {
-    "id": "am7",
-    "faction": "amazons",
-    "name": {
-      "en": "Castle",
-      "es": "Castillo"
-    },
-    "type": "structure",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 0,
-    "range": 0,
-    "special": {
-      "en": "Urban defense: +1 defense die.",
-      "es": "Defensa urbana: +1 dado defensa."
-    },
-    "cost": 3,
-    "imageUrl": "https://picsum.photos/400/400?random=6"
-  },
-  {
-    "id": "ba8",
-    "faction": "barbarians",
-    "name": {
-      "en": "Berserker",
-      "es": "Bárbaro"
-    },
-    "type": "heavy",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Mountain Bonus: Ignore 1 flag.",
-      "es": "Bono en Montaña: Ignora 1 bandera."
-    },
-    "cost": 3,
-    "imageUrl": "https://picsum.photos/400/400?random=7"
-  },
-  {
-    "id": "ba9",
-    "faction": "barbarians",
-    "name": {
-      "en": "Cleric",
-      "es": "Clérigo"
-    },
-    "type": "light",
-    "subtype": "unit",
-    "strength": 3,
-    "movement": 2,
-    "range": 1,
-    "special": {
-      "en": "Generates 1 Mana at the start of the turn.",
-      "es": "Genera 1 Maná al inicio del turno."
-    },
-    "cost": 4,
-    "imageUrl": "https://picsum.photos/400/400?random=8"
-  },
-  {
-    "id": "ba10",
-    "faction": "barbarians",
-    "name": {
-      "en": "Lancer",
-      "es": "Lancero"
-    },
-    "type": "light",
-    "subtype": "unit",
-    "strength": 3,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Plains Bonus: +1 die.",
-      "es": "Bono en Llanura: +1 dado."
-    },
-    "cost": 2,
-    "imageUrl": "https://picsum.photos/400/400?random=9"
-  },
-  {
-    "id": "ba11",
-    "faction": "barbarians",
-    "name": {
-      "en": "Valkyrie",
-      "es": "Valquiria"
-    },
-    "type": "medium",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Flight: Ignores terrain and units.",
-      "es": "Vuelo: Ignora terreno y unidades."
-    },
-    "cost": 5,
-    "imageUrl": "https://picsum.photos/400/400?random=10"
-  },
-  {
-    "id": "ba12",
-    "faction": "barbarians",
-    "name": {
-      "en": "War boat",
-      "es": "Barco de guerra"
-    },
-    "type": "medium",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 1,
-    "special": {
-      "en": "Amphibious: Ignores Water penalty.",
-      "es": "Anfibio: Ignora penalización de Agua."
-    },
-    "cost": 4,
-    "imageUrl": "https://picsum.photos/400/400?random=11"
-  },
-  {
-    "id": "ba13",
-    "faction": "barbarians",
-    "name": {
-      "en": "Scout",
-      "es": "Explorador"
-    },
-    "type": "light",
-    "subtype": "unit",
-    "strength": 3,
-    "movement": 3,
-    "range": 0,
-    "special": {
-      "en": "Forest Bonus: +1 defense die.",
-      "es": "Bonus en Bosque: +1 dado defensa."
-    },
-    "cost": 3,
-    "imageUrl": "https://picsum.photos/400/400?random=12"
-  },
-  {
-    "id": "da14",
-    "faction": "daemons",
-    "name": {
-      "en": "Sorcerer",
-      "es": "Hechicero"
-    },
-    "type": "medium",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 1,
-    "special": {
-      "en": "Generates 1 Mana at the start of the turn.",
-      "es": "Genera 1 Maná al inicio del turno."
-    },
-    "cost": 5,
-    "imageUrl": "https://picsum.photos/400/400?random=14"
-  },
-  {
-    "id": "da15",
-    "faction": "daemons",
-    "name": {
-      "en": "Soldier",
-      "es": "Soldado"
-    },
-    "type": "light",
-    "subtype": "unit",
-    "strength": 3,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Desert Bonus: +1 attack die.",
-      "es": "Bono en Desierto: +1 dado ataque."
-    },
-    "cost": 2,
-    "imageUrl": "https://picsum.photos/400/400?random=15"
-  },
-  {
-    "id": "da16",
-    "faction": "daemons",
-    "name": {
-      "en": "Bane",
-      "es": "Perdición"
-    },
-    "type": "medium",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Generates 1 Mana at the start of the turn.",
-      "es": "Genera 1 Maná al inicio del turno."
-    },
-    "cost": 5,
-    "imageUrl": "https://picsum.photos/400/400?random=16"
-  },
-  {
-    "id": "da17",
-    "faction": "daemons",
-    "name": {
-      "en": "Hellhound",
-      "es": "Sabueso Infernal"
-    },
-    "type": "light",
-    "subtype": "unit",
-    "strength": 3,
-    "movement": 3,
-    "range": 0,
-    "special": {
-      "en": "Forest Bonus: +1 defense die.",
-      "es": "Bonus en Bosque: +1 dado defensa."
-    },
-    "cost": 3,
-    "imageUrl": "https://picsum.photos/400/400?random=17"
-  },
-  {
-    "id": "da18",
-    "faction": "daemons",
-    "name": {
-      "en": "Evil goblin",
-      "es": "Trasgo malvado"
-    },
-    "type": "medium",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 3,
-    "range": 0,
-    "special": {
-      "en": "Flight: Ignores terrain and units.",
-      "es": "Vuelo: Ignora terreno y unidades."
-    },
-    "cost": 5,
-    "imageUrl": "https://picsum.photos/400/400?random=18"
-  },
-  {
-    "id": "da19",
-    "faction": "daemons",
-    "name": {
-      "en": "Torturer",
-      "es": "Torturador"
-    },
-    "type": "medium",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 1,
-    "range": 0,
-    "special": {
-      "en": "Urban defense: +1 defense die.",
-      "es": "Defensa urbana: +1 dado defensa."
-    },
-    "cost": 3,
-    "imageUrl": "https://picsum.photos/400/400?random=19"
-  },
-  {
-    "id": "dw20",
-    "faction": "dwarves",
-    "name": {
-      "en": "Mage",
-      "es": "Mago"
-    },
-    "type": "light",
-    "subtype": "unit",
-    "strength": 3,
-    "movement": 2,
-    "range": 1,
-    "special": {
-      "en": "Generates 1 Mana at the start of the turn.",
-      "es": "Genera 1 Maná al inicio del turno."
-    },
-    "cost": 4,
-    "imageUrl": "https://picsum.photos/400/400?random=21"
-  },
-  {
-    "id": "dw21",
-    "faction": "dwarves",
-    "name": {
-      "en": "Guard",
-      "es": "Guardia"
-    },
-    "type": "light",
-    "subtype": "unit",
-    "strength": 3,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Urban defense: +1 defense die.",
-      "es": "Defensa urbana: +1 dado defensa."
-    },
-    "cost": 2,
-    "imageUrl": "https://picsum.photos/400/400?random=22"
-  },
-  {
-    "id": "dw22",
-    "faction": "dwarves",
-    "name": {
-      "en": "Archer",
-      "es": "Arquero"
-    },
-    "type": "heavy",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 1,
-    "special": {
-      "en": "Mountain Bonus: Ignore 1 flag.",
-      "es": "Bono en Montaña: Ignora 1 bandera."
-    },
-    "cost": 4,
-    "imageUrl": "https://picsum.photos/400/400?random=23"
-  },
-  {
-    "id": "dw23",
-    "faction": "dwarves",
-    "name": {
-      "en": "Gladiator",
-      "es": "Gladiador"
-    },
-    "type": "medium",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Mountain Bonus: Ignore 1 flag.",
-      "es": "Bono en Montaña: Ignora 1 bandera."
-    },
-    "cost": 3,
-    "imageUrl": "https://picsum.photos/400/400?random=24"
-  },
-  {
-    "id": "dw24",
-    "faction": "dwarves",
-    "name": {
-      "en": "Blacksmith",
-      "es": "Herrero"
-    },
-    "type": "medium",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Urban defense: +1 defense die.",
-      "es": "Defensa urbana: +1 dado defensa."
-    },
-    "cost": 3,
-    "imageUrl": "https://picsum.photos/400/400?random=25"
-  },
-  {
-    "id": "dw25",
-    "faction": "dwarves",
-    "name": {
-      "en": "Miner",
-      "es": "Minero"
-    },
-    "type": "medium",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Urban defense: +1 defense die.",
-      "es": "Defensa urbana: +1 dado defensa."
-    },
-    "cost": 3,
-    "imageUrl": "https://picsum.photos/400/400?random=26"
-  },
-  {
-    "id": "el26",
-    "faction": "elves",
-    "name": {
-      "en": "Archer",
-      "es": "Arquero"
-    },
-    "type": "light",
-    "subtype": "unit",
-    "strength": 3,
-    "movement": 1,
-    "range": 1,
-    "special": {
-      "en": "Plains Bonus: +1 die.",
-      "es": "Bono en Llanura: +1 dado."
-    },
-    "cost": 3,
-    "imageUrl": "https://picsum.photos/400/400?random=28"
-  },
-  {
-    "id": "el27",
-    "faction": "elves",
-    "name": {
-      "en": "Fairy",
-      "es": "Hada"
-    },
-    "type": "light",
-    "subtype": "unit",
-    "strength": 3,
-    "movement": 3,
-    "range": 1,
-    "special": {
-      "en": "Flight: Ignores terrain and units.",
-      "es": "Vuelo: Ignora terreno y unidades."
-    },
-    "cost": 5,
-    "imageUrl": "https://picsum.photos/400/400?random=29"
-  },
-  {
-    "id": "el28",
-    "faction": "elves",
-    "name": {
-      "en": "Magician",
-      "es": "Mago"
-    },
-    "type": "light",
-    "subtype": "unit",
-    "strength": 3,
-    "movement": 2,
-    "range": 1,
-    "special": {
-      "en": "Generates 1 Mana at the start of the turn.",
-      "es": "Genera 1 Maná al inicio del turno."
-    },
-    "cost": 4,
-    "imageUrl": "https://picsum.photos/400/400?random=30"
-  },
-  {
-    "id": "el29",
-    "faction": "elves",
-    "name": {
-      "en": "Swordsman",
-      "es": "Espadachín"
-    },
-    "type": "medium",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Forest Bonus: +1 defense die.",
-      "es": "Bonus en Bosque: +1 dado defensa."
-    },
-    "cost": 3,
-    "imageUrl": "https://picsum.photos/400/400?random=31"
-  },
-  {
-    "id": "el30",
-    "faction": "elves",
-    "name": {
-      "en": "Warrior",
-      "es": "Guerrero"
-    },
-    "type": "light",
-    "subtype": "unit",
-    "strength": 3,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Forest Bonus: +1 defense die.",
-      "es": "Bonus en Bosque: +1 dado defensa."
-    },
-    "cost": 2,
-    "imageUrl": "https://picsum.photos/400/400?random=32"
-  },
-  {
-    "id": "or31",
-    "faction": "orcs",
-    "name": {
-      "en": "Assassin",
-      "es": "Asesino"
-    },
-    "type": "heavy",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Forest Bonus: +1 defense die.",
-      "es": "Bonus en Bosque: +1 dado defensa."
-    },
-    "cost": 3,
-    "imageUrl": "https://picsum.photos/400/400?random=35"
-  },
-  {
-    "id": "or32",
-    "faction": "orcs",
-    "name": {
-      "en": "Slynn",
-      "es": "Slynn"
-    },
-    "type": "light",
-    "subtype": "unit",
-    "strength": 3,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Forest Bonus: +1 defense die.",
-      "es": "Bonus en Bosque: +1 dado defensa."
-    },
-    "cost": 2,
-    "imageUrl": "https://picsum.photos/400/400?random=36"
-  },
-  {
-    "id": "or33",
-    "faction": "orcs",
-    "name": {
-      "en": "Shaman",
-      "es": "Chamán"
-    },
-    "type": "medium",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 1,
-    "special": {
-      "en": "Generates 1 Mana at the start of the turn.",
-      "es": "Genera 1 Maná al inicio del turno."
-    },
-    "cost": 5,
-    "imageUrl": "https://picsum.photos/400/400?random=37"
-  },
-  {
-    "id": "or34",
-    "faction": "orcs",
-    "name": {
-      "en": "Axer",
-      "es": "Hachero"
-    },
-    "type": "medium",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Mountain Bonus: Ignore 1 flag.",
-      "es": "Bono en Montaña: Ignora 1 bandera."
-    },
-    "cost": 3,
-    "imageUrl": "https://picsum.photos/400/400?random=38"
-  },
-  {
-    "id": "or35",
-    "faction": "orcs",
-    "name": {
-      "en": "Brutus",
-      "es": "Brutus"
-    },
-    "type": "medium",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Mountain Bonus: Ignore 1 flag.",
-      "es": "Bono en Montaña: Ignora 1 bandera."
-    },
-    "cost": 3,
-    "imageUrl": "https://picsum.photos/400/400?random=39"
-  },
-  {
-    "id": "or36",
-    "faction": "orcs",
-    "name": {
-      "en": "Wolf rider",
-      "es": "Jinete de lobo"
-    },
-    "type": "heavy",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 3,
-    "range": 0,
-    "special": {
-      "en": "Mountain Bonus: Ignore 1 flag.",
-      "es": "Bono en Montaña: Ignora 1 bandera."
-    },
-    "cost": 4,
-    "imageUrl": "https://picsum.photos/400/400?random=40"
-  },
-  {
-    "id": "un37",
-    "faction": "undead",
-    "name": {
-      "en": "Rider",
-      "es": "Jinete"
-    },
-    "type": "heavy",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 3,
-    "range": 0,
-    "special": {
-      "en": "Plains Bonus: +1 die.",
-      "es": "Bono en Llanura: +1 dado."
-    },
-    "cost": 4,
-    "imageUrl": "https://picsum.photos/400/400?random=42"
-  },
-  {
-    "id": "un38",
-    "faction": "undead",
-    "name": {
-      "en": "Skeleton",
-      "es": "Esqueleto"
-    },
-    "type": "medium",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Desert Bonus: +1 attack die.",
-      "es": "Bono en Desierto: +1 dado ataque."
-    },
-    "cost": 3,
-    "imageUrl": "https://picsum.photos/400/400?random=43"
-  },
-  {
-    "id": "un39",
-    "faction": "undead",
-    "name": {
-      "en": "Mummy",
-      "es": "Momia"
-    },
-    "type": "medium",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 1,
-    "range": 0,
-    "special": {
-      "en": "Desert Bonus: +1 attack die.",
-      "es": "Bono en Desierto: +1 dado ataque."
-    },
-    "cost": 3,
-    "imageUrl": "https://picsum.photos/400/400?random=44"
-  },
-  {
-    "id": "un40",
-    "faction": "undead",
-    "name": {
-      "en": "Warlock",
-      "es": "Brujo"
-    },
-    "type": "medium",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 1,
-    "special": {
-      "en": "Generates 1 Mana at the start of the turn.",
-      "es": "Genera 1 Maná al inicio del turno."
-    },
-    "cost": 5,
-    "imageUrl": "https://picsum.photos/400/400?random=45"
-  },
-  {
-    "id": "un41",
-    "faction": "undead",
-    "name": {
-      "en": "Wraith",
-      "es": "Espectro"
-    },
-    "type": "medium",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Desert Bonus: +1 attack die.",
-      "es": "Bono en Desierto: +1 dado ataque."
-    },
-    "cost": 3,
-    "imageUrl": "https://picsum.photos/400/400?random=46"
-  },
-  {
-    "id": "un42",
-    "faction": "undead",
-    "name": {
-      "en": "Zombie",
-      "es": "Zombi"
-    },
-    "type": "light",
-    "subtype": "unit",
-    "strength": 3,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Plains Bonus: +1 die.",
-      "es": "Bono en Llanura: +1 dado."
-    },
-    "cost": 2,
-    "imageUrl": "https://picsum.photos/400/400?random=47"
-  },
-  {
-    "id": "me43",
-    "faction": "mercenaries",
-    "name": {
-      "en": "Spider",
-      "es": "Araña"
-    },
-    "type": "heavy",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Forest Bonus: +1 defense die.",
-      "es": "Bonus en Bosque: +1 dado defensa."
-    },
-    "cost": 4,
-    "imageUrl": "https://picsum.photos/400/400?random=49"
-  },
-  {
-    "id": "me44",
-    "faction": "mercenaries",
-    "name": {
-      "en": "Huge boar",
-      "es": "Gran jabalí"
-    },
-    "type": "medium",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Forest Bonus: +1 defense die.",
-      "es": "Bonus en Bosque: +1 dado defensa."
-    },
-    "cost": 4,
-    "imageUrl": "https://picsum.photos/400/400?random=50"
-  },
-  {
-    "id": "me45",
-    "faction": "mercenaries",
-    "name": {
-      "en": "Black pearl",
-      "es": "Perla negra"
-    },
-    "type": "heavy",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 3,
-    "range": 1,
-    "special": {
-      "en": "Amphibious: Ignores Water penalty.",
-      "es": "Anfibio: Ignora penalización de Agua."
-    },
-    "cost": 6,
-    "imageUrl": "https://picsum.photos/400/400?random=51"
-  },
-  {
-    "id": "me46",
-    "faction": "mercenaries",
-    "name": {
-      "en": "Lumi eel",
-      "es": "Anguila luminosa"
-    },
-    "type": "light",
-    "subtype": "unit",
-    "strength": 3,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Amphibious: Ignores Water penalty.",
-      "es": "Anfibio: Ignora penalización de Agua."
-    },
-    "cost": 3,
-    "imageUrl": "https://picsum.photos/400/400?random=52"
-  },
-  {
-    "id": "me47",
-    "faction": "mercenaries",
-    "name": {
-      "en": "Basilisk",
-      "es": "Basilisco"
-    },
-    "type": "heavy",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Mountain Bonus: Ignore 1 flag.",
-      "es": "Bono en Montaña: Ignora 1 bandera."
-    },
-    "cost": 4,
-    "imageUrl": "https://picsum.photos/400/400?random=53"
-  },
-  {
-    "id": "me48",
-    "faction": "mercenaries",
-    "name": {
-      "en": "Troll",
-      "es": "Troll"
-    },
-    "type": "heavy",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 1,
-    "range": 0,
-    "special": {
-      "en": "Mountain Bonus: Ignore 1 flag.",
-      "es": "Bono en Montaña: Ignora 1 bandera."
-    },
-    "cost": 4,
-    "imageUrl": "https://picsum.photos/400/400?random=54"
-  },
-  {
-    "id": "me49",
-    "faction": "mercenaries",
-    "name": {
-      "en": "Worm",
-      "es": "Gusano"
-    },
-    "type": "medium",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Desert Bonus: +1 attack die.",
-      "es": "Bono en Desierto: +1 dado ataque."
-    },
-    "cost": 4,
-    "imageUrl": "https://picsum.photos/400/400?random=55"
-  },
-  {
-    "id": "me50",
-    "faction": "mercenaries",
-    "name": {
-      "en": "Fire lizard",
-      "es": "Lagarto de fuego"
-    },
-    "type": "medium",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Desert Bonus: +1 attack die.",
-      "es": "Bono en Desierto: +1 dado ataque."
-    },
-    "cost": 4,
-    "imageUrl": "https://picsum.photos/400/400?random=56"
-  },
-  {
-    "id": "me51",
-    "faction": "mercenaries",
-    "name": {
-      "en": "Mantis",
-      "es": "Mantis"
-    },
-    "type": "medium",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Plains Bonus: +1 die.",
-      "es": "Bono en Llanura: +1 dado."
-    },
-    "cost": 4,
-    "imageUrl": "https://picsum.photos/400/400?random=57"
-  },
-  {
-    "id": "me52",
-    "faction": "mercenaries",
-    "name": {
-      "en": "Moose",
-      "es": "Alce"
-    },
-    "type": "heavy",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 3,
-    "range": 0,
-    "special": {
-      "en": "Plains Bonus: +1 die.",
-      "es": "Bono en Llanura: +1 dado."
-    },
-    "cost": 5,
-    "imageUrl": "https://picsum.photos/400/400?random=58"
-  },
-  {
-    "id": "me53",
-    "faction": "mercenaries",
-    "name": {
-      "en": "Toxic drake",
-      "es": "Draco tóxico"
-    },
-    "type": "heavy",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 0,
-    "special": {
-      "en": "Flight: Ignores terrain and units.",
-      "es": "Vuelo: Ignora terreno y unidades."
-    },
-    "cost": 5,
-    "imageUrl": "https://picsum.photos/400/400?random=59"
-  },
-  {
-    "id": "me54",
-    "faction": "mercenaries",
-    "name": {
-      "en": "Ice drake",
-      "es": "Draco de hielo"
-    },
-    "type": "heavy",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 2,
-    "range": 1,
-    "special": {
-      "en": "Flight: Ignores terrain and units.",
-      "es": "Vuelo: Ignora terreno y unidades."
-    },
-    "cost": 6,
-    "imageUrl": "https://picsum.photos/400/400?random=60"
-  },
-  {
-    "id": "me55",
-    "faction": "mercenaries",
-    "name": {
-      "en": "Fire drake",
-      "es": "Draco de fuego"
-    },
-    "type": "heavy",
-    "subtype": "unit",
-    "strength": 4,
-    "movement": 3,
-    "range": 1,
-    "special": {
-      "en": "Flight: Ignores terrain and units.",
-      "es": "Vuelo: Ignora terreno y unidades."
-    },
-    "cost": 7,
-    "imageUrl": "https://picsum.photos/400/400?random=61"
-  },
-  {
-    "id": "da56",
-    "faction": "daemons",
-    "name": {
-      "en": "Azrak",
-      "es": "Azrak"
-    },
-    "type": "elite",
-    "subtype": "hero",
-    "strength": 4,
-    "movement": 4,
-    "range": 0,
-    "special": {
-      "en": "Urban defense: +1 defense die. Hero: Has 2 lives.",
-      "es": "Defensa urbana: +1 dado defensa. Héroe: Tiene 2 vidas."
-    },
-    "cost": 6,
-    "imageUrl": "https://picsum.photos/400/400?random=62"
-  },
-  {
-    "id": "dw57",
-    "faction": "dwarves",
-    "name": {
-      "en": "Durin",
-      "es": "Durin"
-    },
-    "type": "elite",
-    "subtype": "hero",
-    "strength": 4,
-    "movement": 4,
-    "range": 0,
-    "special": {
-      "en": "Urban defense: +1 defense die. Hero: Has 2 lives.",
-      "es": "Defensa urbana: +1 dado defensa. Héroe: Tiene 2 vidas."
-    },
-    "cost": 6,
-    "imageUrl": "https://picsum.photos/400/400?random=64"
-  },
-  {
-    "id": "un58",
-    "faction": "undead",
-    "name": {
-      "en": "Morven",
-      "es": "Morven"
-    },
-    "type": "elite",
-    "subtype": "hero",
-    "strength": 4,
-    "movement": 4,
-    "range": 0,
-    "special": {
-      "en": "Urban defense: +1 defense die. Hero: Has 2 lives.",
-      "es": "Defensa urbana: +1 dado defensa. Héroe: Tiene 2 vidas."
-    },
-    "cost": 6,
-    "imageUrl": "https://picsum.photos/400/400?random=66"
-  },
-  {
-    "id": "or59",
-    "faction": "orcs",
-    "name": {
-      "en": "Gorath",
-      "es": "Gorath"
-    },
-    "type": "elite",
-    "subtype": "hero",
-    "strength": 4,
-    "movement": 4,
-    "range": 0,
-    "special": {
-      "en": "Plains Bonus: +1 die. Hero: Has 2 lives.",
-      "es": "Bono en Llanura: +1 dado. Héroe: Tiene 2 vidas."
-    },
-    "cost": 6,
-    "imageUrl": "https://picsum.photos/400/400?random=68"
-  },
-  {
-    "id": "el60",
-    "faction": "elves",
-    "name": {
-      "en": "Elyria",
-      "es": "Elyria"
-    },
-    "type": "elite",
-    "subtype": "hero",
-    "strength": 4,
-    "movement": 4,
-    "range": 0,
-    "special": {
-      "en": "Forest Bonus: +1 defense die. Hero: Has 2 lives.",
-      "es": "Bonus en Bosque: +1 dado defensa. Héroe: Tiene 2 vidas."
-    },
-    "cost": 6,
-    "imageUrl": "https://picsum.photos/400/400?random=70"
-  },
-  {
-    "id": "ba61",
-    "faction": "barbarians",
-    "name": {
-      "en": "Thorin",
-      "es": "Thorin"
-    },
-    "type": "elite",
-    "subtype": "hero",
-    "strength": 4,
-    "movement": 4,
-    "range": 0,
-    "special": {
-      "en": "Plains Bonus: +1 die. Hero: Has 2 lives.",
-      "es": "Bono en Llanura: +1 dado. Héroe: Tiene 2 vidas."
-    },
-    "cost": 6,
-    "imageUrl": "https://picsum.photos/400/400?random=72"
-  },
-  {
-    "id": "am62",
-    "faction": "amazons",
-    "name": {
-      "en": "Zarina",
-      "es": "Zarina"
-    },
-    "type": "elite",
-    "subtype": "hero",
-    "strength": 4,
-    "movement": 4,
-    "range": 0,
-    "special": {
-      "en": "Plains Bonus: +1 die. Hero: Has 2 lives.",
-      "es": "Bono en Llanura: +1 dado. Héroe: Tiene 2 vidas."
-    },
-    "cost": 6,
-    "imageUrl": "https://picsum.photos/400/400?random=74"
-  },
-  {
-    "id": "ti63",
-    "faction": "titans",
-    "name": {
-      "en": "Hydra",
-      "es": "Hidra"
-    },
-    "type": "elite",
-    "subtype": "titan",
-    "strength": 4,
-    "movement": 3,
-    "range": 0,
-    "special": {
-      "en": "Mountain Bonus: Ignore 1 flag. Hero: Has 2 lives.",
-      "es": "Bono en Montaña: Ignora 1 bandera. Héroe: Tiene 2 vidas."
-    },
-    "cost": 10,
-    "imageUrl": "https://picsum.photos/400/400?random=76"
-  },
-  {
-    "id": "ti64",
-    "faction": "titans",
-    "name": {
-      "en": "Kobra",
-      "es": "Kobra"
-    },
-    "type": "elite",
-    "subtype": "titan",
-    "strength": 4,
-    "movement": 3,
-    "range": 0,
-    "special": {
-      "en": "Forest Bonus: +1 defense die. Hero: Has 2 lives.",
-      "es": "Bonus en Bosque: +1 dado defensa. Héroe: Tiene 2 vidas."
-    },
-    "cost": 10,
-    "imageUrl": "https://picsum.photos/400/400?random=78"
-  },
-  {
-    "id": "ti65",
-    "faction": "titans",
-    "name": {
-      "en": "Skorpic",
-      "es": "Skorpic"
-    },
-    "type": "elite",
-    "subtype": "titan",
-    "strength": 4,
-    "movement": 3,
-    "range": 0,
-    "special": {
-      "en": "Desert Bonus: +1 attack die. Hero: Has 2 lives.",
-      "es": "Bono en Desierto: +1 dado ataque. Héroe: Tiene 2 vidas."
-    },
-    "cost": 10,
-    "imageUrl": "https://picsum.photos/400/400?random=80"
-  },
-  {
-    "id": "ti66",
-    "faction": "titans",
-    "name": {
-      "en": "Walker",
-      "es": "Caminante"
-    },
-    "type": "elite",
-    "subtype": "titan",
-    "strength": 4,
-    "movement": 3,
-    "range": 0,
-    "special": {
-      "en": "Plains Bonus: +1 die. Hero: Has 2 lives.",
-      "es": "Bono en Llanura: +1 dado. Héroe: Tiene 2 vidas."
-    },
-    "cost": 10,
-    "imageUrl": "https://picsum.photos/400/400?random=82"
-  },
-  {
-    "id": "ti67",
-    "faction": "titans",
-    "name": {
-      "en": "Kraken",
-      "es": "Kraken"
-    },
-    "type": "elite",
-    "subtype": "titan",
-    "strength": 4,
-    "movement": 3,
-    "range": 1,
-    "special": {
-      "en": "Amphibious: Ignores Water penalty. Hero: Has 2 lives.",
-      "es": "Anfibio: Ignora penalización de Agua. Héroe: Tiene 2 vidas."
-    },
-    "cost": 10,
-    "imageUrl": "https://picsum.photos/400/400?random=84"
-  },
-  {
-    "id": "ti68",
-    "faction": "titans",
-    "name": {
-      "en": "Demogor",
-      "es": "Demogor"
-    },
-    "type": "elite",
-    "subtype": "titan",
-    "strength": 4,
-    "movement": 3,
-    "range": 0,
-    "special": {
-      "en": "Urban defense: +1 defense die. Hero: Has 2 lives.",
-      "es": "Defensa urbana: +1 dado defensa. Héroe: Tiene 2 vidas."
-    },
-    "cost": 10,
-    "imageUrl": "https://picsum.photos/400/400?random=86"
-  },
-  {
-    "id": "ti69",
-    "faction": "titans",
-    "name": {
-      "en": "Tempus",
-      "es": "Tempus"
-    },
-    "type": "elite",
-    "subtype": "titan",
-    "strength": 4,
-    "movement": 3,
-    "range": 1,
-    "special": {
-      "en": "Flight: Ignores terrain and units. Hero: Has 2 lives.",
-      "es": "Vuelo: Ignora terreno y unidades. Héroe: Tiene 2 vidas."
-    },
-    "cost": 10,
-    "imageUrl": "https://picsum.photos/400/400?random=88"
-  },
-  {
-    "id": "ti70",
-    "faction": "titans",
-    "name": {
-      "en": "Dracoon",
-      "es": "Dracoon"
-    },
-    "type": "elite",
-    "subtype": "titan",
-    "strength": 4,
-    "movement": 3,
-    "range": 1,
-    "special": {
-      "en": "Flight: Ignores terrain and units. Hero: Has 2 lives.",
-      "es": "Vuelo: Ignora terreno y unidades. Héroe: Tiene 2 vidas."
-    },
-    "cost": 12,
-    "imageUrl": "https://picsum.photos/400/400?random=90"
-  },
-  {
-    "id": "in71",
-    "faction": "inferno",
-    "name": {
-      "en": "Lust",
-      "es": "Lujuria"
-    },
-    "type": "elite",
-    "subtype": "hero",
-    "strength": 4,
-    "movement": 3,
-    "range": 1,
-    "special": {
-      "en": "Generates 1 Mana at the start of the turn. Hero: Has 2 lives.",
-      "es": "Genera 1 Maná al inicio del turno. Héroe: Tiene 2 vidas."
-    },
-    "cost": 8,
-    "imageUrl": "https://picsum.photos/400/400?random=92"
-  },
-  {
-    "id": "in72",
-    "faction": "inferno",
-    "name": {
-      "en": "Gluttony",
-      "es": "Gula"
-    },
-    "type": "elite",
-    "subtype": "hero",
-    "strength": 4,
-    "movement": 1,
-    "range": 0,
-    "special": {
-      "en": "Generates 1 Mana at the start of the turn. Hero: Has 2 lives.",
-      "es": "Genera 1 Maná al inicio del turno. Héroe: Tiene 2 vidas."
-    },
-    "cost": 8,
-    "imageUrl": "https://picsum.photos/400/400?random=94"
-  },
-  {
-    "id": "in73",
-    "faction": "inferno",
-    "name": {
-      "en": "Greed",
-      "es": "Codicia"
-    },
-    "type": "elite",
-    "subtype": "hero",
-    "strength": 4,
-    "movement": 3,
-    "range": 0,
-    "special": {
-      "en": "Generates 1 Mana at the start of the turn. Hero: Has 2 lives.",
-      "es": "Genera 1 Maná al inicio del turno. Héroe: Tiene 2 vidas."
-    },
-    "cost": 8,
-    "imageUrl": "https://picsum.photos/400/400?random=96"
-  },
-  {
-    "id": "in74",
-    "faction": "inferno",
-    "name": {
-      "en": "Sloth",
-      "es": "Pereza"
-    },
-    "type": "elite",
-    "subtype": "hero",
-    "strength": 4,
-    "movement": 1,
-    "range": 0,
-    "special": {
-      "en": "Generates 1 Mana at the start of the turn. Hero: Has 2 lives.",
-      "es": "Genera 1 Maná al inicio del turno. Héroe: Tiene 2 vidas."
-    },
-    "cost": 8,
-    "imageUrl": "https://picsum.photos/400/400?random=98"
-  },
-  {
-    "id": "in75",
-    "faction": "inferno",
-    "name": {
-      "en": "Wrath",
-      "es": "Ira"
-    },
-    "type": "elite",
-    "subtype": "hero",
-    "strength": 4,
-    "movement": 3,
-    "range": 0,
-    "special": {
-      "en": "Generates 1 Mana at the start of the turn. Hero: Has 2 lives.",
-      "es": "Genera 1 Maná al inicio del turno. Héroe: Tiene 2 vidas."
-    },
-    "cost": 8,
-    "imageUrl": "https://picsum.photos/400/400?random=100"
-  },
-  {
-    "id": "in76",
-    "faction": "inferno",
-    "name": {
-      "en": "Envy",
-      "es": "Envidia"
-    },
-    "type": "elite",
-    "subtype": "hero",
-    "strength": 4,
-    "movement": 1,
-    "range": 1,
-    "special": {
-      "en": "Generates 1 Mana at the start of the turn. Hero: Has 2 lives.",
-      "es": "Genera 1 Maná al inicio del turno. Héroe: Tiene 2 vidas."
-    },
-    "cost": 8,
-    "imageUrl": "https://picsum.photos/400/400?random=102"
-  },
-  {
-    "id": "in77",
-    "faction": "inferno",
-    "name": {
-      "en": "Pride",
-      "es": "Orgullo"
-    },
-    "type": "elite",
-    "subtype": "hero",
-    "strength": 4,
-    "movement": 2,
-    "range": 1,
-    "special": {
-      "en": "Generates 1 Mana at the start of the turn. Hero: Has 2 lives.",
-      "es": "Genera 1 Maná al inicio del turno. Héroe: Tiene 2 vidas."
-    },
-    "cost": 8,
-    "imageUrl": "https://picsum.photos/400/400?random=104"
-  },
-  {
-    "id": "in78",
-    "faction": "inferno",
-    "name": {
-      "en": "Diablo",
-      "es": "Diablo"
-    },
-    "type": "elite",
-    "subtype": "hero",
-    "strength": 5,
-    "movement": 3,
-    "range": 0,
-    "special": {
-      "en": "Generates 1 Mana at the start of the turn. Hero: Has 2 lives.",
-      "es": "Genera 1 Maná al inicio del turno. Héroe: Tiene 2 vidas."
-    },
-    "cost": "Ø",
-    "imageUrl": "https://picsum.photos/400/400?random=106"
-  }
+    {
+        "id": "am1",
+        "name": {
+            "en": "Guardian",
+            "es": "Guardiana"
+        },
+        "faction": "amazons",
+        "type": "medium",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 3,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Plains Bonus: +1 die.",
+            "es": "Bono en Llanura: +1 dado."
+        },
+        "cost": 2,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "am2",
+        "name": {
+            "en": "Javelin",
+            "es": "Jabalina"
+        },
+        "faction": "amazons",
+        "type": "medium",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 4,
+        "movement": 2,
+        "range": 1,
+        "rules": {
+            "en": "Plains Bonus: +1 die.",
+            "es": "Bono en Llanura: +1 dado."
+        },
+        "cost": 4,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "am3",
+        "name": {
+            "en": "Warlike",
+            "es": "Belicosa"
+        },
+        "faction": "amazons",
+        "type": "medium",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 4,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Plains Bonus: +1 die.",
+            "es": "Bono en Llanura: +1 dado."
+        },
+        "cost": 3,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "am4",
+        "name": {
+            "en": "Druid",
+            "es": "Druida"
+        },
+        "faction": "amazons",
+        "type": "light",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 3,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Generates 1 Mana at the start of the turn.",
+            "es": "Genera 1 Maná al inicio del turno."
+        },
+        "cost": 4,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "am5",
+        "name": {
+            "en": "Falcon",
+            "es": "Halcón"
+        },
+        "faction": "amazons",
+        "type": "light",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 3,
+        "movement": 3,
+        "range": 1,
+        "rules": {
+            "en": "Flight: Ignores terrain and units.",
+            "es": "Vuelo: Ignora terreno y unidades."
+        },
+        "cost": 5,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "am6",
+        "name": {
+            "en": "Tigress",
+            "es": "Tigresa"
+        },
+        "faction": "amazons",
+        "type": "heavy",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 4,
+        "movement": 3,
+        "range": 0,
+        "rules": {
+            "en": "Forest Bonus: +1 defense die.",
+            "es": "Bonus en Bosque: +1 dado defensa."
+        },
+        "cost": 4,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "ba1",
+        "name": {
+            "en": "Berserker",
+            "es": "Bárbaro"
+        },
+        "faction": "barbarians",
+        "type": "heavy",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 4,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Mountain Bonus: Ignore 1 flag.",
+            "es": "Bono en Montaña: Ignora 1 bandera."
+        },
+        "cost": 3,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "ba2",
+        "name": {
+            "en": "Cleric",
+            "es": "Clérigo"
+        },
+        "faction": "barbarians",
+        "type": "light",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 3,
+        "movement": 2,
+        "range": 1,
+        "rules": {
+            "en": "Generates 1 Mana at the start of the turn.",
+            "es": "Genera 1 Maná al inicio del turno."
+        },
+        "cost": 4,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "ba3",
+        "name": {
+            "en": "Lancer",
+            "es": "Lancero"
+        },
+        "faction": "barbarians",
+        "type": "light",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 3,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Plains Bonus: +1 die.",
+            "es": "Bono en Llanura: +1 dado."
+        },
+        "cost": 2,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "ba4",
+        "name": {
+            "en": "Valkyrie",
+            "es": "Valquiria"
+        },
+        "faction": "barbarians",
+        "type": "medium",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 4,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Flight: Ignores terrain and units.",
+            "es": "Vuelo: Ignora terreno y unidades."
+        },
+        "cost": 5,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "ba5",
+        "name": {
+            "en": "War boat",
+            "es": "Barco de guerra"
+        },
+        "faction": "barbarians",
+        "type": "medium",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 4,
+        "movement": 2,
+        "range": 1,
+        "rules": {
+            "en": "Amphibious: Ignores Water penalty.",
+            "es": "Anfibio: Ignora penalización de Agua."
+        },
+        "cost": 4,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "ba6",
+        "name": {
+            "en": "Scout",
+            "es": "Explorador"
+        },
+        "faction": "barbarians",
+        "type": "light",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 3,
+        "movement": 3,
+        "range": 0,
+        "rules": {
+            "en": "Forest Bonus: +1 defense die.",
+            "es": "Bonus en Bosque: +1 dado defensa."
+        },
+        "cost": 3,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "da1",
+        "name": {
+            "en": "Sorcerer",
+            "es": "Hechicero"
+        },
+        "faction": "daemons",
+        "type": "medium",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 4,
+        "movement": 2,
+        "range": 1,
+        "rules": {
+            "en": "Generates 1 Mana at the start of the turn.",
+            "es": "Genera 1 Maná al inicio del turno."
+        },
+        "cost": 5,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "da2",
+        "name": {
+            "en": "Soldier",
+            "es": "Soldado"
+        },
+        "faction": "daemons",
+        "type": "light",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 3,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Desert Bonus: +1 attack die.",
+            "es": "Bono en Desierto: +1 dado ataque."
+        },
+        "cost": 2,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "da3",
+        "name": {
+            "en": "Bane",
+            "es": "Perdición"
+        },
+        "faction": "daemons",
+        "type": "medium",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 4,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Generates 1 Mana at the start of the turn.",
+            "es": "Genera 1 Maná al inicio del turno."
+        },
+        "cost": 5,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "da4",
+        "name": {
+            "en": "Hellhound",
+            "es": "Sabueso Infernal"
+        },
+        "faction": "daemons",
+        "type": "light",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 3,
+        "movement": 3,
+        "range": 0,
+        "rules": {
+            "en": "Forest Bonus: +1 defense die.",
+            "es": "Bonus en Bosque: +1 dado defensa."
+        },
+        "cost": 3,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "da5",
+        "name": {
+            "en": "Evil goblin",
+            "es": "Trasgo malvado"
+        },
+        "faction": "daemons",
+        "type": "medium",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 4,
+        "movement": 3,
+        "range": 0,
+        "rules": {
+            "en": "Flight: Ignores terrain and units.",
+            "es": "Vuelo: Ignora terreno y unidades."
+        },
+        "cost": 5,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "da6",
+        "name": {
+            "en": "Torturer",
+            "es": "Torturador"
+        },
+        "faction": "daemons",
+        "type": "medium",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 4,
+        "movement": 1,
+        "range": 0,
+        "rules": {
+            "en": "Urban defense: +1 defense die.",
+            "es": "Defensa urbana: +1 dado defensa."
+        },
+        "cost": 3,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "dw1",
+        "name": {
+            "en": "Mage",
+            "es": "Mago"
+        },
+        "faction": "dwarves",
+        "type": "light",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 3,
+        "movement": 2,
+        "range": 1,
+        "rules": {
+            "en": "Generates 1 Mana at the start of the turn.",
+            "es": "Genera 1 Maná al inicio del turno."
+        },
+        "cost": 4,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "dw2",
+        "name": {
+            "en": "Guard",
+            "es": "Guardia"
+        },
+        "faction": "dwarves",
+        "type": "light",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 3,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Urban defense: +1 defense die.",
+            "es": "Defensa urbana: +1 dado defensa."
+        },
+        "cost": 2,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "dw3",
+        "name": {
+            "en": "Archer",
+            "es": "Arquero"
+        },
+        "faction": "dwarves",
+        "type": "heavy",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 4,
+        "movement": 2,
+        "range": 1,
+        "rules": {
+            "en": "Mountain Bonus: Ignore 1 flag.",
+            "es": "Bono en Montaña: Ignora 1 bandera."
+        },
+        "cost": 4,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "dw4",
+        "name": {
+            "en": "Gladiator",
+            "es": "Gladiador"
+        },
+        "faction": "dwarves",
+        "type": "medium",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 4,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Mountain Bonus: Ignore 1 flag.",
+            "es": "Bono en Montaña: Ignora 1 bandera."
+        },
+        "cost": 3,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "dw5",
+        "name": {
+            "en": "Blacksmith",
+            "es": "Herrero"
+        },
+        "faction": "dwarves",
+        "type": "medium",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 4,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Urban defense: +1 defense die.",
+            "es": "Defensa urbana: +1 dado defensa."
+        },
+        "cost": 3,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "dw6",
+        "name": {
+            "en": "Miner",
+            "es": "Minero"
+        },
+        "faction": "dwarves",
+        "type": "medium",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 4,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Urban defense: +1 defense die.",
+            "es": "Defensa urbana: +1 dado defensa."
+        },
+        "cost": 3,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "el1",
+        "name": {
+            "en": "Archer",
+            "es": "Arquero"
+        },
+        "faction": "elves",
+        "type": "light",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 3,
+        "movement": 1,
+        "range": 1,
+        "rules": {
+            "en": "Plains Bonus: +1 die.",
+            "es": "Bono en Llanura: +1 dado."
+        },
+        "cost": 3,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "el2",
+        "name": {
+            "en": "Fairy",
+            "es": "Hada"
+        },
+        "faction": "elves",
+        "type": "light",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 3,
+        "movement": 3,
+        "range": 1,
+        "rules": {
+            "en": "Flight: Ignores terrain and units.",
+            "es": "Vuelo: Ignora terreno y unidades."
+        },
+        "cost": 5,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "el3",
+        "name": {
+            "en": "Magician",
+            "es": "Mago"
+        },
+        "faction": "elves",
+        "type": "light",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 3,
+        "movement": 2,
+        "range": 1,
+        "rules": {
+            "en": "Generates 1 Mana at the start of the turn.",
+            "es": "Genera 1 Maná al inicio del turno."
+        },
+        "cost": 4,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "el4",
+        "name": {
+            "en": "Swordsman",
+            "es": "Espadachín"
+        },
+        "faction": "elves",
+        "type": "medium",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 4,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Forest Bonus: +1 defense die.",
+            "es": "Bonus en Bosque: +1 dado defensa."
+        },
+        "cost": 3,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "el5",
+        "name": {
+            "en": "Warrior",
+            "es": "Guerrero"
+        },
+        "faction": "elves",
+        "type": "light",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 3,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Forest Bonus: +1 defense die.",
+            "es": "Bonus en Bosque: +1 dado defensa."
+        },
+        "cost": 2,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "el6",
+        "name": {
+            "en": "Druid",
+            "es": "Druida"
+        },
+        "faction": "elves",
+        "type": "light",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 3,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Generates 1 Mana at the start of the turn.",
+            "es": "Genera 1 Maná al inicio del turno."
+        },
+        "cost": 4,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "or1",
+        "name": {
+            "en": "Assassin",
+            "es": "Asesino"
+        },
+        "faction": "orcs",
+        "type": "heavy",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 4,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Forest Bonus: +1 defense die.",
+            "es": "Bonus en Bosque: +1 dado defensa."
+        },
+        "cost": 3,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "or2",
+        "name": {
+            "en": "Slynn",
+            "es": "Slynn"
+        },
+        "faction": "orcs",
+        "type": "light",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 3,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Forest Bonus: +1 defense die.",
+            "es": "Bonus en Bosque: +1 dado defensa."
+        },
+        "cost": 2,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "or3",
+        "name": {
+            "en": "Shaman",
+            "es": "Chamán"
+        },
+        "faction": "orcs",
+        "type": "medium",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 4,
+        "movement": 2,
+        "range": 1,
+        "rules": {
+            "en": "Generates 1 Mana at the start of the turn.",
+            "es": "Genera 1 Maná al inicio del turno."
+        },
+        "cost": 5,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "or4",
+        "name": {
+            "en": "Axer",
+            "es": "Hachero"
+        },
+        "faction": "orcs",
+        "type": "medium",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 4,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Mountain Bonus: Ignore 1 flag.",
+            "es": "Bono en Montaña: Ignora 1 bandera."
+        },
+        "cost": 3,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "or5",
+        "name": {
+            "en": "Brutus",
+            "es": "Brutus"
+        },
+        "faction": "orcs",
+        "type": "medium",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 4,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Mountain Bonus: Ignore 1 flag.",
+            "es": "Bono en Montaña: Ignora 1 bandera."
+        },
+        "cost": 3,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "or6",
+        "name": {
+            "en": "Wolf rider",
+            "es": "Jinete de lobo"
+        },
+        "faction": "orcs",
+        "type": "heavy",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 4,
+        "movement": 3,
+        "range": 0,
+        "rules": {
+            "en": "Mountain Bonus: Ignore 1 flag.",
+            "es": "Bono en Montaña: Ignora 1 bandera."
+        },
+        "cost": 4,
+        "version": 11,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "un1",
+        "name": {
+            "en": "Rider",
+            "es": "Jinete"
+        },
+        "faction": "undead",
+        "type": "heavy",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 4,
+        "movement": 3,
+        "range": 0,
+        "rules": {
+            "en": "Plains Bonus: +1 die.",
+            "es": "Bono en Llanura: +1 dado."
+        },
+        "cost": 4,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "un2",
+        "name": {
+            "en": "Skeleton",
+            "es": "Esqueleto"
+        },
+        "faction": "undead",
+        "type": "medium",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 4,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Desert Bonus: +1 attack die.",
+            "es": "Bono en Desierto: +1 dado ataque."
+        },
+        "cost": 3,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "un3",
+        "name": {
+            "en": "Mummy",
+            "es": "Momia"
+        },
+        "faction": "undead",
+        "type": "medium",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 4,
+        "movement": 1,
+        "range": 0,
+        "rules": {
+            "en": "Desert Bonus: +1 attack die.",
+            "es": "Bono en Desierto: +1 dado ataque."
+        },
+        "cost": 3,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "un4",
+        "name": {
+            "en": "Warlock",
+            "es": "Brujo"
+        },
+        "faction": "undead",
+        "type": "medium",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 4,
+        "movement": 2,
+        "range": 1,
+        "rules": {
+            "en": "Generates 1 Mana at the start of the turn.",
+            "es": "Genera 1 Maná al inicio del turno."
+        },
+        "cost": 5,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "un5",
+        "name": {
+            "en": "Wraith",
+            "es": "Espectro"
+        },
+        "faction": "undead",
+        "type": "medium",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 4,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Desert Bonus: +1 attack die.",
+            "es": "Bono en Desierto: +1 dado ataque."
+        },
+        "cost": 3,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "un6",
+        "name": {
+            "en": "Zombie",
+            "es": "Zombi"
+        },
+        "faction": "undead",
+        "type": "light",
+        "subtype": "unit",
+        "expansion": "base",
+        "strength": 3,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Plains Bonus: +1 die.",
+            "es": "Bono en Llanura: +1 dado."
+        },
+        "cost": 2,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "me1",
+        "name": {
+            "en": "Castle",
+            "es": "Castillo"
+        },
+        "faction": "mercenaries",
+        "type": "structure",
+        "subtype": "unit",
+        "expansion": "mercenaries",
+        "strength": 4,
+        "movement": 0,
+        "range": 0,
+        "rules": {
+            "en": "Urban defense: +1 defense die.",
+            "es": "Defensa urbana: +1 dado defensa."
+        },
+        "cost": 3,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "me2",
+        "name": {
+            "en": "Spider",
+            "es": "Araña"
+        },
+        "faction": "mercenaries",
+        "type": "heavy",
+        "subtype": "unit",
+        "expansion": "mercenaries",
+        "strength": 4,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Forest Bonus: +1 defense die.",
+            "es": "Bonus en Bosque: +1 dado defensa."
+        },
+        "cost": 4,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "me3",
+        "name": {
+            "en": "Huge boar",
+            "es": "Gran jabalí"
+        },
+        "faction": "mercenaries",
+        "type": "medium",
+        "subtype": "unit",
+        "expansion": "mercenaries",
+        "strength": 4,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Forest Bonus: +1 defense die.",
+            "es": "Bonus en Bosque: +1 dado defensa."
+        },
+        "cost": 4,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "me4",
+        "name": {
+            "en": "Black pearl",
+            "es": "Perla negra"
+        },
+        "faction": "mercenaries",
+        "type": "heavy",
+        "subtype": "unit",
+        "expansion": "mercenaries",
+        "strength": 4,
+        "movement": 3,
+        "range": 1,
+        "rules": {
+            "en": "Amphibious: Ignores Water penalty.",
+            "es": "Anfibio: Ignora penalización de Agua."
+        },
+        "cost": 6,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "me5",
+        "name": {
+            "en": "Lumi eel",
+            "es": "Anguila luminosa"
+        },
+        "faction": "mercenaries",
+        "type": "light",
+        "subtype": "unit",
+        "expansion": "mercenaries",
+        "strength": 3,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Amphibious: Ignores Water penalty.",
+            "es": "Anfibio: Ignora penalización de Agua."
+        },
+        "cost": 3,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "me6",
+        "name": {
+            "en": "Basilisk",
+            "es": "Basilisco"
+        },
+        "faction": "mercenaries",
+        "type": "heavy",
+        "subtype": "unit",
+        "expansion": "mercenaries",
+        "strength": 4,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Mountain Bonus: Ignore 1 flag.",
+            "es": "Bono en Montaña: Ignora 1 bandera."
+        },
+        "cost": 4,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "me7",
+        "name": {
+            "en": "Troll",
+            "es": "Troll"
+        },
+        "faction": "mercenaries",
+        "type": "heavy",
+        "subtype": "unit",
+        "expansion": "mercenaries",
+        "strength": 4,
+        "movement": 1,
+        "range": 0,
+        "rules": {
+            "en": "Mountain Bonus: Ignore 1 flag.",
+            "es": "Bono en Montaña: Ignora 1 bandera."
+        },
+        "cost": 4,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "me8",
+        "name": {
+            "en": "Worm",
+            "es": "Gusano"
+        },
+        "faction": "mercenaries",
+        "type": "medium",
+        "subtype": "unit",
+        "expansion": "mercenaries",
+        "strength": 4,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Desert Bonus: +1 attack die.",
+            "es": "Bono en Desierto: +1 dado ataque."
+        },
+        "cost": 4,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "me9",
+        "name": {
+            "en": "Fire lizard",
+            "es": "Lagarto de fuego"
+        },
+        "faction": "mercenaries",
+        "type": "medium",
+        "subtype": "unit",
+        "expansion": "mercenaries",
+        "strength": 4,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Desert Bonus: +1 attack die.",
+            "es": "Bono en Desierto: +1 dado ataque."
+        },
+        "cost": 4,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "me10",
+        "name": {
+            "en": "Mantis",
+            "es": "Mantis"
+        },
+        "faction": "mercenaries",
+        "type": "medium",
+        "subtype": "unit",
+        "expansion": "mercenaries",
+        "strength": 4,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Plains Bonus: +1 die.",
+            "es": "Bono en Llanura: +1 dado."
+        },
+        "cost": 4,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "me11",
+        "name": {
+            "en": "Moose",
+            "es": "Alce"
+        },
+        "faction": "mercenaries",
+        "type": "heavy",
+        "subtype": "unit",
+        "expansion": "mercenaries",
+        "strength": 4,
+        "movement": 3,
+        "range": 0,
+        "rules": {
+            "en": "Plains Bonus: +1 die.",
+            "es": "Bono en Llanura: +1 dado."
+        },
+        "cost": 5,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "me12",
+        "name": {
+            "en": "Toxic drake",
+            "es": "Draco tóxico"
+        },
+        "faction": "mercenaries",
+        "type": "heavy",
+        "subtype": "unit",
+        "expansion": "mercenaries",
+        "strength": 4,
+        "movement": 2,
+        "range": 0,
+        "rules": {
+            "en": "Flight: Ignores terrain and units.",
+            "es": "Vuelo: Ignora terreno y unidades."
+        },
+        "cost": 5,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "me13",
+        "name": {
+            "en": "Ice drake",
+            "es": "Draco de hielo"
+        },
+        "faction": "mercenaries",
+        "type": "heavy",
+        "subtype": "unit",
+        "expansion": "mercenaries",
+        "strength": 4,
+        "movement": 2,
+        "range": 1,
+        "rules": {
+            "en": "Flight: Ignores terrain and units.",
+            "es": "Vuelo: Ignora terreno y unidades."
+        },
+        "cost": 6,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "me14",
+        "name": {
+            "en": "Fire drake",
+            "es": "Draco de fuego"
+        },
+        "faction": "mercenaries",
+        "type": "heavy",
+        "subtype": "unit",
+        "expansion": "mercenaries",
+        "strength": 4,
+        "movement": 3,
+        "range": 1,
+        "rules": {
+            "en": "Flight: Ignores terrain and units.",
+            "es": "Vuelo: Ignora terreno y unidades."
+        },
+        "cost": 7,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "da7",
+        "name": {
+            "en": "Azrak",
+            "es": "Azrak"
+        },
+        "faction": "daemons",
+        "type": "elite",
+        "subtype": "hero",
+        "expansion": "heroes",
+        "strength": 4,
+        "movement": 4,
+        "range": 0,
+        "rules": {
+            "en": "Urban defense: +1 defense die. Hero: Has 2 lives.",
+            "es": "Defensa urbana: +1 dado defensa. Héroe: Tiene 2 vidas."
+        },
+        "cost": 6,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "dw7",
+        "name": {
+            "en": "Durin",
+            "es": "Durin"
+        },
+        "faction": "dwarves",
+        "type": "elite",
+        "subtype": "hero",
+        "expansion": "heroes",
+        "strength": 4,
+        "movement": 4,
+        "range": 0,
+        "rules": {
+            "en": "Urban defense: +1 defense die. Hero: Has 2 lives.",
+            "es": "Defensa urbana: +1 dado defensa. Héroe: Tiene 2 vidas."
+        },
+        "cost": 6,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "un7",
+        "name": {
+            "en": "Morven",
+            "es": "Morven"
+        },
+        "faction": "undead",
+        "type": "elite",
+        "subtype": "hero",
+        "expansion": "heroes",
+        "strength": 4,
+        "movement": 4,
+        "range": 0,
+        "rules": {
+            "en": "Urban defense: +1 defense die. Hero: Has 2 lives.",
+            "es": "Defensa urbana: +1 dado defensa. Héroe: Tiene 2 vidas."
+        },
+        "cost": 6,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "or7",
+        "name": {
+            "en": "Gorath",
+            "es": "Gorath"
+        },
+        "faction": "orcs",
+        "type": "elite",
+        "subtype": "hero",
+        "expansion": "heroes",
+        "strength": 4,
+        "movement": 4,
+        "range": 0,
+        "rules": {
+            "en": "Plains Bonus: +1 die. Hero: Has 2 lives.",
+            "es": "Bono en Llanura: +1 dado. Héroe: Tiene 2 vidas."
+        },
+        "cost": 6,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "el7",
+        "name": {
+            "en": "Elyria",
+            "es": "Elyria"
+        },
+        "faction": "elves",
+        "type": "elite",
+        "subtype": "hero",
+        "expansion": "heroes",
+        "strength": 4,
+        "movement": 4,
+        "range": 0,
+        "rules": {
+            "en": "Forest Bonus: +1 defense die. Hero: Has 2 lives.",
+            "es": "Bonus en Bosque: +1 dado defensa. Héroe: Tiene 2 vidas."
+        },
+        "cost": 6,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "ba7",
+        "name": {
+            "en": "Thorin",
+            "es": "Thorin"
+        },
+        "faction": "barbarians",
+        "type": "elite",
+        "subtype": "hero",
+        "expansion": "heroes",
+        "strength": 4,
+        "movement": 4,
+        "range": 0,
+        "rules": {
+            "en": "Plains Bonus: +1 die. Hero: Has 2 lives.",
+            "es": "Bono en Llanura: +1 dado. Héroe: Tiene 2 vidas."
+        },
+        "cost": 6,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "am7",
+        "name": {
+            "en": "Zarina",
+            "es": "Zarina"
+        },
+        "faction": "amazons",
+        "type": "elite",
+        "subtype": "hero",
+        "expansion": "heroes",
+        "strength": 4,
+        "movement": 4,
+        "range": 0,
+        "rules": {
+            "en": "Plains Bonus: +1 die. Hero: Has 2 lives.",
+            "es": "Bono en Llanura: +1 dado. Héroe: Tiene 2 vidas."
+        },
+        "cost": 6,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "ti1",
+        "name": {
+            "en": "Hydra",
+            "es": "Hidra"
+        },
+        "faction": "titans",
+        "type": "elite",
+        "subtype": "titan",
+        "expansion": "titans",
+        "strength": 4,
+        "movement": 3,
+        "range": 0,
+        "rules": {
+            "en": "Mountain Bonus: Ignore 1 flag. Hero: Has 2 lives.",
+            "es": "Bono en Montaña: Ignora 1 bandera. Héroe: Tiene 2 vidas."
+        },
+        "cost": 10,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "ti2",
+        "name": {
+            "en": "Kobra",
+            "es": "Kobra"
+        },
+        "faction": "titans",
+        "type": "elite",
+        "subtype": "titan",
+        "expansion": "titans",
+        "strength": 4,
+        "movement": 3,
+        "range": 0,
+        "rules": {
+            "en": "Forest Bonus: +1 defense die. Hero: Has 2 lives.",
+            "es": "Bonus en Bosque: +1 dado defensa. Héroe: Tiene 2 vidas."
+        },
+        "cost": 10,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "ti3",
+        "name": {
+            "en": "Skorpic",
+            "es": "Skorpic"
+        },
+        "faction": "titans",
+        "type": "elite",
+        "subtype": "titan",
+        "expansion": "titans",
+        "strength": 4,
+        "movement": 3,
+        "range": 0,
+        "rules": {
+            "en": "Desert Bonus: +1 attack die. Hero: Has 2 lives.",
+            "es": "Bono en Desierto: +1 dado ataque. Héroe: Tiene 2 vidas."
+        },
+        "cost": 10,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "ti4",
+        "name": {
+            "en": "Walker",
+            "es": "Caminante"
+        },
+        "faction": "titans",
+        "type": "elite",
+        "subtype": "titan",
+        "expansion": "titans",
+        "strength": 4,
+        "movement": 3,
+        "range": 0,
+        "rules": {
+            "en": "Plains Bonus: +1 die. Hero: Has 2 lives.",
+            "es": "Bono en Llanura: +1 dado. Héroe: Tiene 2 vidas."
+        },
+        "cost": 10,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "ti5",
+        "name": {
+            "en": "Kraken",
+            "es": "Kraken"
+        },
+        "faction": "titans",
+        "type": "elite",
+        "subtype": "titan",
+        "expansion": "titans",
+        "strength": 4,
+        "movement": 3,
+        "range": 1,
+        "rules": {
+            "en": "Amphibious: Ignores Water penalty. Hero: Has 2 lives.",
+            "es": "Anfibio: Ignora penalización de Agua. Héroe: Tiene 2 vidas."
+        },
+        "cost": 10,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "ti6",
+        "name": {
+            "en": "Demogor",
+            "es": "Demogor"
+        },
+        "faction": "titans",
+        "type": "elite",
+        "subtype": "titan",
+        "expansion": "titans",
+        "strength": 4,
+        "movement": 3,
+        "range": 0,
+        "rules": {
+            "en": "Urban defense: +1 defense die. Hero: Has 2 lives.",
+            "es": "Defensa urbana: +1 dado defensa. Héroe: Tiene 2 vidas."
+        },
+        "cost": 10,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "ti7",
+        "name": {
+            "en": "Tempus",
+            "es": "Tempus"
+        },
+        "faction": "titans",
+        "type": "elite",
+        "subtype": "titan",
+        "expansion": "titans",
+        "strength": 4,
+        "movement": 3,
+        "range": 1,
+        "rules": {
+            "en": "Flight: Ignores terrain and units. Hero: Has 2 lives.",
+            "es": "Vuelo: Ignora terreno y unidades. Héroe: Tiene 2 vidas."
+        },
+        "cost": 10,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "ti8",
+        "name": {
+            "en": "Dracoon",
+            "es": "Dracoon"
+        },
+        "faction": "titans",
+        "type": "elite",
+        "subtype": "titan",
+        "expansion": "titans",
+        "strength": 4,
+        "movement": 3,
+        "range": 1,
+        "rules": {
+            "en": "Flight: Ignores terrain and units. Hero: Has 2 lives.",
+            "es": "Vuelo: Ignora terreno y unidades. Héroe: Tiene 2 vidas."
+        },
+        "cost": 12,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "in1",
+        "name": {
+            "en": "Lust",
+            "es": "Lujuria"
+        },
+        "faction": "inferno",
+        "type": "elite",
+        "subtype": "hero",
+        "expansion": "inferno",
+        "strength": 4,
+        "movement": 3,
+        "range": 1,
+        "rules": {
+            "en": "Generates 1 Mana at the start of the turn. Hero: Has 2 lives.",
+            "es": "Genera 1 Maná al inicio del turno. Héroe: Tiene 2 vidas."
+        },
+        "cost": 8,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "in2",
+        "name": {
+            "en": "Gluttony",
+            "es": "Gula"
+        },
+        "faction": "inferno",
+        "type": "elite",
+        "subtype": "hero",
+        "expansion": "inferno",
+        "strength": 4,
+        "movement": 1,
+        "range": 0,
+        "rules": {
+            "en": "Generates 1 Mana at the start of the turn. Hero: Has 2 lives.",
+            "es": "Genera 1 Maná al inicio del turno. Héroe: Tiene 2 vidas."
+        },
+        "cost": 8,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "in3",
+        "name": {
+            "en": "Greed",
+            "es": "Codicia"
+        },
+        "faction": "inferno",
+        "type": "elite",
+        "subtype": "hero",
+        "expansion": "inferno",
+        "strength": 4,
+        "movement": 3,
+        "range": 0,
+        "rules": {
+            "en": "Generates 1 Mana at the start of the turn. Hero: Has 2 lives.",
+            "es": "Genera 1 Maná al inicio del turno. Héroe: Tiene 2 vidas."
+        },
+        "cost": 8,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "in4",
+        "name": {
+            "en": "Sloth",
+            "es": "Pereza"
+        },
+        "faction": "inferno",
+        "type": "elite",
+        "subtype": "hero",
+        "expansion": "inferno",
+        "strength": 4,
+        "movement": 1,
+        "range": 0,
+        "rules": {
+            "en": "Generates 1 Mana at the start of the turn. Hero: Has 2 lives.",
+            "es": "Genera 1 Maná al inicio del turno. Héroe: Tiene 2 vidas."
+        },
+        "cost": 8,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "in5",
+        "name": {
+            "en": "Wrath",
+            "es": "Ira"
+        },
+        "faction": "inferno",
+        "type": "elite",
+        "subtype": "hero",
+        "expansion": "inferno",
+        "strength": 4,
+        "movement": 3,
+        "range": 0,
+        "rules": {
+            "en": "Generates 1 Mana at the start of the turn. Hero: Has 2 lives.",
+            "es": "Genera 1 Maná al inicio del turno. Héroe: Tiene 2 vidas."
+        },
+        "cost": 8,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "in6",
+        "name": {
+            "en": "Envy",
+            "es": "Envidia"
+        },
+        "faction": "inferno",
+        "type": "elite",
+        "subtype": "hero",
+        "expansion": "inferno",
+        "strength": 4,
+        "movement": 1,
+        "range": 1,
+        "rules": {
+            "en": "Generates 1 Mana at the start of the turn. Hero: Has 2 lives.",
+            "es": "Genera 1 Maná al inicio del turno. Héroe: Tiene 2 vidas."
+        },
+        "cost": 8,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "in7",
+        "name": {
+            "en": "Pride",
+            "es": "Soberbia"
+        },
+        "faction": "inferno",
+        "type": "elite",
+        "subtype": "hero",
+        "expansion": "inferno",
+        "strength": 4,
+        "movement": 2,
+        "range": 1,
+        "rules": {
+            "en": "Generates 1 Mana at the start of the turn. Hero: Has 2 lives.",
+            "es": "Genera 1 Maná al inicio del turno. Héroe: Tiene 2 vidas."
+        },
+        "cost": 8,
+        "version": 1,
+        "date": "2026-01-01"
+    },
+    {
+        "id": "in8",
+        "name": {
+            "en": "Diablo",
+            "es": "Diablo"
+        },
+        "faction": "inferno",
+        "type": "elite",
+        "subtype": "hero",
+        "expansion": "inferno",
+        "strength": 5,
+        "movement": 3,
+        "range": 0,
+        "rules": {
+            "en": "Generates 1 Mana at the start of the turn. Hero: Has 2 lives.",
+            "es": "Genera 1 Maná al inicio del turno. Héroe: Tiene 2 vidas."
+        },
+        "cost": "Ø",
+        "version": 1,
+        "date": "2026-01-01"
+    }
 ]
