@@ -11,12 +11,20 @@ interface TerrainViewProps {
 const TerrainView: React.FC<TerrainViewProps> = ({ lang, data, t }) => {
     const viewsT = t.views.terrain;
 
+    const processedData = React.useMemo(() => {
+        return data.map(tNode => ({
+            ...tNode,
+            imageUrl: `/assets/game/terrain/${tNode.id}.png`
+        }));
+    }, [data]);
+
     return (
         <DataTable<Terrain>
             lang={lang}
             title={viewsT.title}
-            data={data}
+            data={processedData}
             searchKeys={['id']}
+            imageClassName="hex-clip bg-slate-100 border-none"
             columns={[
                 { key: 'name', label: viewsT.name, sortable: true, render: (tNode) => <span className="font-bold text-slate-900">{tNode.name[lang]}</span> },
                 { key: 'effectMovement', label: viewsT.movement, render: (tNode) => tNode.effectMovement[lang] },

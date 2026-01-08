@@ -1189,8 +1189,8 @@
         "movement": 4,
         "range": 0,
         "rules": {
-            "en": "Urban defense: +1 defense die. Hero: Has 2 lives.",
-            "es": "Defensa urbana: +1 dado defensa. Héroe: Tiene 2 vidas."
+            "en": "Urban defense: +1 defense die.",
+            "es": "Defensa urbana: +1 dado defensa."
         },
         "cost": 6,
         "version": 1,
@@ -1210,8 +1210,8 @@
         "movement": 4,
         "range": 0,
         "rules": {
-            "en": "Urban defense: +1 defense die. Hero: Has 2 lives.",
-            "es": "Defensa urbana: +1 dado defensa. Héroe: Tiene 2 vidas."
+            "en": "Urban defense: +1 defense die.",
+            "es": "Defensa urbana: +1 dado defensa."
         },
         "cost": 6,
         "version": 1,
@@ -1231,8 +1231,8 @@
         "movement": 4,
         "range": 0,
         "rules": {
-            "en": "Urban defense: +1 defense die. Hero: Has 2 lives.",
-            "es": "Defensa urbana: +1 dado defensa. Héroe: Tiene 2 vidas."
+            "en": "Urban defense: +1 defense die.",
+            "es": "Defensa urbana: +1 dado defensa."
         },
         "cost": 6,
         "version": 1,
@@ -1252,8 +1252,8 @@
         "movement": 4,
         "range": 0,
         "rules": {
-            "en": "Plains Bonus: +1 die. Hero: Has 2 lives.",
-            "es": "Bono en Llanura: +1 dado. Héroe: Tiene 2 vidas."
+            "en": "Plains Bonus: +1 die.",
+            "es": "Bono en Llanura: +1 dado."
         },
         "cost": 6,
         "version": 1,
@@ -1273,8 +1273,8 @@
         "movement": 4,
         "range": 0,
         "rules": {
-            "en": "Forest Bonus: +1 defense die. Hero: Has 2 lives.",
-            "es": "Bonus en Bosque: +1 dado defensa. Héroe: Tiene 2 vidas."
+            "en": "Forest Bonus: +1 defense die.",
+            "es": "Bonus en Bosque: +1 dado defensa."
         },
         "cost": 6,
         "version": 1,
@@ -1294,8 +1294,8 @@
         "movement": 4,
         "range": 0,
         "rules": {
-            "en": "Plains Bonus: +1 die. Hero: Has 2 lives.",
-            "es": "Bono en Llanura: +1 dado. Héroe: Tiene 2 vidas."
+            "en": "Plains Bonus: +1 die.",
+            "es": "Bono en Llanura: +1 dado."
         },
         "cost": 6,
         "version": 1,
@@ -1315,8 +1315,8 @@
         "movement": 4,
         "range": 0,
         "rules": {
-            "en": "Plains Bonus: +1 die. Hero: Has 2 lives.",
-            "es": "Bono en Llanura: +1 dado. Héroe: Tiene 2 vidas."
+            "en": "Plains Bonus: +1 die.",
+            "es": "Bono en Llanura: +1 dado."
         },
         "cost": 6,
         "version": 1,
@@ -1336,8 +1336,8 @@
         "movement": 3,
         "range": 0,
         "rules": {
-            "en": "Mountain Bonus: Ignore 1 flag. Hero: Has 2 lives.",
-            "es": "Bono en Montaña: Ignora 1 bandera. Héroe: Tiene 2 vidas."
+            "en": "Mountain Bonus: Ignore 1 flag.",
+            "es": "Bono en Montaña: Ignora 1 bandera."
         },
         "cost": 10,
         "version": 1,
@@ -1357,8 +1357,8 @@
         "movement": 3,
         "range": 0,
         "rules": {
-            "en": "Forest Bonus: +1 defense die. Hero: Has 2 lives.",
-            "es": "Bonus en Bosque: +1 dado defensa. Héroe: Tiene 2 vidas."
+            "en": "Forest Bonus: +1 defense die.",
+            "es": "Bonus en Bosque: +1 dado defensa."
         },
         "cost": 10,
         "version": 1,
@@ -1378,8 +1378,8 @@
         "movement": 3,
         "range": 0,
         "rules": {
-            "en": "Desert Bonus: +1 attack die. Hero: Has 2 lives.",
-            "es": "Bono en Desierto: +1 dado ataque. Héroe: Tiene 2 vidas."
+            "en": "Desert Bonus: +1 attack die.",
+            "es": "Bono en Desierto: +1 dado ataque."
         },
         "cost": 10,
         "version": 1,
@@ -1399,8 +1399,8 @@
         "movement": 3,
         "range": 0,
         "rules": {
-            "en": "Plains Bonus: +1 die. Hero: Has 2 lives.",
-            "es": "Bono en Llanura: +1 dado. Héroe: Tiene 2 vidas."
+            "en": "Plains Bonus: +1 die.",
+            "es": "Bono en Llanura: +1 dado."
         },
         "cost": 10,
         "version": 1,
@@ -1420,8 +1420,8 @@
         "movement": 3,
         "range": 1,
         "rules": {
-            "en": "Amphibious: Ignores Water penalty. Hero: Has 2 lives.",
-            "es": "Anfibio: Ignora penalización de Agua. Héroe: Tiene 2 vidas."
+            "en": "Amphibious: Ignores Water penalty.",
+            "es": "Anfibio: Ignora penalización de Agua."
         },
         "cost": 10,
         "version": 1,
@@ -1441,8 +1441,8 @@
         "movement": 3,
         "range": 0,
         "rules": {
-            "en": "Urban defense: +1 defense die. Hero: Has 2 lives.",
-            "es": "Defensa urbana: +1 dado defensa. Héroe: Tiene 2 vidas."
+            "en": "Urban defense: +1 defense die.",
+            "es": "Defensa urbana: +1 dado defensa."
         },
         "cost": 10,
         "version": 1,
@@ -1462,8 +1462,8 @@
         "movement": 3,
         "range": 1,
         "rules": {
-            "en": "Flight: Ignores terrain and units. Hero: Has 2 lives.",
-            "es": "Vuelo: Ignora terreno y unidades. Héroe: Tiene 2 vidas."
+            "en": "Flight: Ignores terrain and units.",
+            "es": "Vuelo: Ignora terreno y unidades."
         },
         "cost": 10,
         "version": 1,
@@ -1483,8 +1483,8 @@
         "movement": 3,
         "range": 1,
         "rules": {
-            "en": "Flight: Ignores terrain and units. Hero: Has 2 lives.",
-            "es": "Vuelo: Ignora terreno y unidades. Héroe: Tiene 2 vidas."
+            "en": "Flight: Ignores terrain and units.",
+            "es": "Vuelo: Ignora terreno y unidades."
         },
         "cost": 12,
         "version": 1,
@@ -1504,8 +1504,8 @@
         "movement": 3,
         "range": 1,
         "rules": {
-            "en": "Generates 1 Mana at the start of the turn. Hero: Has 2 lives.",
-            "es": "Genera 1 Maná al inicio del turno. Héroe: Tiene 2 vidas."
+            "en": "Generates 1 Mana at the start of the turn.",
+            "es": "Genera 1 Maná al inicio del turno."
         },
         "cost": 8,
         "version": 1,
@@ -1525,8 +1525,8 @@
         "movement": 1,
         "range": 0,
         "rules": {
-            "en": "Generates 1 Mana at the start of the turn. Hero: Has 2 lives.",
-            "es": "Genera 1 Maná al inicio del turno. Héroe: Tiene 2 vidas."
+            "en": "Generates 1 Mana at the start of the turn.",
+            "es": "Genera 1 Maná al inicio del turno."
         },
         "cost": 8,
         "version": 1,
@@ -1546,8 +1546,8 @@
         "movement": 3,
         "range": 0,
         "rules": {
-            "en": "Generates 1 Mana at the start of the turn. Hero: Has 2 lives.",
-            "es": "Genera 1 Maná al inicio del turno. Héroe: Tiene 2 vidas."
+            "en": "Generates 1 Mana at the start of the turn.",
+            "es": "Genera 1 Maná al inicio del turno."
         },
         "cost": 8,
         "version": 1,
@@ -1567,8 +1567,8 @@
         "movement": 1,
         "range": 0,
         "rules": {
-            "en": "Generates 1 Mana at the start of the turn. Hero: Has 2 lives.",
-            "es": "Genera 1 Maná al inicio del turno. Héroe: Tiene 2 vidas."
+            "en": "Generates 1 Mana at the start of the turn.",
+            "es": "Genera 1 Maná al inicio del turno."
         },
         "cost": 8,
         "version": 1,
@@ -1588,8 +1588,8 @@
         "movement": 3,
         "range": 0,
         "rules": {
-            "en": "Generates 1 Mana at the start of the turn. Hero: Has 2 lives.",
-            "es": "Genera 1 Maná al inicio del turno. Héroe: Tiene 2 vidas."
+            "en": "Generates 1 Mana at the start of the turn.",
+            "es": "Genera 1 Maná al inicio del turno."
         },
         "cost": 8,
         "version": 1,
@@ -1609,8 +1609,8 @@
         "movement": 1,
         "range": 1,
         "rules": {
-            "en": "Generates 1 Mana at the start of the turn. Hero: Has 2 lives.",
-            "es": "Genera 1 Maná al inicio del turno. Héroe: Tiene 2 vidas."
+            "en": "Generates 1 Mana at the start of the turn.",
+            "es": "Genera 1 Maná al inicio del turno."
         },
         "cost": 8,
         "version": 1,
@@ -1630,8 +1630,8 @@
         "movement": 2,
         "range": 1,
         "rules": {
-            "en": "Generates 1 Mana at the start of the turn. Hero: Has 2 lives.",
-            "es": "Genera 1 Maná al inicio del turno. Héroe: Tiene 2 vidas."
+            "en": "Generates 1 Mana at the start of the turn.",
+            "es": "Genera 1 Maná al inicio del turno."
         },
         "cost": 8,
         "version": 1,
@@ -1651,8 +1651,8 @@
         "movement": 3,
         "range": 0,
         "rules": {
-            "en": "Generates 1 Mana at the start of the turn. Hero: Has 2 lives.",
-            "es": "Genera 1 Maná al inicio del turno. Héroe: Tiene 2 vidas."
+            "en": "Generates 1 Mana at the start of the turn.",
+            "es": "Genera 1 Maná al inicio del turno."
         },
         "cost": "Ø",
         "version": 1,
