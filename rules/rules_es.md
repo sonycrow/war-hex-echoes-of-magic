@@ -5,7 +5,7 @@ Bienvenido. Este es un juego de batallas tácticas de fantasía que utiliza el s
 ## Componentes del juego
 
 * **Tablero Hexagonal:** Dividido en tres secciones: flanco izquierdo, centro y flanco derecho.
-* **Bloques de Unidad:** Cuadrados y rectángulos de madera o plástico, de color sólido (azul, verde, rojo, gris, etc...) según la facción.
+* **Bloques de Unidad:** Cuadrados y rectángulos de madera o plástico, de color sólido (azul, verde, rojo, gris, etc.) según la facción.
 * **Mazo de Mando:** 50 cartas que permiten activar unidades.
 * **Dados de Combate:** Dados de 6 caras con símbolos: espada, bandera, escudo y magia/casco.
 * **Fichas de Maná (💧):** Para ejecutar poderosos hechizos.
@@ -38,6 +38,7 @@ El juego se desarrolla en turnos alternos. En cada turno, el jugador activo sigu
 Cada unidad tiene un valor de movimiento en su ficha técnica.
 
 * El terreno puede detener o ralentizar el avance (ver Tabla de terreno).
+* **Movimiento de Héroes:** Los Héroes pueden moverse a través de hexágonos ocupados por otras unidades amigas sin penalización.
 * **Carga impetuosa:** Las unidades **pesadas** que muevan 2 o más hexágonos antes de atacar ganan +1 dado en melé e ignoran la primera bandera de retirada recibida ese turno.
 
 ## Los dados de combate y armaduras
@@ -62,7 +63,7 @@ Para infligir daño, el símbolo obtenido debe coincidir con la categoría de la
 * **Unidades ligeras (verde)**: Reciben daño con ⚔️ y 🟢.
 * **Unidades medias (azul)**: Reciben daño con ⚔️ y 🔵.
 * **Unidades pesadas (rojo)**: Reciben daño con ⚔️ y 🔴.
-* **Unidades élite**: Generalmente **solo** reciben daño con ⚔️ (las caras de colores son fallos contra ellas).
+* **Héroes y Unidades élite**: Generalmente **solo** reciben daño con ⚔️ (las caras de colores son fallos contra ellas).
 
 ## Combate
 
@@ -93,7 +94,16 @@ Puedes acumular hasta un máximo de **5 💧** en tu reserva. Se utiliza para ac
 
 ### Héroes y titanes
 
-Estas unidades son legendarias y poseen **Reglas especiales** especificadas en su ficha de unidad o descritas en el escenario.
+Estas unidades son legendarias y poseen reglas especiales especificadas en su ficha de unidad o descritas en el escenario. Los titanes siguen las especificaciones de su ficha o escenario.
+
+#### Reglas especiales para Héroes
+
+* **Hexágonos compartidos:** Los Héroes pueden compartir un hexágono con otra unidad amiga.
+* **Protección (Escolta):** Para atacar a un Héroe (a melé o rango), este debe estar solo en el hexágono. Debes eliminar primero a cualquier unidad que comparta el espacio con el Héroe antes de poder dañarlo.
+* *Nota:* Ciertas habilidades de "Ataque Directo" podrían ignorar esta restricción si así se especifica.
+
+
+* **Resistencia:** Funcionan bajo la mecánica de fuerza rotativa igual que el resto, pero son más difíciles de destruir al poseer defensa de Élite (solo dañados por ⚔️) y contar con la protección de otras unidades.
 
 ## Tabla de referencia de terreno
 
@@ -112,6 +122,7 @@ Estas unidades son legendarias y poseen **Reglas especiales** especificadas en s
 1. **Movimiento:** Los Caballeros mueven 3 hexágonos hacia un grupo de Orcos. Al mover más de 2 hexes, ganan el bono de **Carga impetuosa**.
 2. **Combate:** Atacan con 5 dados (4 de Fuerza + 1 por el bono de carga).
 3. **Resultado:** Obtienen: ⚔️, ⚔️, 🚩, 🛡️, 💧.
+
 * Los Orcos reciben 2 daños (rotan su bloque 2 veces).
 * La bandera (🚩) obliga a los Orcos a retirarse un hexágono.
 * El jugador Humano elige ganar 1 punto de Maná (💧) para su reserva.
