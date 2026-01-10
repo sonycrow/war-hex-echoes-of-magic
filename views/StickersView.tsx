@@ -13,6 +13,8 @@ interface StickersViewProps {
 const StickersView: React.FC<StickersViewProps> = ({ lang, data, t }) => {
     const [selectedExpansion, setSelectedExpansion] = useState<string>('all');
     const [selectedFaction, setSelectedFaction] = useState<string>('all');
+    const [rotationType, setRotationType] = useState<'cw' | 'ccw'>('cw');
+    const [showName, setShowName] = useState<boolean>(true);
     const [isDownloading, setIsDownloading] = useState<string | null>(null);
 
     const stickersT = t.views.stickers;
@@ -121,6 +123,30 @@ const StickersView: React.FC<StickersViewProps> = ({ lang, data, t }) => {
                             ))}
                         </select>
 
+                        {/* Rotation Type Selector */}
+                        <div className="flex items-center gap-2 ml-4">
+                            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Giro:</span>
+                            <select
+                                value={rotationType}
+                                onChange={(e) => setRotationType(e.target.value as 'cw' | 'ccw')}
+                                className="bg-white border border-slate-200 rounded-lg px-4 py-2 text-sm font-bold text-slate-700 outline-none focus:ring-2 focus:ring-slate-900/5 transition-all"
+                            >
+                                <option value="cw">Horario (CW)</option>
+                                <option value="ccw">Antihorario (CCW)</option>
+                            </select>
+                        </div>
+
+                        {/* Show Name Toggle */}
+                        <label className="flex items-center gap-2 ml-4 cursor-pointer select-none">
+                            <input
+                                type="checkbox"
+                                checked={showName}
+                                onChange={(e) => setShowName(e.target.checked)}
+                                className="w-4 h-4 rounded border-slate-300 text-slate-900 focus:ring-slate-900"
+                            />
+                            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Mostrar Nombre</span>
+                        </label>
+
                         <div className="ml-auto text-slate-400 text-sm font-medium">
                             {filteredUnits.length} {stickersT.title.toLowerCase()}
                         </div>
@@ -136,7 +162,7 @@ const StickersView: React.FC<StickersViewProps> = ({ lang, data, t }) => {
                             {filteredUnits.map(unit => (
                                 <div key={unit.id} className="group flex flex-col items-center">
                                     <div className="relative transform transition-transform duration-300 group-hover:scale-[1.02]">
-                                        <Sticker unit={unit} lang={lang} />
+                                        <Sticker unit={unit} lang={lang} rotationType={rotationType} showName={showName} />
 
                                         {/* Overlay Download Button */}
                                         <div className="absolute inset-0 flex items-center justify-center bg-slate-900/0 group-hover:bg-slate-900/10 transition-colors pointer-events-none rounded-lg">

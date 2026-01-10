@@ -520,7 +520,7 @@
             "en": "Plains Bonus: +1 die.",
             "es": "Bono en Llanura: +1 dado."
         },
-        "cost": 3,
+        "cost": 2,
         "version": 1,
         "date": "2026-01-01"
     },
@@ -604,7 +604,7 @@
             "en": "Forest Bonus: +1 defense die.",
             "es": "Bonus en Bosque: +1 dado defensa."
         },
-        "cost": 2,
+        "cost": 1,
         "version": 1,
         "date": "2026-01-01"
     },
@@ -667,7 +667,7 @@
             "en": "Forest Bonus: +1 defense die.",
             "es": "Bonus en Bosque: +1 dado defensa."
         },
-        "cost": 2,
+        "cost": 3,
         "version": 1,
         "date": "2026-01-01"
     },
@@ -793,7 +793,7 @@
             "en": "Desert Bonus: +1 attack die.",
             "es": "Bono en Desierto: +1 dado ataque."
         },
-        "cost": 3,
+        "cost": 5,
         "version": 1,
         "date": "2026-01-01"
     },
