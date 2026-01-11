@@ -24,7 +24,7 @@ const CardsView: React.FC<CardsViewProps> = ({ lang, data, t }) => {
                     sortable: true,
                     render: (c) => (
                         <span className={`text-[10px] uppercase tracking-wider font-black ${c.type === 'arcane' ? 'text-purple-600' :
-                            c.type === 'tactics' ? 'text-red-600' :
+                            c.type === 'tactic' ? 'text-red-600' :
                                 'text-blue-600'
                             }`}>
                             {cardsT.cardTypes[c.type.toLowerCase()] || c.type}

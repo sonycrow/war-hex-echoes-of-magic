@@ -78,7 +78,7 @@
             "placeholderArt": "Historical Archive",
             "cardTypes": {
                 "section": "SECTION",
-                "tactics": "TACTICS",
+                "tactic": "TACTIC",
                 "arcane": "ARCANE"
             }
         },

@@ -10,12 +10,11 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ card, lang, t }) => {
     const type = card.type.toLowerCase();
     const isSpell = type === 'arcane';
-    const isTactic = type === 'tactics';
+    const isTactic = type === 'tactic';
     const isSection = type === 'section';
 
     // Map categories to "Roles" for the footer strip
-    const roleColor = isTactic ? 'bg-red-800' : isSpell ? 'bg-purple-900' : 'bg-blue-800';
-    const roleText = isTactic ? t.cardTypes.tactics :
+    const roleText = isTactic ? t.cardTypes.tactic :
         isSpell ? t.cardTypes.arcane :
             t.cardTypes.section;
 
@@ -29,10 +28,10 @@ const Card: React.FC<CardProps> = ({ card, lang, t }) => {
             }}
         >
             {/* Texture Overlay */}
-            <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/light-paper-fibers.png')]" />
+            <div className="absolute inset-0 opacity-[0.06] bg-center bg-cover bg-[url('/assets/img/texture.png')]" />
 
             {/* Worn Edges Effect */}
-            <div className="absolute inset-0 border-2 border-black/10 m-1 pointer-events-none" />
+            <div className="absolute inset-0 border-2 border-black/10 m-2 pointer-events-none rounded-2xl" />
 
             {/* Title Block - Historical Document Look */}
             <div className="pt-6 px-4 text-center z-10">
@@ -46,7 +45,7 @@ const Card: React.FC<CardProps> = ({ card, lang, t }) => {
             </div>
 
             {/* Illustration Area with Vignette/Blur blend */}
-            <div className="relative h-48 mt-2 overflow-hidden">
+            <div className="relative h-32 m-4 mt-2 mb-2 overflow-hidden">
                 <div className="absolute inset-0 z-10" style={{
                     background: 'radial-gradient(circle, transparent 30%, #f4ece1 100%)'
                 }} />
@@ -58,24 +57,14 @@ const Card: React.FC<CardProps> = ({ card, lang, t }) => {
                         (e.target as HTMLImageElement).src = `https://via.placeholder.com/300x200?text=${encodeURIComponent(t.placeholderArt || 'Art')}`;
                     }}
                 />
-
-                {/* Count badge - Wax Seal style */}
-                <div className="absolute top-2 right-4 z-20 w-10 h-10 flex items-center justify-center">
-                    <div className="absolute inset-0 bg-red-900 rounded-full rotate-12 shadow-lg border border-red-950/50" />
-                    <span className="relative text-white font-black text-xs z-10" style={{ fontFamily: "'Germania One', system-ui" }}>
-                        x{card.count}
-                    </span>
-                </div>
             </div>
 
             {/* Content Area - Centralized Ability Text */}
             <div className="px-6 py-4 flex flex-col justify-center flex-1 text-center z-10">
                 <div className="flex flex-col gap-4">
                     <div className="group">
-                        <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest block mb-1">
-                            {t.maneuverA}
-                        </span>
                         <p className="text-lg leading-relaxed text-slate-800 font-bold" style={{ fontFamily: "'Almendra Display', serif" }}>
+                            <span className="font-black text-slate-400 uppercase tracking-widest">A:</span>
                             {card.effectA[lang]}
                         </p>
                     </div>
@@ -87,19 +76,23 @@ const Card: React.FC<CardProps> = ({ card, lang, t }) => {
                     </div>
 
                     <div>
-                        <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest block mb-1">
-                            {t.maneuverB}
-                        </span>
                         <p className="text-lg leading-relaxed text-slate-800 font-bold" style={{ fontFamily: "'Almendra Display', serif" }}>
+                            <span className="font-black text-slate-400 uppercase tracking-widest">B:</span>
                             {card.effectB[lang]}
                         </p>
                     </div>
                 </div>
             </div>
 
-            {/* Footer Role Strip */}
-            <div className={`${roleColor} py-2 px-1 text-center shadow-[0_-4px_10px_rgba(0,0,0,0.1)] z-20 border-t border-white/10`}>
-                <span className="text-white text-xs font-black tracking-[0.3em] pl-[0.3em] font-sans opacity-95">
+            {/* Footer Role Strip - Floating Banner */}
+            <div className="relative w-full h-16 flex items-center justify-center z-20 mt-auto mb-4">
+                <img
+                    src={`/assets/img/banner_${type}.png`}
+                    alt=""
+                    className="absolute h-full w-auto object-contain pointer-events-none drop-shadow-xl"
+                />
+                <span className="text-2xl text-white italic leading-none tracking-widest mb-[-4px] z-20"
+                    style={{ fontFamily: "'Pirata One', cursive", textShadow: '0 1px 0 rgba(255,255,255,0.8)' }}>
                     {roleText}
                 </span>
             </div>

@@ -77,9 +77,9 @@
             "noCardsFound": "No se encontraron cartas",
             "placeholderArt": "Archivo Histórico",
             "cardTypes": {
-                "section": "SECCIÓN",
-                "tactics": "TÁCTICA",
-                "arcane": "ARCANA"
+                "section": "Sección",
+                "tactic": "Táctica",
+                "arcane": "Arcana"
             }
         },
         "terrain": {

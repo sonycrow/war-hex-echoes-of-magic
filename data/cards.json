@@ -1,7 +1,7 @@
 [
     {
         "id": "c1",
-        "type": "Section",
+        "type": "section",
         "name": {
             "en": "Exploration",
             "es": "Exploración"
@@ -55,7 +55,7 @@
     },
     {
         "id": "c4",
-        "type": "tactics",
+        "type": "tactic",
         "name": {
             "en": "Harassment",
             "es": "Hostigamiento"
@@ -73,7 +73,7 @@
     },
     {
         "id": "c5",
-        "type": "tactics",
+        "type": "tactic",
         "name": {
             "en": "Steel Wall",
             "es": "Muro de Acero"
@@ -91,7 +91,7 @@
     },
     {
         "id": "c6",
-        "type": "tactics",
+        "type": "tactic",
         "name": {
             "en": "Cavalry Charge",
             "es": "Carga de Caballería"
@@ -109,7 +109,7 @@
     },
     {
         "id": "c7",
-        "type": "tactics",
+        "type": "tactic",
         "name": {
             "en": "King's Order",
             "es": "Orden del Rey"
