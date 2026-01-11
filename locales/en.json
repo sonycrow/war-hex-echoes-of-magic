@@ -48,8 +48,9 @@
         "cards": "Cards",
         "terrain": "Terrain",
         "scenarios": "Scenarios",
-        "rules": "Rulebook",
-        "stickers": "Stickers"
+        "stickers": "Stickers",
+        "cardGenerator": "Card Gen.",
+        "rules": "Rulebook"
     },
     "views": {
         "units": {
@@ -64,10 +65,13 @@
         },
         "cards": {
             "title": "Command Deck",
+            "generatorTitle": "Card Generator",
+            "generatorDescription": "Generate and preview command deck cards.",
             "category": "Category",
             "name": "Name",
             "effectA": "Effect A",
-            "effectB": "Effect B"
+            "effectB": "Effect B",
+            "allCategories": "All Categories"
         },
         "terrain": {
             "title": "Terrain",

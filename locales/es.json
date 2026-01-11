@@ -48,8 +48,9 @@
         "cards": "Cartas",
         "terrain": "Terreno",
         "scenarios": "Escenarios",
-        "rules": "Reglamento",
-        "stickers": "Pegatinas"
+        "stickers": "Pegatinas",
+        "cardGenerator": "Gen. Cartas",
+        "rules": "Reglamento"
     },
     "views": {
         "units": {
@@ -64,10 +65,13 @@
         },
         "cards": {
             "title": "Mazo de Mando",
+            "generatorTitle": "Generador de Cartas",
+            "generatorDescription": "Genera y previsualiza las cartas del mazo de mando.",
             "category": "Categoría",
             "name": "Nombre",
             "effectA": "Efecto A",
-            "effectB": "Efecto B"
+            "effectB": "Efecto B",
+            "allCategories": "Todas las Categorías"
         },
         "terrain": {
             "title": "Terreno",

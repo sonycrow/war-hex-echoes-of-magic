@@ -71,4 +71,4 @@ export interface Scenario {
   imageUrl: string;
 }
 
-export type ViewState = 'units' | 'cards' | 'terrain' | 'scenarios' | 'rules' | 'stickers';
+export type ViewState = 'units' | 'cards' | 'terrain' | 'scenarios' | 'rules' | 'stickers' | 'card-generator';

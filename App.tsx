@@ -7,6 +7,7 @@ import TerrainView from './views/TerrainView';
 import ScenariosView from './views/ScenariosView';
 import RulesView from './views/RulesView';
 import StickersView from './views/StickersView';
+import CardGeneratorView from './views/CardGeneratorView';
 import { Unit, Card, Terrain, Scenario, ViewState } from './types';
 
 const App: React.FC = () => {
@@ -100,6 +101,8 @@ const App: React.FC = () => {
         return <RulesView lang={lang} />;
       case 'stickers':
         return <StickersView lang={lang} data={gameData.units} t={t} />;
+      case 'card-generator':
+        return <CardGeneratorView lang={lang} data={gameData.cards} t={t} />;
       default:
         return null;
     }
@@ -125,7 +128,7 @@ const App: React.FC = () => {
           <div className="w-6"></div>
         </header>
 
-        <div className={`flex-1 overflow-y-auto ${currentView === 'stickers' ? '' : 'p-4 md:p-12'}`}>
+        <div className={`flex-1 overflow-y-auto ${(['stickers', 'card-generator'].includes(currentView)) ? '' : 'p-4 md:p-12'}`}>
           {renderContent()}
         </div>
       </main>

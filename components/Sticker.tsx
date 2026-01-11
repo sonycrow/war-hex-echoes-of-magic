@@ -16,9 +16,9 @@ const factionColors: Record<FactionCode, { bg: string; text: string; accent: str
     dwarves: { bg: '#FAF5FF', text: '#9141BB', accent: '#9141BB', border: '#9141BB' },
     elves: { bg: '#F0FDF4', text: '#439D41', accent: '#439D41', border: '#439D41' },
     orcs: { bg: '#FFFBEB', text: '#D0691C', accent: '#D0691C', border: '#D0691C' },
-    undead: { bg: '#F8FAFC', text: '#3A3A3A', accent: '#3A3A3A', border: '#3A3A3A' },
+    undead: { bg: '#F8FAFC', text: '#202020ff', accent: '#3A3A3A', border: '#3A3A3A' },
     mercenaries: { bg: '#FEFCE8', text: '#593A02', accent: '#593A02', border: '#593A02' },
-    titans: { bg: '#FFFFFF', text: '#1F2937', accent: '#EFEFEF', border: '#EFEFEF' },
+    titans: { bg: '#FFFFFF', text: '#a3a3a3ff', accent: '#EFEFEF', border: '#EFEFEF' },
     inferno: { bg: '#FEF2F2', text: '#750808', accent: '#750808', border: '#750808' },
     neutral: { bg: '#F9FAFB', text: '#374151', accent: '#6B7280', border: '#D1D5DB' },
 };
@@ -91,34 +91,42 @@ const Sticker: React.FC<StickerProps> = ({ unit, lang, rotationType = 'cw', show
                     transform: `rotate(${rotation}deg)`
                 }}
             >
-                {/* 1. LAYER: Center Unit Image (Background) */}
-                <div className="absolute inset-0 flex items-center justify-center p-16 z-0 pointer-events-none">
-                    <img
-                        src={imageUrl}
-                        alt={unit.name.en}
-                        className="max-w-full max-h-full object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]"
-                        onError={(e) => {
-                            (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400?text=No+Image';
-                        }}
-                    />
-                </div>
-
-                {/* 2. LAYER: Unit Name (Above image, below UI) */}
-                {showName && (
-                    <div
-                        className="absolute bottom-16 left-0 right-0 flex items-center justify-center p-4 z-10 pointer-events-none"
-                    >
-                        <h2
-                            className="text-5xl font-normal uppercase tracking-wide drop-shadow-[0_4px_8px_rgba(0,0,0,1)] text-center px-12"
-                            style={{
-                                color: colors.bg,
-                                fontFamily: "'Germania One', system-ui"
+                {/* 1. LAYER: Central Container (Image & Name) */}
+                <div
+                    className="absolute inset-[66px] border-4 shadow-2xl rounded-sm z-10 flex flex-col items-center justify-center overflow-hidden"
+                    style={{
+                        backgroundColor: colors.bg,
+                        borderColor: colors.text,
+                        boxShadow: `inset 0 0 68px ${colors.text}22`
+                    }}
+                >
+                    {/* Unit Image */}
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <img
+                            src={imageUrl}
+                            alt={unit.name.en}
+                            className="max-w-full max-h-full object-contain filter drop-shadow-[0_15px_25px_rgba(0,0,0,0.3)]"
+                            onError={(e) => {
+                                (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400?text=No+Image';
                             }}
-                        >
-                            {unit.name[lang]}
-                        </h2>
+                        />
                     </div>
-                )}
+
+                    {/* Unit Name (Overlaid on bottom) */}
+                    {showName && (
+                        <div className="absolute bottom-4 left-0 right-0 px-4 flex items-center justify-center pointer-events-none">
+                            <h2
+                                className="text-5xl font-normal uppercase tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] text-center"
+                                style={{
+                                    color: colors.text,
+                                    fontFamily: "'Germania One', system-ui"
+                                }}
+                            >
+                                {unit.name[lang]}
+                            </h2>
+                        </div>
+                    )}
+                </div>
 
                 {/* 3. LAYER: UI Elements (Topmost) */}
 
@@ -143,7 +151,7 @@ const Sticker: React.FC<StickerProps> = ({ unit, lang, rotationType = 'cw', show
                 </div>
 
                 {/* Cost - Top Left Gold Coin */}
-                <div className="absolute top-6 left-6 z-20">
+                <div className="absolute top-6 left-6 z-30">
                     <div
                         className="flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-amber-300 via-amber-400 to-amber-600 border-4 border-amber-800/40 shadow-2xl text-amber-950 font-normal text-7xl relative select-none"
                         style={{ fontFamily: "'Germania One', system-ui" }}
@@ -155,7 +163,7 @@ const Sticker: React.FC<StickerProps> = ({ unit, lang, rotationType = 'cw', show
                 </div>
 
                 {/* Unit Type - Top Right */}
-                <div className="absolute top-6 right-6 z-20 pointer-events-none">
+                <div className="absolute top-8 right-8 z-30 pointer-events-none">
                     <div className="flex items-center justify-center">
                         {unit.type === 'light' && (
                             <div className="w-16 h-16 rounded-full bg-[#4ADE80] border-4 border-white shadow-[0_4px_10px_rgba(0,0,0,0.3)]" />
@@ -178,7 +186,7 @@ const Sticker: React.FC<StickerProps> = ({ unit, lang, rotationType = 'cw', show
                 </div>
 
                 {/* Movement - Bottom Left */}
-                <div className="absolute bottom-6 left-6 z-20">
+                <div className="absolute bottom-6 left-6 z-30">
                     <div
                         className="flex flex-col items-center justify-center w-20 h-20 bg-white border-4 border-black/20 rounded-xl shadow-lg"
                         style={{ fontFamily: "'Germania One', system-ui" }}
@@ -188,7 +196,7 @@ const Sticker: React.FC<StickerProps> = ({ unit, lang, rotationType = 'cw', show
                 </div>
 
                 {/* Range - Bottom Right */}
-                <div className="absolute bottom-6 right-6 z-20">
+                <div className="absolute bottom-6 right-6 z-30">
                     <div
                         className="flex flex-col items-center justify-center w-20 h-20 bg-white border-4 border-black/20 rounded-xl shadow-lg"
                         style={{ fontFamily: "'Germania One', system-ui" }}

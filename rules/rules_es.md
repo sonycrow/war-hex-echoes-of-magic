@@ -1,3 +1,53 @@
+# War-Hex: Echoes of Magic
+
+**War-Hex: Echoes of Magic** es una carta de amor a los juegos de estrategia de mesa clásicos, diseñada para aquellos que buscan la profundidad de un *wargame* táctico sin la complejidad abrumadora de los manuales de cien páginas.
+
+Aquí tienes un resumen para poner a cualquier jugador en contexto y explicar por qué este sistema tiene esa "magia" especial.
+
+## ¿Qué es War-Hex?
+
+**War-Hex** es un juego de batallas tácticas de fantasía épica donde comandas ejércitos de humanos, elfos, orcos o no muertos en un tablero hexagonal. Se basa en el legendario sistema **Command & Colors**, una mecánica que ha definido los mejores juegos de historia y guerra durante décadas, pero reimaginado en un mundo de magia, héroes y criaturas mitológicas.
+
+## El Corazón del Sistema: Command & Colors
+
+Lo que hace que **War-Hex** sea especial es cómo gestiona el caos de la batalla. A diferencia de otros juegos donde puedes mover todas tus piezas a la vez, aquí dependes de tu **Mazo de Mando**.
+
+### El Tablero en Secciones
+
+El campo de batalla está dividido en tres áreas: **Flanco Izquierdo, Centro y Flanco Derecho**.
+
+La mayoría de las cartas que juegas te permiten activar unidades solo en secciones específicas. Esto crea la **"Fricción de Guerra"**: puede que necesites atacar por la derecha, pero si tus cartas solo dicen "Centro", deberás adaptar tu estrategia. Esa es la magia: no es solo tener el mejor ejército, sino saber reaccionar a lo que la suerte y el terreno te permiten hacer.
+
+### El Mando por Cartas
+
+Cada turno juegas una carta que dicta cuántas y qué tipo de unidades se activan. ¿Lanzas una carga de caballería masiva o utilizas un hechizo para teletransportar a tus arqueros a una colina? La decisión es constante y cada carta es una oportunidad o un dilema.
+
+## La Niebla de Guerra: Los Bloques
+
+En lugar de miniaturas fijas, **War-Hex** utiliza bloques de madera o plástico que se colocan "de pie".
+
+* **Identidad Oculta:** Tú sabes quiénes son tus tropas, pero tu enemigo solo ve un muro de bloques de color. ¿Es una leva de campesinos o es el Héroe legendario con su escolta de élite? No lo sabrá hasta que choquen en combate.
+* **Fuerza Rotativa:** Los bloques no mueren de un golpe. A medida que reciben daño, el bloque se gira. El número que queda en la parte superior indica su **Fuerza actual** (cuántos dados lanza). Una unidad herida es una unidad menos efectiva.
+
+## El Combate: Dados y Armaduras
+
+El sistema de combate es intuitivo pero profundo. No tiras para "ver si aciertas", tiras para ver si tu ataque es efectivo contra la **armadura** del rival.
+
+* Si atacas a una unidad **Ligera (Verde)**, tienes más símbolos en el dado que pueden dañarla.
+* Si atacas a una unidad **Pesada (Roja)**, solo las caras rojas o las espadas cuentan.
+* **Las Banderas:** Una cara del dado muestra una bandera. Si sale, obligas al enemigo a retirarse. A veces, ganar una batalla no significa matar al enemigo, sino expulsarlo de una posición estratégica.
+
+## El Toque War-Hex: Héroes y Maná
+
+Lo que eleva a **War-Hex** por encima de un juego histórico es su gestión de la magia.
+
+* **Héroes con Escolta:** Tus héroes no van solos; pueden compartir hexágono con una unidad de tropa. Esto los convierte en el corazón de tu formación: son casi imposibles de matar mientras tengan soldados que los protejan.
+* **La Reserva de Maná:** A diferencia de otros juegos donde la magia es un "usar y tirar", aquí acumulas maná (💧). Debes decidir si gastarlo en hechizos pequeños constantes o ahorrar para un cataclismo que cambie el rumbo de la partida.
+
+**En resumen:** War-Hex es un juego de decisiones difíciles, de niebla de guerra que te mantiene en tensión y de momentos épicos donde un solo héroe, bien escoltado y con un mazo de cartas a su favor, puede cambiar el destino de todo un reino.
+
+---
+
 # Manual de reglas
 
 Bienvenido. Este es un juego de batallas tácticas de fantasía que utiliza el sistema de mando por cartas y combate con dados de la saga *Command & Colors*, fusionado con una mecánica de bloques rotativos para gestionar la salud y la niebla de guerra.
@@ -126,3 +176,18 @@ Estas unidades son legendarias y poseen reglas especiales especificadas en su fi
 * Los Orcos reciben 2 daños (rotan su bloque 2 veces).
 * La bandera (🚩) obliga a los Orcos a retirarse un hexágono.
 * El jugador Humano elige ganar 1 punto de Maná (💧) para su reserva.
+
+---
+
+## Tipos de Cartas de Mando
+
+El mazo de mando se compone de tres tipos principales de cartas:
+
+1. **Cartas de Sección:** Permiten activar un número específico de unidades en una sección del tablero (Flanco Izquierdo, Centro o Flanco Derecho).
+2. **Cartas Tácticas:** Permiten realizar maniobras especiales o activar tipos específicos de unidades (por ejemplo, "Carga de Caballería" para unidades pesadas).
+3. **Cartas de Hechizo:** Tienen dos opciones de uso:
+    * **Opción A (Hechizo):** Requiere gastar Maná (💧) para ejecutar un efecto mágico poderoso.
+    * **Opción B (Mando):** Si no se tiene maná, permite realizar una activación convencional básica.
+
+---
+
