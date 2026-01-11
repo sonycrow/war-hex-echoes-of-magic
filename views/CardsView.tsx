@@ -16,18 +16,18 @@ const CardsView: React.FC<CardsViewProps> = ({ lang, data, t }) => {
             lang={lang}
             title={cardsT.title}
             data={data}
-            searchKeys={['id', 'category']}
+            searchKeys={['id', 'type']}
             columns={[
                 {
-                    key: 'category',
-                    label: cardsT.category,
+                    key: 'type',
+                    label: cardsT.type,
                     sortable: true,
                     render: (c) => (
-                        <span className={`text-[10px] uppercase tracking-wider font-black ${c.category.en === 'Spell' ? 'text-purple-600' :
-                            c.category.en === 'Tactic' || c.category.en === 'Tactics' ? 'text-red-600' :
+                        <span className={`text-[10px] uppercase tracking-wider font-black ${c.type === 'arcane' ? 'text-purple-600' :
+                            c.type === 'tactics' ? 'text-red-600' :
                                 'text-blue-600'
                             }`}>
-                            {c.category[lang]}
+                            {cardsT.cardTypes[c.type.toLowerCase()] || c.type}
                         </span>
                     )
                 },

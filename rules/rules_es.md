@@ -185,7 +185,7 @@ El mazo de mando se compone de tres tipos principales de cartas:
 
 1. **Cartas de Sección:** Permiten activar un número específico de unidades en una sección del tablero (Flanco Izquierdo, Centro o Flanco Derecho).
 2. **Cartas Tácticas:** Permiten realizar maniobras especiales o activar tipos específicos de unidades (por ejemplo, "Carga de Caballería" para unidades pesadas).
-3. **Cartas de Hechizo:** Tienen dos opciones de uso:
+3. **Cartas de Arcanas:** Tienen dos opciones de uso:
     * **Opción A (Hechizo):** Requiere gastar Maná (💧) para ejecutar un efecto mágico poderoso.
     * **Opción B (Mando):** Si no se tiene maná, permite realizar una activación convencional básica.
 

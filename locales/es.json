@@ -67,11 +67,20 @@
             "title": "Mazo de Mando",
             "generatorTitle": "Generador de Cartas",
             "generatorDescription": "Genera y previsualiza las cartas del mazo de mando.",
-            "category": "Categoría",
+            "type": "Tipo",
             "name": "Nombre",
             "effectA": "Efecto A",
             "effectB": "Efecto B",
-            "allCategories": "Todas las Categorías"
+            "maneuverA": "Maniobra A",
+            "maneuverB": "Maniobra B",
+            "allTypes": "Todos los Tipos",
+            "noCardsFound": "No se encontraron cartas",
+            "placeholderArt": "Archivo Histórico",
+            "cardTypes": {
+                "section": "SECCIÓN",
+                "tactics": "TÁCTICA",
+                "arcane": "ARCANA"
+            }
         },
         "terrain": {
             "title": "Terreno",

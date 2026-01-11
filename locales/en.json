@@ -67,11 +67,20 @@
             "title": "Command Deck",
             "generatorTitle": "Card Generator",
             "generatorDescription": "Generate and preview command deck cards.",
-            "category": "Category",
+            "type": "Type",
             "name": "Name",
             "effectA": "Effect A",
             "effectB": "Effect B",
-            "allCategories": "All Categories"
+            "maneuverA": "Maneuver A",
+            "maneuverB": "Maneuver B",
+            "allTypes": "All Types",
+            "noCardsFound": "No cards found",
+            "placeholderArt": "Historical Archive",
+            "cardTypes": {
+                "section": "SECTION",
+                "tactics": "TACTICS",
+                "arcane": "ARCANE"
+            }
         },
         "terrain": {
             "title": "Terrain",

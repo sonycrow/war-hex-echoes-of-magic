@@ -1,157 +1,133 @@
 [
     {
         "id": "c1",
-        "category": {
-            "en": "Section",
-            "es": "Sección"
-        },
+        "type": "Section",
         "name": {
             "en": "Exploration",
             "es": "Exploración"
         },
         "count": 6,
         "effectA": {
-            "en": "2 units in section + Draw 2, discard 1.",
-            "es": "2 unidades en sección + Roba 2, descarta 1."
+            "en": "2 units in any section and draw 1 card, discard 1.",
+            "es": "2 unidades en cualquier sección y roba 1 carta, descarta 1 carta."
         },
         "effectB": {
-            "en": "1 unit anywhere + Draw 1.",
-            "es": "1 unidad en cualquier sitio + Roba 1."
+            "en": "1 unit in any section and draw 2 cards, discard 2.",
+            "es": "1 unidad en cualquier sección y roba 2 cartas, descarta 2 cartas."
         },
         "imageUrl": "https://picsum.photos/300/400?random=20"
     },
     {
         "id": "c2",
-        "category": {
-            "en": "Section",
-            "es": "Sección"
-        },
+        "type": "section",
         "name": {
             "en": "Attack",
             "es": "Ataque"
         },
         "count": 12,
         "effectA": {
-            "en": "3 units in section.",
-            "es": "3 unidades en sección."
+            "en": "3 units in any section.",
+            "es": "3 unidades en cualquier sección."
         },
         "effectB": {
-            "en": "1 unit anywhere.",
-            "es": "1 unidad en cualquier sitio."
+            "en": "1 unit in any section.",
+            "es": "1 unidad en cualquier sección."
         },
         "imageUrl": "https://picsum.photos/300/400?random=21"
     },
     {
         "id": "c3",
-        "category": {
-            "en": "Section",
-            "es": "Sección"
-        },
+        "type": "section",
         "name": {
             "en": "General Advance",
             "es": "Avance General"
         },
         "count": 6,
         "effectA": {
-            "en": "1 unit in each section (L, C, R).",
-            "es": "1 unidad en cada sección (I, C, D)."
+            "en": "2 unit in each section (L, C, R).",
+            "es": "2 unidad en cada sección (I, C, D)."
         },
         "effectB": {
-            "en": "2 units in a section.",
-            "es": "2 unidades en una sección."
+            "en": "1 unit in any section.",
+            "es": "1 unidad en cualquier sección."
         },
         "imageUrl": "https://picsum.photos/300/400?random=22"
     },
     {
         "id": "c4",
-        "category": {
-            "en": "Tactic",
-            "es": "Táctica"
-        },
+        "type": "tactics",
         "name": {
             "en": "Harassment",
             "es": "Hostigamiento"
         },
         "count": 4,
         "effectA": {
-            "en": "4 Light.",
-            "es": "4 Ligeras."
+            "en": "4 light units in any section.",
+            "es": "4 unidades ligeras en cualquier sección."
         },
         "effectB": {
-            "en": "2 Medium.",
-            "es": "2 Medias."
+            "en": "2 medium units in any section.",
+            "es": "2 unidades medias en cualquier sección."
         },
         "imageUrl": "https://picsum.photos/300/400?random=23"
     },
     {
         "id": "c5",
-        "category": {
-            "en": "Tactic",
-            "es": "Táctica"
-        },
+        "type": "tactics",
         "name": {
             "en": "Steel Wall",
             "es": "Muro de Acero"
         },
         "count": 4,
         "effectA": {
-            "en": "3 Medium (+1 defense die).",
-            "es": "3 Medias (+1 dado defensa)."
+            "en": "3 medium units in any section (+1 defense die).",
+            "es": "3 unidades medias en cualquier sección (+1 dado defensa)."
         },
         "effectB": {
-            "en": "2 Heavy.",
-            "es": "2 Pesadas."
+            "en": "2 heavy units in any section.",
+            "es": "2 unidades pesadas en cualquier sección."
         },
         "imageUrl": "https://picsum.photos/300/400?random=24"
     },
     {
         "id": "c6",
-        "category": {
-            "en": "Tactic",
-            "es": "Táctica"
-        },
+        "type": "tactics",
         "name": {
             "en": "Cavalry Charge",
             "es": "Carga de Caballería"
         },
         "count": 4,
         "effectA": {
-            "en": "3 Heavy (Charge bonus).",
-            "es": "3 Pesadas (Bono carga)."
+            "en": "3 heavy units in any section (Charge bonus).",
+            "es": "3 unidades pesadas en cualquier sección (Bono carga)."
         },
         "effectB": {
-            "en": "1 Elite.",
-            "es": "1 Élite."
+            "en": "1 elite unit in any section.",
+            "es": "1 unidad élite en cualquier sección."
         },
         "imageUrl": "https://picsum.photos/300/400?random=25"
     },
     {
         "id": "c7",
-        "category": {
-            "en": "Tactic",
-            "es": "Táctica"
-        },
+        "type": "tactics",
         "name": {
             "en": "King's Order",
             "es": "Orden del Rey"
         },
         "count": 4,
         "effectA": {
-            "en": "1 Elite (Move and attack x2).",
-            "es": "1 Élite (Mueve y ataca x2)."
+            "en": "1 elite unit in any section (Move and attack x2).",
+            "es": "1 unidad élite en cualquier sección (Mueve y ataca x2)."
         },
         "effectB": {
-            "en": "Any 2 units.",
-            "es": "2 unidades cualesquiera."
+            "en": "Any 2 units in any section.",
+            "es": "2 unidades cualesquiera en cualquier sección."
         },
         "imageUrl": "https://picsum.photos/300/400?random=26"
     },
     {
         "id": "c8",
-        "category": {
-            "en": "Spell",
-            "es": "Hechizo"
-        },
+        "type": "arcane",
         "name": {
             "en": "Fireball",
             "es": "Bola de Fuego"
@@ -162,17 +138,14 @@
             "es": "(2 💧) Daño área R4."
         },
         "effectB": {
-            "en": "Activate 1 Light.",
-            "es": "Activa 1 Ligera."
+            "en": "Activate 1 light unit in any section.",
+            "es": "Activa 1 unidad ligeras en cualquier sección."
         },
         "imageUrl": "https://picsum.photos/300/400?random=27"
     },
     {
         "id": "c9",
-        "category": {
-            "en": "Spell",
-            "es": "Hechizo"
-        },
+        "type": "arcane",
         "name": {
             "en": "Resurrection",
             "es": "Resurrección"
@@ -183,17 +156,14 @@
             "es": "(3 💧) Revive unidad F1."
         },
         "effectB": {
-            "en": "Activate 1 Medium.",
-            "es": "Activa 1 Media."
+            "en": "Activate 1 medium unit in any section.",
+            "es": "Activa 1 unidad media en cualquier sección."
         },
         "imageUrl": "https://picsum.photos/300/400?random=28"
     },
     {
         "id": "c10",
-        "category": {
-            "en": "Spell",
-            "es": "Hechizo"
-        },
+        "type": "arcane",
         "name": {
             "en": "Arcane Shield",
             "es": "Escudo Arcano"
@@ -204,17 +174,14 @@
             "es": "(1 💧) Cancela daño recibido."
         },
         "effectB": {
-            "en": "Activate 1 Range unit.",
-            "es": "Activa 1 unidad de Rango."
+            "en": "Activate 1 range unit in any section.",
+            "es": "Activa 1 unidad de rango en cualquier sección."
         },
         "imageUrl": "https://picsum.photos/300/400?random=29"
     },
     {
         "id": "c11",
-        "category": {
-            "en": "Spell",
-            "es": "Hechizo"
-        },
+        "type": "arcane",
         "name": {
             "en": "Teleport",
             "es": "Teletransporte"
@@ -225,17 +192,14 @@
             "es": "(2 💧) Mueve unidad a cualquier hex."
         },
         "effectB": {
-            "en": "Activate 1 Heavy.",
-            "es": "Activa 1 Pesada."
+            "en": "Activate 1 heavy unit in any section.",
+            "es": "Activa 1 unidad pesada en cualquier sección."
         },
         "imageUrl": "https://picsum.photos/300/400?random=30"
     },
     {
         "id": "c12",
-        "category": {
-            "en": "Spell",
-            "es": "Hechizo"
-        },
+        "type": "arcane",
         "name": {
             "en": "Mana Surge",
             "es": "Oleada de Maná"
@@ -246,8 +210,8 @@
             "es": "Gana 3 💧."
         },
         "effectB": {
-            "en": "Activate 1 Elite.",
-            "es": "Activa 1 Élite."
+            "en": "Activate 1 elite unit in any section.",
+            "es": "Activa 1 unidad élite en cualquier sección."
         },
         "imageUrl": "https://picsum.photos/300/400?random=31"
     }

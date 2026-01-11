@@ -46,7 +46,7 @@ export interface Unit {
 
 export interface Card {
   id: string;
-  category: LocalizedString;
+  type: string;
   name: LocalizedString;
   count: number;
   effectA: LocalizedString;
