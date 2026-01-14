@@ -58,6 +58,15 @@ const App: React.FC = () => {
 
         setGameData({ units, cards, terrain, scenarios });
         setLocales({ es, en });
+
+        // Handle initial routing based on hash
+        const hash = window.location.hash.replace('#', '');
+        if (hash) {
+          const [view] = hash.split('?');
+          if (['units', 'cards', 'terrain', 'scenarios', 'rules', 'stickers', 'card-generator', 'map-editor'].includes(view)) {
+            setCurrentView(view as ViewState);
+          }
+        }
       } catch (err) {
         console.error("Failed to load codex data:", err);
         setError("Error cargando el Codex.");
@@ -131,7 +140,7 @@ const App: React.FC = () => {
           <div className="w-6"></div>
         </header>
 
-        <div className={`flex-1 overflow-y-auto ${(['stickers', 'card-generator', 'map-editor'].includes(currentView)) ? '' : 'p-4 md:p-12'}`}>
+        <div className={`flex-1 overflow-y-auto ${(['stickers', 'card-generator'].includes(currentView)) ? '' : 'p-4 md:p-12'}`}>
           {renderContent()}
         </div>
       </main>

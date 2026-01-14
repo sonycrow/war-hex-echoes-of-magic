@@ -2,7 +2,7 @@ import React, { useState, useCallback, useEffect, useMemo, useRef } from 'react'
 import {
     ZoomIn, ZoomOut, Share2, Copy, Check, Trash2,
     Maximize2, Minimize2, Move, Download, MousePointer2,
-    Map as MapIcon, PlusCircle, Flag, Info, Trash, Swords
+    Map as MapIcon, PlusCircle, Flag, Info, Trash, Swords, Search
 } from 'lucide-react';
 import { Terrain, Unit } from '../types';
 
@@ -34,34 +34,55 @@ const REVERSE_TERRAIN_MAP: Record<string, string> = Object.fromEntries(
     Object.entries(TERRAIN_MAP).map(([k, v]) => [v, k])
 );
 
+const MAP_SIZES = {
+    'standard': { cols: 13, rows: 9, label_es: 'Estándar (13x9)', label_en: 'Standard (13x9)', code: 's' },
+    'epic': { cols: 26, rows: 9, label_es: 'Épico (26x9)', label_en: 'Epic (26x9)', code: 'e' },
+    'skirmish': { cols: 9, rows: 7, label_es: 'Escaramuza (9x7)', label_en: 'Skirmish (9x7)', code: 'k' },
+    'large': { cols: 15, rows: 11, label_es: 'Grande (15x11)', label_en: 'Large (15x11)', code: 'l' },
+};
+
 const MapEditorView: React.FC<MapEditorViewProps> = ({ lang, data, t }) => {
     const viewsT = t.views.mapEditor;
-    const [mapSize, setMapSize] = useState<'standard' | 'epic'>('standard');
+    const [mapSize, setMapSize] = useState<keyof typeof MAP_SIZES>('standard');
     const [zoom, setZoom] = useState(1);
     const [selectedTool, setSelectedTool] = useState<{ type: 'terrain' | 'unit' | 'overlay' | 'eraser', id: string }>({ type: 'terrain', id: 't1' });
     const [isPainting, setIsPainting] = useState(false);
+    const [isDraggingMap, setIsDraggingMap] = useState(false);
+    const [lastMousePos, setLastMousePos] = useState({ x: 0, y: 0 });
     const [showPermalinkFeedback, setShowPermalinkFeedback] = useState(false);
     const [grid, setGrid] = useState<MapHex[]>([]);
 
-    const cols = mapSize === 'standard' ? 13 : 26;
-    const rows = 9;
+    const viewportRef = useRef<HTMLDivElement>(null);
+
+    const { cols, rows } = MAP_SIZES[mapSize];
 
     // Initialize grid
     useEffect(() => {
-        const params = new URLSearchParams(window.location.hash.split('?')[1]);
+        const hash = window.location.hash.split('?')[1];
+        if (!hash) {
+            setGrid(Array(cols * rows).fill(null).map(() => ({ t: 't1' })));
+            return;
+        }
+
+        const params = new URLSearchParams(hash);
         const mapData = params.get('m');
 
         if (mapData) {
             try {
-                const [size, terrainEncoded] = mapData.split('|');
-                setMapSize(size === 'e' ? 'epic' : 'standard');
-                const newCols = size === 'e' ? 26 : 13;
+                const [sizeCode, terrainEncoded] = mapData.split('|');
+                const matchedSize = Object.entries(MAP_SIZES).find(([_, info]) => info.code === sizeCode)?.[0] as keyof typeof MAP_SIZES;
+                const finalSize = matchedSize || 'standard';
+
+                setMapSize(finalSize);
+                const newCols = MAP_SIZES[finalSize].cols;
+                const newRows = MAP_SIZES[finalSize].rows;
+
                 const newGrid: MapHex[] = [];
                 for (let i = 0; i < terrainEncoded.length; i++) {
                     newGrid.push({ t: REVERSE_TERRAIN_MAP[terrainEncoded[i]] || 't1' });
                 }
                 // Fill if shorter
-                while (newGrid.length < newCols * 9) newGrid.push({ t: 't1' });
+                while (newGrid.length < newCols * newRows) newGrid.push({ t: 't1' });
                 setGrid(newGrid);
                 return;
             } catch (e) {
@@ -69,23 +90,19 @@ const MapEditorView: React.FC<MapEditorViewProps> = ({ lang, data, t }) => {
             }
         }
 
-        // Default grid
         setGrid(Array(cols * rows).fill(null).map(() => ({ t: 't1' })));
     }, []); // Run once on mount
 
-    // Update grid when size changes (only if not loading from URL)
-    const handleSizeChange = (size: 'standard' | 'epic') => {
-        setMapSize(size);
-        const newCols = size === 'standard' ? 13 : 26;
-        setGrid(prev => {
-            const newGrid = Array(newCols * rows).fill(null).map(() => ({ t: 't1' }));
-            // Copy existing as much as possible? 
-            // Better to just reset or keep what fits.
-            return newGrid;
-        });
+    const handleSizeChange = (size: keyof typeof MAP_SIZES) => {
+        if (window.confirm(lang === 'es' ? "¿Cambiar el tamaño del mapa reseteará el diseño actual, continuar?" : "Changing map size will reset current design, continue?")) {
+            setMapSize(size);
+            const { cols: newCols, rows: newRows } = MAP_SIZES[size];
+            setGrid(Array(newCols * newRows).fill(null).map(() => ({ t: 't1' })));
+        }
     };
 
     const handleHexAction = useCallback((index: number) => {
+        if (isDraggingMap) return;
         setGrid(prev => {
             const newGrid = [...prev];
             if (selectedTool.type === 'terrain') {
@@ -97,15 +114,39 @@ const MapEditorView: React.FC<MapEditorViewProps> = ({ lang, data, t }) => {
             }
             return newGrid;
         });
-    }, [selectedTool]);
+    }, [selectedTool, isDraggingMap]);
+
+    const handleMouseDown = (e: React.MouseEvent) => {
+        if (e.button === 2) {
+            setIsDraggingMap(true);
+            setLastMousePos({ x: e.clientX, y: e.clientY });
+        } else if (e.button === 0) {
+            setIsPainting(true);
+        }
+    };
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+        if (isDraggingMap && viewportRef.current) {
+            const dx = e.clientX - lastMousePos.x;
+            const dy = e.clientY - lastMousePos.y;
+            viewportRef.current.scrollLeft -= dx;
+            viewportRef.current.scrollTop -= dy;
+            setLastMousePos({ x: e.clientX, y: e.clientY });
+        }
+    };
+
+    const handleMouseUp = () => {
+        setIsDraggingMap(false);
+        setIsPainting(false);
+    };
 
     const generatePermalink = () => {
         const terrainEncoded = grid.map(hex => TERRAIN_MAP[hex.t] || 'a').join('');
-        const sizeCode = mapSize === 'epic' ? 'e' : 's';
+        const sizeCode = MAP_SIZES[mapSize].code;
         const mapValue = `${sizeCode}|${terrainEncoded}`;
 
         const url = new URL(window.location.href);
-        url.hash = `${window.location.hash.split('?')[0]}?m=${mapValue}`;
+        url.hash = `map-editor?m=${mapValue}`;
 
         navigator.clipboard.writeText(url.toString());
         setShowPermalinkFeedback(true);
@@ -124,56 +165,56 @@ const MapEditorView: React.FC<MapEditorViewProps> = ({ lang, data, t }) => {
     };
 
     return (
-        <div className="flex flex-col h-full gap-6">
-            {/* Header & Main Controls */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="space-y-8 animate-in fade-in slide-in-from-bottom-6 duration-700">
+            {/* Header matching DataTable */}
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div>
-                    <h1 className="text-3xl font-black text-slate-900 uppercase tracking-tight flex items-center gap-3">
-                        <MapIcon className="text-slate-400" />
-                        {viewsT.title}
-                    </h1>
-                    <p className="text-slate-500 text-sm mt-1">{viewsT.size}: {mapSize === 'standard' ? viewsT.standard : viewsT.epic}</p>
+                    <h2 className="text-4xl font-black text-slate-900 tracking-tight mb-2 uppercase">{viewsT.title}</h2>
+                    <p className="text-slate-400 font-medium text-sm">
+                        {lang === 'es' ? `Configurando mapa de ${cols}x${rows} hexágonos` : `Configuring ${cols}x${rows} hex map`}
+                    </p>
                 </div>
 
-                <div className="flex items-center gap-2 bg-white p-1.5 rounded-2xl border border-slate-100 shadow-sm">
-                    <button
-                        onClick={() => {
-                            if (window.confirm("¿Vaciar el mapa?")) {
-                                setGrid(Array(cols * rows).fill(null).map(() => ({ t: 't1' })));
-                            }
-                        }}
-                        className="p-2 mr-2 text-red-300 hover:text-red-500 hover:bg-red-50 rounded-xl transition-colors"
-                        title="Reset Map"
-                    >
-                        <Trash size={18} />
-                    </button>
-                    <div className="w-px h-6 bg-slate-100 mr-2"></div>
-                    <button
-                        onClick={() => handleSizeChange('standard')}
-                        className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${mapSize === 'standard' ? 'bg-slate-900 text-white shadow-lg' : 'text-slate-500 hover:bg-slate-50'}`}
-                    >
-                        {viewsT.standard}
-                    </button>
-                    <button
-                        onClick={() => handleSizeChange('epic')}
-                        className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${mapSize === 'epic' ? 'bg-slate-900 text-white shadow-lg' : 'text-slate-500 hover:bg-slate-50'}`}
-                    >
-                        {viewsT.epic}
-                    </button>
-                    <div className="w-px h-6 bg-slate-100 mx-2"></div>
-                    <button
-                        onClick={generatePermalink}
-                        className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold text-amber-600 hover:bg-amber-50 transition-all active:scale-95"
-                    >
-                        {showPermalinkFeedback ? <Check size={14} /> : <Share2 size={14} />}
-                        {showPermalinkFeedback ? viewsT.copied : viewsT.permalink}
-                    </button>
+                <div className="flex flex-wrap items-center gap-3">
+                    <div className="flex items-center gap-2 bg-white p-1.5 rounded-xl border border-slate-100 shadow-sm">
+                        <select
+                            value={mapSize}
+                            onChange={(e) => handleSizeChange(e.target.value as keyof typeof MAP_SIZES)}
+                            className="bg-transparent text-sm font-bold text-slate-600 px-3 py-1.5 focus:outline-none cursor-pointer"
+                        >
+                            {Object.entries(MAP_SIZES).map(([key, info]) => (
+                                <option key={key} value={key}>
+                                    {lang === 'es' ? info.label_es : info.label_en}
+                                </option>
+                            ))}
+                        </select>
+                        <div className="w-px h-6 bg-slate-100 mx-1"></div>
+                        <button
+                            onClick={generatePermalink}
+                            className="flex items-center gap-2 px-4 py-1.5 rounded-lg text-xs font-black text-amber-600 hover:bg-amber-50 transition-all active:scale-95 uppercase tracking-wider"
+                        >
+                            {showPermalinkFeedback ? <Check size={14} /> : <Share2 size={14} />}
+                            {showPermalinkFeedback ? viewsT.copied : viewsT.permalink}
+                        </button>
+                        <div className="w-px h-6 bg-slate-100 mx-1"></div>
+                        <button
+                            onClick={() => {
+                                if (window.confirm(lang === 'es' ? "¿Vaciar el mapa?" : "Clear map?")) {
+                                    setGrid(Array(cols * rows).fill(null).map(() => ({ t: 't1' })));
+                                }
+                            }}
+                            className="p-1.5 text-red-300 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
+                            title="Reset Map"
+                        >
+                            <Trash size={18} />
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <div className="flex-1 flex flex-col min-h-0 lg:flex-row gap-6">
+            <div className="flex flex-col min-h-[600px] lg:flex-row gap-6">
                 {/* Toolbox */}
-                <div className="w-full lg:w-80 flex flex-col gap-6 shrink-0 h-full overflow-y-auto pr-2 custom-scrollbar">
+                <div className="w-full lg:w-80 flex flex-col gap-6 shrink-0 pr-2">
                     {/* Terrains */}
                     <section className="bg-white rounded-3xl border border-slate-100 shadow-sm p-6">
                         <h3 className="text-xs font-black uppercase tracking-widest text-slate-400 mb-4">{viewsT.terrain}</h3>
@@ -209,26 +250,26 @@ const MapEditorView: React.FC<MapEditorViewProps> = ({ lang, data, t }) => {
                         </div>
                     </section>
 
-                    {/* Units (Placeholder grouped by faction) */}
-                    <section className="bg-white rounded-3xl border border-slate-100 shadow-sm p-6 flex-1 overflow-hidden flex flex-col">
+                    {/* Units/Overlay */}
+                    <section className="bg-white rounded-3xl border border-slate-100 shadow-sm p-6 flex-1 flex flex-col min-h-[300px]">
                         <h3 className="text-xs font-black uppercase tracking-widest text-slate-400 mb-4">{viewsT.overlay}</h3>
-                        <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar space-y-4">
+                        <div className="space-y-4">
                             <div className="grid grid-cols-2 gap-3">
-                                <button className="aspect-square bg-slate-50 border-2 border-dashed border-slate-200 rounded-xl flex flex-col items-center justify-center gap-2 text-slate-400 opacity-50 cursor-not-allowed">
+                                <button className="aspect-square bg-slate-50 border-2 border-dashed border-slate-200 rounded-xl flex flex-col items-center justify-center gap-2 text-slate-400 opacity-50 cursor-not-allowed group-hover:bg-white transition-colors">
                                     <Swords size={20} />
-                                    <span className="text-[10px] font-bold uppercase">Unidad</span>
+                                    <span className="text-[10px] font-bold uppercase tracking-tight">Unidad</span>
                                 </button>
                                 <button className="aspect-square bg-slate-50 border-2 border-dashed border-slate-200 rounded-xl flex flex-col items-center justify-center gap-2 text-slate-400 opacity-50 cursor-not-allowed">
                                     <Flag size={20} />
-                                    <span className="text-[10px] font-bold uppercase">Medalla</span>
+                                    <span className="text-[10px] font-bold uppercase tracking-tight">Medalla</span>
                                 </button>
                                 <button className="aspect-square bg-slate-50 border-2 border-dashed border-slate-200 rounded-xl flex flex-col items-center justify-center gap-2 text-slate-400 opacity-50 cursor-not-allowed">
                                     <Info size={20} />
-                                    <span className="text-[10px] font-bold uppercase">P.O.I.</span>
+                                    <span className="text-[10px] font-bold uppercase tracking-tight">P.O.I.</span>
                                 </button>
                                 <button className="aspect-square bg-slate-50 border-2 border-dashed border-slate-200 rounded-xl flex flex-col items-center justify-center gap-2 text-slate-400 opacity-50 cursor-not-allowed">
                                     <PlusCircle size={20} />
-                                    <span className="text-[10px] font-bold uppercase">Más</span>
+                                    <span className="text-[10px] font-bold uppercase tracking-tight">Más</span>
                                 </button>
                             </div>
                             <div className="p-4 bg-amber-50 rounded-2xl border border-amber-100">
@@ -238,31 +279,40 @@ const MapEditorView: React.FC<MapEditorViewProps> = ({ lang, data, t }) => {
                             </div>
                         </div>
                     </section>
-
-                    {/* Zoom Control */}
-                    <div className="bg-slate-900 rounded-3xl p-4 flex items-center justify-between shadow-xl">
-                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-2">{viewsT.zoom}: {Math.round(zoom * 100)}%</span>
-                        <div className="flex gap-2">
-                            <button
-                                onClick={() => setZoom(Math.max(0.5, zoom - 0.1))}
-                                className="w-8 h-8 rounded-xl bg-slate-800 text-white flex items-center justify-center hover:bg-slate-700 transition-colors"
-                            >
-                                <ZoomOut size={16} />
-                            </button>
-                            <button
-                                onClick={() => setZoom(Math.min(2, zoom + 0.1))}
-                                className="w-8 h-8 rounded-xl bg-slate-800 text-white flex items-center justify-center hover:bg-slate-700 transition-colors"
-                            >
-                                <ZoomIn size={16} />
-                            </button>
-                        </div>
-                    </div>
                 </div>
 
-                {/* Map Viewport */}
-                <div className="flex-1 bg-slate-200/50 rounded-[2.5rem] border-4 border-white shadow-inner overflow-hidden relative group cursor-crosshair select-none">
+                {/* Map Viewport Area */}
+                <div className="flex-1 bg-slate-50 rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/50 overflow-hidden relative group select-none min-h-[600px]">
+                    {/* Floating Zoom Controls */}
+                    <div className="absolute top-6 left-6 z-30 flex flex-col gap-2">
+                        <div className="bg-slate-900/90 backdrop-blur-md rounded-2xl p-1.5 flex flex-col shadow-2xl border border-white/10">
+                            <button
+                                onClick={() => setZoom(Math.min(3, zoom + 0.25))}
+                                className="w-10 h-10 rounded-xl text-white flex items-center justify-center hover:bg-white/10 transition-colors"
+                            >
+                                <ZoomIn size={20} />
+                            </button>
+                            <div className="h-px bg-white/10 mx-2 my-1"></div>
+                            <button
+                                onClick={() => setZoom(Math.max(0.25, zoom - 0.25))}
+                                className="w-10 h-10 rounded-xl text-white flex items-center justify-center hover:bg-white/10 transition-colors"
+                            >
+                                <ZoomOut size={20} />
+                            </button>
+                        </div>
+                        <div className="bg-slate-900/90 backdrop-blur-md rounded-xl px-3 py-1.5 shadow-xl border border-white/10 flex justify-center">
+                            <span className="text-[10px] font-black text-white/80 uppercase tracking-widest">{Math.round(zoom * 100)}%</span>
+                        </div>
+                    </div>
+
                     <div
-                        className="w-full h-full overflow-auto p-20 custom-scrollbar"
+                        ref={viewportRef}
+                        className="w-full h-full overflow-auto p-20 custom-scrollbar cursor-crosshair"
+                        onMouseDown={handleMouseDown}
+                        onMouseMove={handleMouseMove}
+                        onMouseUp={handleMouseUp}
+                        onMouseLeave={handleMouseUp}
+                        onContextMenu={(e) => e.preventDefault()}
                     >
                         <div
                             className="relative shadow-2xl transition-transform duration-200 ease-out origin-center"
@@ -276,7 +326,7 @@ const MapEditorView: React.FC<MapEditorViewProps> = ({ lang, data, t }) => {
                             onMouseUp={() => setIsPainting(false)}
                             onMouseLeave={() => setIsPainting(false)}
                         >
-                            {/* Grid Content */}
+                            {/* Grid Content Background */}
                             <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px] hex-clip border-8 border-white/20"></div>
 
                             {/* The Hexes */}
@@ -309,11 +359,9 @@ const MapEditorView: React.FC<MapEditorViewProps> = ({ lang, data, t }) => {
                             })}
 
                             {/* Section Dividers */}
-                            {/* 13 columns: sections after col 3 (4-5-4) */}
-                            {/* 26 columns: double it? (8-10-8)? */}
                             {(() => {
-                                const leftSectionEnd = mapSize === 'standard' ? 4 : 8;
-                                const rightSectionStart = mapSize === 'standard' ? 9 : 18;
+                                const leftSectionEnd = Math.floor(cols / 3);
+                                const rightSectionStart = Math.floor(cols * 2 / 3);
 
                                 const leftX = leftSectionEnd * HORIZONTAL_STEP - 5;
                                 const rightX = rightSectionStart * HORIZONTAL_STEP - 5;
@@ -324,13 +372,13 @@ const MapEditorView: React.FC<MapEditorViewProps> = ({ lang, data, t }) => {
                                             className="absolute top-0 bottom-0 border-l-4 border-red-500/50 z-20 pointer-events-none"
                                             style={{ left: `${leftX}px` }}
                                         >
-                                            <div className="bg-red-500/50 text-white text-[8px] font-black px-2 py-0.5 rounded-br-lg uppercase">Section</div>
+                                            <div className="bg-red-500 text-white text-[8px] font-black px-2 py-0.5 rounded-br-lg uppercase">Section</div>
                                         </div>
                                         <div
                                             className="absolute top-0 bottom-0 border-l-4 border-red-500/50 z-20 pointer-events-none"
                                             style={{ left: `${rightX}px` }}
                                         >
-                                            <div className="bg-red-500/50 text-white text-[8px] font-black px-2 py-0.5 rounded-br-lg uppercase">Section</div>
+                                            <div className="bg-red-500 text-white text-[8px] font-black px-2 py-0.5 rounded-br-lg uppercase">Section</div>
                                         </div>
                                     </>
                                 );
@@ -339,8 +387,8 @@ const MapEditorView: React.FC<MapEditorViewProps> = ({ lang, data, t }) => {
                     </div>
 
                     {/* Zoom / Pan indicator */}
-                    <div className="absolute bottom-6 right-6 bg-white/80 backdrop-blur-md px-4 py-2 rounded-2xl border border-white shadow-lg text-[10px] font-black text-slate-400 uppercase tracking-widest hidden group-hover:block transition-all animate-in fade-in slide-in-from-bottom-2">
-                        Click & Drag to Paint • Use Zoom Controls
+                    <div className="absolute bottom-6 right-6 bg-white/80 backdrop-blur-md px-5 py-2.5 rounded-2xl border border-white shadow-lg text-[10px] font-black text-slate-500 uppercase tracking-[0.15em] hidden group-hover:block transition-all animate-in fade-in slide-in-from-bottom-2 z-30">
+                        <span className="text-amber-600">Click Izq:</span> Pintar • <span className="text-amber-600">Click Der:</span> Mover Mapa
                     </div>
                 </div>
             </div>
