@@ -29,15 +29,7 @@ En lugar de miniaturas fijas, **War-Hex** utiliza bloques de madera o plástico 
 * **Identidad oculta:** Tú sabes quiénes son tus tropas, pero tu enemigo solo ve un muro de bloques de color. ¿Es una leva de campesinos o es el Héroe legendario con su escolta de élite? No lo sabrá hasta que choquen en combate.
 * **Fuerza rotativa:** Los bloques no mueren de un golpe. A medida que reciben daño, el bloque se gira. El número que queda en la parte superior indica su **fuerza actual** (cuántos dados lanza). Una unidad herida es una unidad menos efectiva.
 
-## El combate: dados y armaduras
-
-El sistema de combate es intuitivo pero profundo. No tiras para "ver si aciertas", tiras para ver si tu ataque es efectivo contra la **armadura** del rival.
-
-* Si atacas a una unidad **Ligera (●)**, tienes más símbolos en el dado que pueden dañarla.
-* Si atacas a una unidad **Pesada (■)**, solo las caras rojas o las espadas cuentan.
-* **Las banderas:** Una cara del dado muestra una bandera. Si sale, obligas al enemigo a retirarse. A veces, ganar una batalla no significa matar al enemigo, sino expulsarlo de una posición estratégica.
-
-### El toque War-Hex: héroes y maná
+## El toque War-Hex: héroes y maná
 
 Lo que eleva a **War-Hex** por encima de un juego histórico es su gestión de la magia.
 
@@ -95,13 +87,14 @@ Cada unidad tiene un valor de movimiento en su ficha técnica.
 
 * El terreno puede detener o ralentizar el avance (ver Tabla de terreno).
 * **Movimiento de Héroes:** Los Héroes pueden moverse a través de hexágonos ocupados por otras unidades amigas sin penalización.
-* **Carga impetuosa:** Las unidades **pesadas** que muevan 2 o más hexágonos antes de atacar ganan +1 dado en melé e ignoran la primera bandera de retirada recibida ese turno.
+* **Carga impetuosa:** Las unidades **pesadas** que muevan 1 o más hexágonos antes de atacar ganan +1 dado al ataque.
+* **Ignorar banderas:** Las unidades **pesadas** ignoran la primera bandera de retirada recibida ese turno.
 
 ## Los dados de combate y armaduras
 
 El sistema de combate se basa en la interacción entre los símbolos del dado y el tipo de unidad objetivo.
 
-### Distribución de las caras (Probabilidad 1/6 cada una)
+### Distribución de las caras del dado
 
 | Cara | Símbolo | Efecto táctico |
 | --- | --- | --- |
@@ -131,11 +124,12 @@ Se realiza contra una unidad enemiga adyacente. El atacante lanza tantos dados c
 
 ### A distancia (rango)
 
-Utiliza la regla decreciente: **dados = fuerza - (distancia en hexágonos - 1)**.
+Se realiza contra una unidad enemiga no adyacente, siempre que esté dentro del rango máximo de la unidad y exista línea de visión.
 
-**Suelo de Dados:** Un ataque a distancia siempre lanzará un mínimo de 1 dado, independientemente de la distancia o la Fuerza actual, siempre que el objetivo esté dentro del rango máximo de la unidad y haya línea de visión.
+* El atacante lanza tantos dados como su **fuerza actual - 1**.
+* **Suelo de Dados:** Un ataque a distancia siempre lanzará un mínimo de 1 dado, independientemente de la Fuerza actual.
 
-> *Ejemplo:* Una unidad con F3 dispara a un objetivo a 3 hexágonos de distancia. Lanza 1 dado (3 de Fuerza - 2 de penalización por distancia).
+> *Ejemplo:* Una unidad con F3 dispara a un objetivo a 3 hexágonos de distancia. Lanza 2 dados (3 de Fuerza - 1 de penalización por ataque a distancia).
 
 ## Magia
 

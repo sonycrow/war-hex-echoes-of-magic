@@ -50,7 +50,8 @@
         "scenarios": "Scenarios",
         "stickers": "Stickers",
         "cardGenerator": "Card Gen.",
-        "rules": "Rulebook"
+        "rules": "Rulebook",
+        "mapEditor": "Map Editor"
     },
     "views": {
         "units": {
@@ -101,6 +102,20 @@
             "downloadAll": "Download All",
             "allExpansions": "All Expansions",
             "allFactions": "All Factions"
+        },
+        "mapEditor": {
+            "title": "Map Editor",
+            "size": "Size",
+            "format": "Format",
+            "standard": "Standard (13x9)",
+            "epic": "Epic (26x9)",
+            "terrain": "Terrain",
+            "overlay": "Overlay",
+            "zoom": "Zoom",
+            "export": "Export",
+            "permalink": "Permalink",
+            "copied": "Copied!",
+            "plains": "Plains"
         }
     }
 }

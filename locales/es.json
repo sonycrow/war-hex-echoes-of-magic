@@ -50,7 +50,8 @@
         "scenarios": "Escenarios",
         "stickers": "Pegatinas",
         "cardGenerator": "Gen. Cartas",
-        "rules": "Reglamento"
+        "rules": "Reglamento",
+        "mapEditor": "Editor Mapas"
     },
     "views": {
         "units": {
@@ -101,6 +102,20 @@
             "downloadAll": "Descargar Todas",
             "allExpansions": "Todas las Expansiones",
             "allFactions": "Todas las Facciones"
+        },
+        "mapEditor": {
+            "title": "Editor de Mapas",
+            "size": "Tamaño",
+            "format": "Formato",
+            "standard": "Estándar (13x9)",
+            "epic": "Épico (26x9)",
+            "terrain": "Terreno",
+            "overlay": "Superposición",
+            "zoom": "Zoom",
+            "export": "Exportar",
+            "permalink": "Enlace Permanente",
+            "copied": "¡Copiado!",
+            "plains": "Llanuras"
         }
     }
 }
