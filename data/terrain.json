@@ -6,10 +6,14 @@
             "es": "Llanuras"
         },
         "effectMovement": {
-            "en": "No penalty.",
-            "es": "Sin penalización."
+            "en": "No effect.",
+            "es": "Sin efecto."
         },
         "effectCombat": {
+            "en": "No effect.",
+            "es": "Sin efecto."
+        },
+        "effectVision": {
             "en": "No effect.",
             "es": "Sin efecto."
         }
@@ -21,12 +25,16 @@
             "es": "Arboleda"
         },
         "effectMovement": {
-            "en": "No penalty.",
-            "es": "Sin penalización."
+            "en": "No effect.",
+            "es": "Sin efecto."
         },
         "effectCombat": {
             "en": "-1 die to incoming attacks.",
             "es": "-1 dado a los ataques que entran."
+        },
+        "effectVision": {
+            "en": "No effect.",
+            "es": "Sin efecto."
         }
     },
     {
@@ -42,6 +50,10 @@
         "effectCombat": {
             "en": "-1 die to incoming attacks.",
             "es": "-1 dado a los ataques que entran."
+        },
+        "effectVision": {
+            "en": "Blocks line of sight.",
+            "es": "Bloquea la visión."
         }
     },
     {
@@ -55,8 +67,12 @@
             "es": "Sin penalización."
         },
         "effectCombat": {
-            "en": "Attacker from below rolls -1 die. Line of sight blocked by other hills.",
-            "es": "Atacante desde abajo tira -1 dado. Linea de visión bloqueada por otras colinas."
+            "en": "Attacker from below rolls -1 die. Range Advantage: Units on a hill ignore the first -1 distance penalty when making ranged attacks.",
+            "es": "Atacante desde abajo tira -1 dado. Ventaja de Rango: Las unidades en una colina ignoran el primer -1 de penalización por distancia al realizar ataques a distancia."
+        },
+        "effectVision": {
+            "en": "Blocks line of sight.",
+            "es": "Bloquea la visión."
         }
     },
     {
@@ -72,6 +88,10 @@
         "effectCombat": {
             "en": "Attacks from river have -1 die.",
             "es": "Ataques desde río tienen -1 dado."
+        },
+        "effectVision": {
+            "en": "No effect.",
+            "es": "Sin efecto."
         }
     },
     {
@@ -87,6 +107,10 @@
         "effectCombat": {
             "en": "Immune to the first flag.",
             "es": "Inmune a la primera bandera."
+        },
+        "effectVision": {
+            "en": "Blocks line of sight.",
+            "es": "Bloquea la visión."
         }
     },
     {
@@ -102,6 +126,10 @@
         "effectCombat": {
             "en": "Grants +1 Mana (💧) at the start of the turn if controlled.",
             "es": "Otorga +1 Maná (💧) al inicio del turno si se controla."
+        },
+        "effectVision": {
+            "en": "No effect.",
+            "es": "Sin efecto."
         }
     }
 ]

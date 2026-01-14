@@ -2,153 +2,324 @@
   {
     "id": "s1",
     "type": "section",
-    "name": { "es": "Sonda (Flanco Izquierdo 🡄)", "en": "Probe (Left Flank 🡄)" },
+    "name": {
+      "es": "🡄 Exploración 🡄",
+      "en": "🡄 Exploration 🡄"
+    },
     "count": 2,
-    "effectA": { "es": "Activa 2 unidades en 🡄. Roba 1 carta y descarta 1.", "en": "Activate 2 units in 🡄. Draw 1, discard 1." },
-    "effectB": { "es": "Activa 1 unidad en cualquier sección.", "en": "Activate 1 unit in any section." }
+    "effectA": {
+      "es": "Activa 2 unidades en 🡄. Roba 1 carta y descarta 1.",
+      "en": "Activate 2 units in 🡄. Draw 1, discard 1."
+    },
+    "effectB": {
+      "es": "Activa 1 unidad en cualquier sección.",
+      "en": "Activate 1 unit in any section."
+    }
   },
   {
     "id": "s2",
     "type": "section",
-    "name": { "es": "Sonda (Centro 🡅)", "en": "Probe (Center 🡅)" },
+    "name": {
+      "es": "🡅 Exploración 🡅",
+      "en": "🡅 Exploration 🡅"
+    },
     "count": 2,
-    "effectA": { "es": "Activa 2 unidades en 🡅. Roba 1 carta y descarta 1.", "en": "Activate 2 units in 🡅. Draw 1, discard 1." },
-    "effectB": { "es": "Activa 1 unidad en cualquier sección.", "en": "Activate 1 unit in any section." }
+    "effectA": {
+      "es": "Activa 2 unidades en 🡅. Roba 1 carta y descarta 1.",
+      "en": "Activate 2 units in 🡅. Draw 1, discard 1."
+    },
+    "effectB": {
+      "es": "Activa 1 unidad en cualquier sección.",
+      "en": "Activate 1 unit in any section."
+    }
   },
   {
     "id": "s3",
     "type": "section",
-    "name": { "es": "Sonda (Flanco Derecho 🡆)", "en": "Probe (Right Flank 🡆)" },
+    "name": {
+      "es": "🡆 Exploración 🡆",
+      "en": "🡆 Exploration 🡆"
+    },
     "count": 2,
-    "effectA": { "es": "Activa 2 unidades en 🡆. Roba 1 carta y descarta 1.", "en": "Activate 2 units in 🡆. Draw 1, discard 1." },
-    "effectB": { "es": "Activa 1 unidad en cualquier sección.", "en": "Activate 1 unit in any section." }
+    "effectA": {
+      "es": "Activa 2 unidades en 🡆. Roba 1 carta y descarta 1.",
+      "en": "Activate 2 units in 🡆. Draw 1, discard 1."
+    },
+    "effectB": {
+      "es": "Activa 1 unidad en cualquier sección.",
+      "en": "Activate 1 unit in any section."
+    }
   },
   {
     "id": "s4",
     "type": "section",
-    "name": { "es": "Ataque (Flanco Izquierdo 🡄)", "en": "Attack (Left Flank 🡄)" },
+    "name": {
+      "es": "🡄 Ataque 🡄",
+      "en": "🡄 Attack 🡄"
+    },
     "count": 3,
-    "effectA": { "es": "Activa 3 unidades en 🡄.", "en": "Activate 3 units in 🡄." },
-    "effectB": { "es": "Activa 1 unidad en cualquier sección.", "en": "Activate 1 unit in any section." }
+    "effectA": {
+      "es": "Activa 3 unidades en 🡄.",
+      "en": "Activate 3 units in 🡄."
+    },
+    "effectB": {
+      "es": "Activa 1 unidad en cualquier sección.",
+      "en": "Activate 1 unit in any section."
+    }
   },
   {
     "id": "s5",
     "type": "section",
-    "name": { "es": "Ataque (Centro 🡅)", "en": "Attack (Center 🡅)" },
+    "name": {
+      "es": "🡅 Ataque 🡅",
+      "en": "🡅 Attack 🡅"
+    },
     "count": 3,
-    "effectA": { "es": "Activa 3 unidades en 🡅.", "en": "Activate 3 units in 🡅." },
-    "effectB": { "es": "Activa 1 unidad en cualquier sección.", "en": "Activate 1 unit in any section." }
+    "effectA": {
+      "es": "Activa 3 unidades en 🡅.",
+      "en": "Activate 3 units in 🡅."
+    },
+    "effectB": {
+      "es": "Activa 1 unidad en cualquier sección.",
+      "en": "Activate 1 unit in any section."
+    }
   },
   {
     "id": "s6",
     "type": "section",
-    "name": { "es": "Ataque (Flanco Derecho 🡆)", "en": "Attack (Right Flank 🡆)" },
+    "name": {
+      "es": "🡆 Ataque 🡆",
+      "en": "🡆 Attack 🡆"
+    },
     "count": 3,
-    "effectA": { "es": "Activa 3 unidades en 🡆.", "en": "Activate 3 units in 🡆." },
-    "effectB": { "es": "Activa 1 unidad en cualquier sección.", "en": "Activate 1 unit in any section." }
+    "effectA": {
+      "es": "Activa 3 unidades en 🡆.",
+      "en": "Activate 3 units in 🡆."
+    },
+    "effectB": {
+      "es": "Activa 1 unidad en cualquier sección.",
+      "en": "Activate 1 unit in any section."
+    }
   },
   {
     "id": "s7",
     "type": "section",
-    "name": { "es": "Avance General (🡄 🡅 🡆)", "en": "General Advance (🡄 🡅 🡆)" },
+    "name": {
+      "es": "Avance general",
+      "en": "General advance"
+    },
     "count": 3,
-    "effectA": { "es": "Activa 2 unidades en cada sección (🡄, 🡅 y 🡆).", "en": "Activate 2 units in each section (🡄, 🡅 and 🡆)." },
-    "effectB": { "es": "Activa 2 unidades en una sola sección cualquiera.", "en": "Activate 2 units in a single section." }
+    "effectA": {
+      "es": "Activa 2 unidades en cada sección (🡄, 🡅 y 🡆).",
+      "en": "Activate 2 units in each section (🡄, 🡅 and 🡆)."
+    },
+    "effectB": {
+      "es": "Activa 2 unidades en una sola sección cualquiera.",
+      "en": "Activate 2 units in a single section."
+    }
   },
   {
     "id": "s8",
     "type": "section",
-    "name": { "es": "Flanqueo (🡄 🡆)", "en": "Flank Attack (🡄 🡆)" },
+    "name": {
+      "es": "Flanqueo",
+      "en": "Flank attack"
+    },
     "count": 3,
-    "effectA": { "es": "Activa 2 unidades en 🡄 y 2 en 🡆.", "en": "Activate 2 units in 🡄 and 2 in 🡆." },
-    "effectB": { "es": "Activa 1 unidad en cualquier sección.", "en": "Activate 1 unit in any section." }
+    "effectA": {
+      "es": "Activa 2 unidades en 🡄 y 2 en 🡆.",
+      "en": "Activate 2 units in 🡄 and 2 in 🡆."
+    },
+    "effectB": {
+      "es": "Activa 1 unidad en cualquier sección.",
+      "en": "Activate 1 unit in any section."
+    }
   },
   {
     "id": "s9",
     "type": "section",
-    "name": { "es": "Reconocimiento", "en": "Reconnaissance" },
+    "name": {
+      "es": "Reconocimiento",
+      "en": "Reconnaissance"
+    },
     "count": 3,
-    "effectA": { "es": "Activa 1 unidad en cualquier sección. Roba 2 cartas y descarta 1.", "en": "Activate 1 unit in any section. Draw 2, discard 1." },
-    "effectB": { "es": "Gana 1 💧 de Maná para tu reserva.", "en": "Gain 1 💧 Mana for your pool." }
+    "effectA": {
+      "es": "Activa 1 unidad en cualquier sección. Roba 2 cartas y descarta 1.",
+      "en": "Activate 1 unit in any section. Draw 2, discard 1."
+    },
+    "effectB": {
+      "es": "Gana 1 💧 de Maná para tu reserva.",
+      "en": "Gain 1 💧 Mana for your pool."
+    }
   },
   {
     "id": "t1",
     "type": "tactic",
-    "name": { "es": "Carga de Élite (★)", "en": "Elite Charge (★)" },
+    "name": {
+      "es": "Carga de élite",
+      "en": "Elite charge"
+    },
     "count": 3,
-    "effectA": { "es": "Activa 4 unidades ★. Ganan bono de 'Carga Impetuosa' (+1 dado e ignoran primera 🚩).", "en": "Activate 4 ★ units. Gain Charge bonus." },
-    "effectB": { "es": "Activa 1 unidad en cualquier sección.", "en": "Activate 1 unit in any section." }
+    "effectA": {
+      "es": "Activa 4 unidades ★. Ganan bono de 'Carga Impetuosa' (+1 dado e ignoran primera 🚩).",
+      "en": "Activate 4 ★ units. Gain Charge bonus."
+    },
+    "effectB": {
+      "es": "Activa 1 unidad en cualquier sección.",
+      "en": "Activate 1 unit in any section."
+    }
   },
   {
     "id": "t2",
     "type": "tactic",
-    "name": { "es": "Avance de Infantería", "en": "Infantry Advance" },
+    "name": {
+      "es": "Avance de infantería",
+      "en": "Infantry advance"
+    },
     "count": 4,
-    "effectA": { "es": "Activa 4 unidades de infantería (●/■). Pueden mover 2 hexágonos y atacar.", "en": "Activate 4 infantry units (●/■). Move 2 and attack." },
-    "effectB": { "es": "Activa 1 unidad en cualquier sección.", "en": "Activate 1 unit in any section." }
+    "effectA": {
+      "es": "Activa 4 unidades ● o ■. Pueden mover 2 hexágonos y atacar.",
+      "en": "Activate 4 units ● or ■. Move 2 and attack."
+    },
+    "effectB": {
+      "es": "Activa 1 unidad en cualquier sección.",
+      "en": "Activate 1 unit in any section."
+    }
   },
   {
     "id": "t3",
     "type": "tactic",
-    "name": { "es": "Muro de Escudos (▼)", "en": "Shield Wall (▼)" },
+    "name": {
+      "es": "Muro de escudos",
+      "en": "Shield wall"
+    },
     "count": 3,
-    "effectA": { "es": "Activa 3 unidades ▼. Ganan +1 dado en defensa e ignoran la primera 🚩.", "en": "Activate 3 ▼ units. +1 defense die and ignore first 🚩." },
-    "effectB": { "es": "Activa 1 unidad en cualquier sección.", "en": "Activate 1 unit in any section." }
+    "effectA": {
+      "es": "Activa 3 unidades ▼. Ganan +1 dado en defensa e ignoran la primera 🚩.",
+      "en": "Activate 3 ▼ units. +1 defense die and ignore first 🚩."
+    },
+    "effectB": {
+      "es": "Activa 1 unidad en cualquier sección.",
+      "en": "Activate 1 unit in any section."
+    }
   },
   {
     "id": "t4",
     "type": "tactic",
-    "name": { "es": "Hostigamiento (●)", "en": "Harassment (●)" },
+    "name": {
+      "es": "Hostigamiento",
+      "en": "Harassment"
+    },
     "count": 3,
-    "effectA": { "es": "Activa todas las unidades ●. Pueden mover, atacar y volver a mover.", "en": "Activate all ● units. Move-Attack-Move." },
-    "effectB": { "es": "Activa 1 unidad en cualquier sección.", "en": "Activate 1 unit in any section." }
+    "effectA": {
+      "es": "Activa todas las unidades ●. Pueden mover, atacar y volver a mover.",
+      "en": "Activate all ● units. Move-Attack-Move."
+    },
+    "effectB": {
+      "es": "Activa 1 unidad en cualquier sección.",
+      "en": "Activate 1 unit in any section."
+    }
   },
   {
     "id": "t5",
     "type": "tactic",
-    "name": { "es": "Orden de Élite (★)", "en": "Elite Order (★)" },
+    "name": {
+      "es": "Orden de élite",
+      "en": "Elite order"
+    },
     "count": 3,
-    "effectA": { "es": "Activa 1 unidad ★ y todas las unidades aliadas adyacentes a ella.", "en": "Activate 1 ★ unit and all adjacent allied units." },
-    "effectB": { "es": "Activa 1 unidad en cualquier sección.", "en": "Activate 1 unit in any section." }
+    "effectA": {
+      "es": "Activa 1 unidad ★ y todas las unidades aliadas adyacentes a ella.",
+      "en": "Activate 1 ★ unit and all adjacent allied units."
+    },
+    "effectB": {
+      "es": "Activa 1 unidad en cualquier sección.",
+      "en": "Activate 1 unit in any section."
+    }
   },
   {
     "id": "a1",
     "type": "arcane",
-    "name": { "es": "Bola de Fuego", "en": "Fireball" },
+    "name": {
+      "es": "Bola de fuego",
+      "en": "Fireball"
+    },
     "count": 2,
-    "effectA": { "es": "(💧💧) Causa daño en área con F3 a un hexágono y sus adyacentes.", "en": "(💧💧) AoE damage F3." },
-    "effectB": { "es": "Activa 1 unidad en cualquier sección.", "en": "Activate 1 unit in any section." }
+    "effectA": {
+      "es": "(💧💧) Causa daño en área con F3 a un hexágono y sus adyacentes.",
+      "en": "(💧💧) AoE damage F3."
+    },
+    "effectB": {
+      "es": "Activa 1 unidad en cualquier sección.",
+      "en": "Activate 1 unit in any section."
+    }
   },
   {
     "id": "a2",
     "type": "arcane",
-    "name": { "es": "Teletransporte", "en": "Teleport" },
+    "name": {
+      "es": "Teletransporte",
+      "en": "Teleport"
+    },
     "count": 2,
-    "effectA": { "es": "(💧💧) Mueve 1 unidad a cualquier hexágono libre (no puede atacar este turno).", "en": "(💧💧) Move 1 unit to any free hex." },
-    "effectB": { "es": "Activa 1 unidad en cualquier sección.", "en": "Activate 1 unit in any section." }
+    "effectA": {
+      "es": "(💧💧) Mueve 1 unidad a cualquier hexágono libre (no puede atacar este turno).",
+      "en": "(💧💧) Move 1 unit to any free hex."
+    },
+    "effectB": {
+      "es": "Activa 1 unidad en cualquier sección.",
+      "en": "Activate 1 unit in any section."
+    }
   },
   {
     "id": "a3",
     "type": "arcane",
-    "name": { "es": "Escudo Arcano", "en": "Arcane Shield" },
+    "name": {
+      "es": "Escudo arcano",
+      "en": "Arcane shield"
+    },
     "count": 2,
-    "effectA": { "es": "(💧) Una unidad ignora todo el daño y banderas recibidas este turno.", "en": "(💧) Unit ignores all damage and 🚩 this turn." },
-    "effectB": { "es": "Activa 1 unidad en cualquier sección.", "en": "Activate 1 unit in any section." }
+    "effectA": {
+      "es": "(💧) Una unidad ignora todo el daño y banderas recibidas este turno.",
+      "en": "(💧) Unit ignores all damage and 🚩 this turn."
+    },
+    "effectB": {
+      "es": "Activa 1 unidad en cualquier sección.",
+      "en": "Activate 1 unit in any section."
+    }
   },
   {
     "id": "a4",
     "type": "arcane",
-    "name": { "es": "Resurrección", "en": "Resurrection" },
+    "name": {
+      "es": "Resurrección",
+      "en": "Resurrection"
+    },
     "count": 2,
-    "effectA": { "es": "(💧) Recupera 2 puntos de Fuerza (F) en una unidad herida.", "en": "(💧) Restore 2 Strength (F) to a wounded unit." },
-    "effectB": { "es": "Activa 1 unidad en cualquier sección.", "en": "Activate 1 unit in any section." }
+    "effectA": {
+      "es": "(💧) Recupera 2 puntos de Fuerza (F) en una unidad herida.",
+      "en": "(💧) Restore 2 Strength (F) to a wounded unit."
+    },
+    "effectB": {
+      "es": "Activa 1 unidad en cualquier sección.",
+      "en": "Activate 1 unit in any section."
+    }
   },
   {
     "id": "a5",
     "type": "arcane",
-    "name": { "es": "Oleada de Maná", "en": "Mana Surge" },
+    "name": {
+      "es": "Ola de maná",
+      "en": "Mana surge"
+    },
     "count": 2,
-    "effectA": { "es": "Gana 3 💧 de Maná inmediatamente.", "en": "Gain 3 💧 Mana immediately." },
-    "effectB": { "es": "Activa 2 unidades en la sección del Centro 🡅.", "en": "Activate 2 units in the Center 🡅." }
+    "effectA": {
+      "es": "Gana 3 💧 de Maná inmediatamente.",
+      "en": "Gain 3 💧 Mana immediately."
+    },
+    "effectB": {
+      "es": "Activa 2 unidades en la sección del Centro 🡅.",
+      "en": "Activate 2 units in the Center 🡅."
+    }
   }
 ]

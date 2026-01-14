@@ -8,41 +8,41 @@ Aquí tienes un resumen para poner a cualquier jugador en contexto y explicar po
 
 **War-Hex** es un juego de batallas tácticas de fantasía épica donde comandas ejércitos de humanos, elfos, orcos o no muertos en un tablero hexagonal. Se basa en el legendario sistema **Command & Colors**, una mecánica que ha definido los mejores juegos de historia y guerra durante décadas, pero reimaginado en un mundo de magia, héroes y criaturas mitológicas.
 
-## El Corazón del Sistema: Command & Colors
+## El corazón del sistema: Command & Colors
 
 Lo que hace que **War-Hex** sea especial es cómo gestiona el caos de la batalla. A diferencia de otros juegos donde puedes mover todas tus piezas a la vez, aquí dependes de tu **Mazo de Mando**.
 
-### El Tablero en Secciones
+### El tablero en secciones
 
 El campo de batalla está dividido en tres áreas: **Flanco Izquierdo, Centro y Flanco Derecho**.
 
-La mayoría de las cartas que juegas te permiten activar unidades solo en secciones específicas. Esto crea la **"Fricción de Guerra"**: puede que necesites atacar por la derecha, pero si tus cartas solo dicen "Centro", deberás adaptar tu estrategia. Esa es la magia: no es solo tener el mejor ejército, sino saber reaccionar a lo que la suerte y el terreno te permiten hacer.
+La mayoría de las cartas que juegas te permiten activar unidades solo en secciones específicas. Esto crea la **"fricción de guerra"**: puede que necesites atacar por la derecha, pero si tus cartas solo dicen "Centro", deberás adaptar tu estrategia. Esa es la magia: no es solo tener el mejor ejército, sino saber reaccionar a lo que la suerte y el terreno te permiten hacer.
 
-### El Mando por Cartas
+### El mando por cartas
 
 Cada turno juegas una carta que dicta cuántas y qué tipo de unidades se activan. ¿Lanzas una carga de caballería masiva o utilizas un hechizo para teletransportar a tus arqueros a una colina? La decisión es constante y cada carta es una oportunidad o un dilema.
 
-## La Niebla de Guerra: Los Bloques
+## La niebla de guerra: los bloques
 
 En lugar de miniaturas fijas, **War-Hex** utiliza bloques de madera o plástico que se colocan "de pie".
 
-* **Identidad Oculta:** Tú sabes quiénes son tus tropas, pero tu enemigo solo ve un muro de bloques de color. ¿Es una leva de campesinos o es el Héroe legendario con su escolta de élite? No lo sabrá hasta que choquen en combate.
-* **Fuerza Rotativa:** Los bloques no mueren de un golpe. A medida que reciben daño, el bloque se gira. El número que queda en la parte superior indica su **Fuerza actual** (cuántos dados lanza). Una unidad herida es una unidad menos efectiva.
+* **Identidad oculta:** Tú sabes quiénes son tus tropas, pero tu enemigo solo ve un muro de bloques de color. ¿Es una leva de campesinos o es el Héroe legendario con su escolta de élite? No lo sabrá hasta que choquen en combate.
+* **Fuerza rotativa:** Los bloques no mueren de un golpe. A medida que reciben daño, el bloque se gira. El número que queda en la parte superior indica su **fuerza actual** (cuántos dados lanza). Una unidad herida es una unidad menos efectiva.
 
-## El Combate: Dados y Armaduras
+## El combate: dados y armaduras
 
 El sistema de combate es intuitivo pero profundo. No tiras para "ver si aciertas", tiras para ver si tu ataque es efectivo contra la **armadura** del rival.
 
-* Si atacas a una unidad **Ligera (Verde)**, tienes más símbolos en el dado que pueden dañarla.
-* Si atacas a una unidad **Pesada (Roja)**, solo las caras rojas o las espadas cuentan.
-* **Las Banderas:** Una cara del dado muestra una bandera. Si sale, obligas al enemigo a retirarse. A veces, ganar una batalla no significa matar al enemigo, sino expulsarlo de una posición estratégica.
+* Si atacas a una unidad **Ligera (●)**, tienes más símbolos en el dado que pueden dañarla.
+* Si atacas a una unidad **Pesada (■)**, solo las caras rojas o las espadas cuentan.
+* **Las banderas:** Una cara del dado muestra una bandera. Si sale, obligas al enemigo a retirarse. A veces, ganar una batalla no significa matar al enemigo, sino expulsarlo de una posición estratégica.
 
-### El Toque War-Hex: Héroes y Maná
+### El toque War-Hex: héroes y maná
 
 Lo que eleva a **War-Hex** por encima de un juego histórico es su gestión de la magia.
 
-* **Héroes con Escolta:** Tus héroes no van solos; pueden compartir hexágono con una unidad de tropa. Esto los convierte en el corazón de tu formación: son casi imposibles de matar mientras tengan soldados que los protejan.
-* **La Reserva de Maná:** A diferencia de otros juegos donde la magia es un "usar y tirar", aquí acumulas maná (💧). Debes decidir si gastarlo en hechizos pequeños constantes o ahorrar para un cataclismo que cambie el rumbo de la partida.
+* **Héroes con escolta:** Tus héroes no van solos; pueden compartir hexágono con una unidad de tropa. Esto los convierte en el corazón de tu formación: son casi imposibles de matar mientras tengan soldados que los protejan.
+* **La reserva de maná:** A diferencia de otros juegos donde la magia es un "usar y tirar", aquí acumulas maná (💧). Debes decidir si gastarlo en hechizos pequeños constantes o ahorrar para un cataclismo que cambie el rumbo de la partida.
 
 ---
 
@@ -52,13 +52,13 @@ Bienvenido. Este es un juego de batallas tácticas de fantasía que utiliza el s
 
 ## Componentes del juego
 
-* **Tablero Hexagonal:** Dividido en tres secciones: flanco izquierdo, centro y flanco derecho.
-* **Bloques de Unidad:** Cuadrados y rectángulos de madera o plástico, de color sólido según la facción.
-* **Mazo de Mando:** 50 cartas que permiten activar unidades.
-* **Dados de Combate:** Dados de 6 caras con símbolos específicos.
-* **Fichas de Maná (💧):** Para ejecutar poderosos hechizos.
+* **Tablero hexagonal:** Dividido en tres secciones: flanco izquierdo, centro y flanco derecho.
+* **Bloques de unidad:** Cuadrados y rectángulos de madera o plástico, de color sólido según la facción.
+* **Mazo de mando:** 50 cartas que permiten activar unidades.
+* **Dados de combate:** Dados de 6 caras con símbolos específicos.
+* **Fichas de maná (💧):** Para ejecutar poderosos hechizos.
 
-## Cartas de Mando
+## Cartas de mando
 
 El mazo de mando se compone de tres tipos principales de cartas:
 
@@ -133,6 +133,8 @@ Se realiza contra una unidad enemiga adyacente. El atacante lanza tantos dados c
 
 Utiliza la regla decreciente: **dados = fuerza - (distancia en hexágonos - 1)**.
 
+**Suelo de Dados:** Un ataque a distancia siempre lanzará un mínimo de 1 dado, independientemente de la distancia o la Fuerza actual, siempre que el objetivo esté dentro del rango máximo de la unidad y haya línea de visión.
+
 > *Ejemplo:* Una unidad con F3 dispara a un objetivo a 3 hexágonos de distancia. Lanza 1 dado (3 de Fuerza - 2 de penalización por distancia).
 
 ## Magia
@@ -146,7 +148,7 @@ Puedes acumular hasta un máximo de **5 💧** en tu reserva. Se utiliza para ac
 | **Llanuras** | Sin penalización. | Sin efecto. |
 | **Arboleda** | Sin penalización. | -1 dado a los ataques que entran. |
 | **Bosque** | Las unidades deben detenerse al entrar. | -1 dado a los ataques que entran. |
-| **Colina** | Sin penalización. | Atacante desde abajo tira -1 dado. |
+| **Colina** | Sin penalización. | Atacante desde abajo tira -1 dado. Ventaja de Rango: Las unidades en una colina ignoran el primer -1 de penalización por distancia al realizar ataques a distancia. |
 | **Río** | Intransitable excepto en puentes. | Ataques desde río tienen -1 dado. |
 | **Pueblo** | Las unidades deben detenerse. | Inmune a la primera bandera. |
 | **Altar** | Terreno abierto. | Otorga +1 Maná (💧) al inicio del turno si se controla. |
