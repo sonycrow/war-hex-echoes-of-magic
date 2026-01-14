@@ -268,7 +268,7 @@
             "en": "Generates 1 Mana at the start of the turn.",
             "es": "Genera 1 Maná al inicio del turno."
         },
-        "cost": 5,
+        "cost": 6,
         "version": 1,
         "date": "2026-01-01"
     },
@@ -310,7 +310,7 @@
             "en": "Generates 1 Mana at the start of the turn.",
             "es": "Genera 1 Maná al inicio del turno."
         },
-        "cost": 5,
+        "cost": 6,
         "version": 1,
         "date": "2026-01-01"
     },
@@ -331,7 +331,7 @@
             "en": "Forest Bonus: +1 defense die.",
             "es": "Bonus en Bosque: +1 dado defensa."
         },
-        "cost": 3,
+        "cost": 4,
         "version": 1,
         "date": "2026-01-01"
     },
@@ -513,14 +513,14 @@
         "type": "light",
         "subtype": "unit",
         "expansion": "base",
-        "strength": 3,
+        "strength": 4,
         "movement": 1,
-        "range": 2,
+        "range": 3,
         "rules": {
             "en": "Plains Bonus: +1 die.",
             "es": "Bono en Llanura: +1 dado."
         },
-        "cost": 2,
+        "cost": 3,
         "version": 1,
         "date": "2026-01-01"
     },
@@ -536,12 +536,12 @@
         "expansion": "base",
         "strength": 3,
         "movement": 3,
-        "range": 2,
+        "range": 3,
         "rules": {
             "en": "Flight: Ignores terrain and units.",
             "es": "Vuelo: Ignora terreno y unidades."
         },
-        "cost": 5,
+        "cost": 4,
         "version": 1,
         "date": "2026-01-01"
     },
@@ -557,7 +557,7 @@
         "expansion": "base",
         "strength": 3,
         "movement": 2,
-        "range": 2,
+        "range": 3,
         "rules": {
             "en": "Generates 1 Mana at the start of the turn.",
             "es": "Genera 1 Maná al inicio del turno."
@@ -620,12 +620,12 @@
         "expansion": "base",
         "strength": 3,
         "movement": 2,
-        "range": 1,
+        "range": 2,
         "rules": {
             "en": "Generates 1 Mana at the start of the turn.",
             "es": "Genera 1 Maná al inicio del turno."
         },
-        "cost": 4,
+        "cost": 3,
         "version": 1,
         "date": "2026-01-01"
     },
@@ -646,7 +646,7 @@
             "en": "Forest Bonus: +1 attack die.",
             "es": "Bonus en Bosque: +1 dado de ataque."
         },
-        "cost": 3,
+        "cost": 2,
         "version": 1,
         "date": "2026-01-01"
     },
@@ -667,7 +667,7 @@
             "en": "Forest Bonus: +1 defense die.",
             "es": "Bonus en Bosque: +1 dado de defensa."
         },
-        "cost": 3,
+        "cost": 2,
         "version": 1,
         "date": "2026-01-01"
     },
@@ -709,7 +709,7 @@
             "en": "Mountain Bonus: Ignore 1 flag.",
             "es": "Bono en Montaña: Ignora 1 bandera."
         },
-        "cost": 3,
+        "cost": 2,
         "version": 1,
         "date": "2026-01-01"
     },
@@ -751,7 +751,7 @@
             "en": "Mountain Bonus: Ignore 1 flag.",
             "es": "Bono en Montaña: Ignora 1 bandera."
         },
-        "cost": 4,
+        "cost": 3,
         "version": 11,
         "date": "2026-01-01"
     },
@@ -934,13 +934,13 @@
         "subtype": "unit",
         "expansion": "mercenaries",
         "strength": 4,
-        "movement": 2,
+        "movement": 3,
         "range": 1,
         "rules": {
             "en": "Forest Bonus: +1 defense die.",
             "es": "Bonus en Bosque: +1 dado defensa."
         },
-        "cost": 4,
+        "cost": 5,
         "version": 1,
         "date": "2026-01-01"
     },

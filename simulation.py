@@ -80,7 +80,7 @@ class Unit:
         return False
 
 class Player:
-    def __init__(self, faction_code, faction_name, units_data):
+    def __init__(self, faction_code, faction_name, units_data, use_heroes=False):
         self.faction_code = faction_code
         self.faction_name = faction_name
         self.units = []
@@ -88,22 +88,22 @@ class Player:
         self.medals = 0
         self.hand = [] # Cards
         
-        # Build Army: Simply take all units available for the faction for this simulation
-        # In a real game there is a points limit, here we test "Full Faction Roster" roughly balanced by count
-        # Or better: Standard standardized army composition for metrics? 
-        # Let's use the USER REQUEST: "todo el ejercito de una faccion contra otra" 
-        # But limited to reasonable numbers (e.g. 1 of each unit type defined in JSON to avoid infinite armies?)
-        # Actually, let's look at units.json. Most factions have ~6 unit types. 
-        # Taking 2 of cheap units and 1 of elites seems fair, or just 1 of each for raw power test.
-        # Let's take 2 of cost < 4, 1 of cost >= 4.
-        
+        # Build Army
         faction_units_defs = [u for u in units_data if u['faction'] == faction_code and u['expansion'] == 'base']
         
+        # Standard Units
         for u_def in faction_units_defs:
             count = 2 if u_def.get('cost', 0) < 4 else 1
             for _ in range(count):
                 self.units.append(Unit(u_def, faction_code))
 
+        # Hero Addition
+        if use_heroes:
+            # Find hero for this faction
+            hero_def = next((u for u in units_data if u['faction'] == faction_code and u.get('subtype') == 'hero'), None)
+            if hero_def:
+                self.units.append(Unit(hero_def, faction_code))
+                
         # Initial positioning (Abstracted)
         # Distribute evenly across sections
         for i, u in enumerate(self.units):
@@ -113,9 +113,9 @@ class Player:
         return [u for u in self.units if u.is_alive()]
 
 class Game:
-    def __init__(self, faction1_def, faction2_def, units_data, cards_data):
-        self.p1 = Player(faction1_def['code'], faction1_def['name']['es'], units_data)
-        self.p2 = Player(faction2_def['code'], faction2_def['name']['es'], units_data)
+    def __init__(self, faction1_def, faction2_def, units_data, cards_data, use_heroes=False):
+        self.p1 = Player(faction1_def['code'], faction1_def['name']['es'], units_data, use_heroes)
+        self.p2 = Player(faction2_def['code'], faction2_def['name']['es'], units_data, use_heroes)
         self.cards_data = cards_data
         self.turn_count = 0
         self.max_turns = 200 # Increased from 50
@@ -132,8 +132,9 @@ class Game:
     def resolve_combat(self, attacker, defender, range_combat=False, distance=1):
         dice_count = attacker.current_strength
         if range_combat:
-            # Rule: dice = strength - (distance - 1)
-            dice_count = max(1, dice_count - (distance - 1)) # Floor of 1 die always
+            # Rule Update: Flat -1 if not adjacent (distance > 1), minimum 1 die.
+            if distance > 1:
+                dice_count = max(1, dice_count - 1)
         
         rolls = self.roll_dice(dice_count)
         hits = 0
@@ -183,6 +184,16 @@ class Game:
             
             # Find target in same section
             enemies = [e for e in opponent.get_alive_units() if e.section == unit.section]
+            
+            if not enemies:
+                # No enemies in this section! Move to a section with enemies.
+                enemy_sections = list(set(e.section for e in opponent.get_alive_units()))
+                if enemy_sections:
+                    # Move to random populated section
+                    # self.log_event(f"{unit.name_es} moves from {unit.section} to {enemy_sections[0]}")
+                    unit.section = random.choice(enemy_sections)
+                    # End activation (Move action consumes turn usually unless special)
+                    continue
             
             if enemies:
                 target = random.choice(enemies) # Random target in lane
@@ -259,7 +270,7 @@ def run_simulations(n_games):
         for _ in range(n_games):
             # Run 2 games per pair to swap first player advantage if any (though simultaneous turns here)
             # Just plain loop
-            g = Game(f1, f2, units, cards)
+            g = Game(f1, f2, units, cards, use_heroes=args.heroes)
             if first_run:
                 g.verbose = True
                 g.log_event(f"--- Debug Game: {code1} vs {code2} ---")
@@ -271,9 +282,11 @@ def run_simulations(n_games):
             if winner == code1:
                 results[code1][code2] += 1
                 results[code1]['total_wins'] += 1
+                results[code1]['win_turns'] += g.turn_count
             elif winner == code2:
                 results[code2][code1] += 1
                 results[code2]['total_wins'] += 1
+                results[code2]['win_turns'] += g.turn_count
             else:
                 results[code1]['draws'] += 1
                 results[code2]['draws'] += 1
@@ -290,9 +303,14 @@ def run_simulations(n_games):
         name = f['name']['es']
         wins = results[code]['total_wins']
         draws = results[code]['draws'] # We were tracking draws but not printing them
+        avg_turns = 0
+        if wins > 0:
+            avg_turns = results[code]['win_turns'] / wins
+            
         print(f"### {name} ({code})")
         print(f"- Victorias Totales: {wins}")
         print(f"- Empates: {draws}")
+        print(f"- Turnos Medios (Victoria): {avg_turns:.1f}")
         print("")
         # for f_opp in valid_factions:
         #    if f_opp == f: continue
@@ -304,6 +322,7 @@ def run_simulations(n_games):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--games", type=int, default=100, help="Number of games per matchup")
+    parser.add_argument("--heroes", action="store_true", help="Include heroes in armies")
     args = parser.parse_args()
     
     run_simulations(args.games)
