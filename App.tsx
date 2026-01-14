@@ -140,7 +140,7 @@ const App: React.FC = () => {
           <div className="w-6"></div>
         </header>
 
-        <div className={`flex-1 overflow-y-auto ${(['card-generator'].includes(currentView)) ? '' : 'p-4 md:p-12'}`}>
+        <div className="flex-1 overflow-y-auto p-4 md:p-12">
           {renderContent()}
         </div>
       </main>

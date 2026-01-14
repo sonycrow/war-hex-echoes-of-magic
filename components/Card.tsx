@@ -27,9 +27,6 @@ const Card: React.FC<CardProps> = ({ card, lang, t }) => {
                 boxShadow: 'inset 0 0 100px rgba(0,0,0,0.1), 0 10px 30px rgba(0,0,0,0.2)',
             }}
         >
-            {/* Texture Overlay */}
-            <div className="absolute inset-0 opacity-[0.06] bg-center bg-cover bg-[url('/assets/img/texture.png')]" />
-
             {/* Worn Edges Effect */}
             <div className="absolute inset-0 border-2 border-black/10 m-2 pointer-events-none rounded-2xl" />
 
@@ -45,24 +42,25 @@ const Card: React.FC<CardProps> = ({ card, lang, t }) => {
             </div>
 
             {/* Illustration Area with Vignette/Blur blend */}
-            <div className="relative h-32 m-4 mt-2 mb-2 overflow-hidden">
-                <div className="absolute inset-0 z-10" style={{
-                    background: 'radial-gradient(circle, transparent 30%, #f4ece1 100%)'
-                }} />
+            <div className="relative h-44 mx-4 my-2 overflow-hidden">
+                <div className="absolute inset-0 z-10 pointer-events-none" />
                 <img
-                    src={card.imageUrl}
+                    src={`/assets/art/cards/${card.id}.png`}
                     alt={card.name[lang]}
                     className="w-full h-full object-cover filter saturate-[0.8] contrast-[1.1]"
                     onError={(e) => {
-                        (e.target as HTMLImageElement).src = `https://via.placeholder.com/300x200?text=${encodeURIComponent(t.placeholderArt || 'Art')}`;
+                        (e.target as HTMLImageElement).style.display = 'none';
                     }}
                 />
             </div>
 
+            {/* Texture Overlay */}
+            <div className="absolute inset-0 opacity-[0.06] bg-center bg-cover bg-[url('/assets/img/texture.png')]" />
+
             {/* Content Area - Centralized Ability Text */}
-            <div className="px-6 py-4 flex flex-col justify-center flex-1 text-center z-10">
-                <div className="flex flex-col gap-4">
-                    <div className="group">
+            <div className="px-6 flex flex-col justify-center flex-1 text-center z-10">
+                <div className="flex flex-col gap-2">
+                    <div>
                         <p className="text-lg leading-relaxed text-slate-800 font-bold" style={{ fontFamily: "'Almendra Display', serif" }}>
                             <span className="font-black text-slate-400 uppercase tracking-widest">A:</span>
                             {card.effectA[lang]}
@@ -101,7 +99,7 @@ const Card: React.FC<CardProps> = ({ card, lang, t }) => {
             <div className="absolute bottom-1 right-2 opacity-20 pointer-events-none">
                 <span className="text-[8px] font-mono font-black text-white">{card.id}</span>
             </div>
-        </div>
+        </div >
     );
 };
 

@@ -31,73 +31,70 @@ const CardGeneratorView: React.FC<CardGeneratorViewProps> = ({ lang, data, t }) 
         });
     }, [data, selectedType, searchQuery, lang]);
 
-    const downloadCard = async (cardId: string, cardName: string, isBatch: boolean = false) => {
+    const downloadCard = async (cardId: string, cardName: string) => {
         const element = document.getElementById(`card-${cardId}`);
         if (!element) return;
 
-        if (!isBatch) setIsDownloading(cardId);
+        setIsDownloading(cardId);
         try {
-            const options = { quality: 0.95, pixelRatio: 2, cacheBust: true };
-            const dataUrl = await toPng(element, options);
-
+            const dataUrl = await toPng(element, { quality: 1.0, pixelRatio: 2 });
             const link = document.createElement('a');
             link.download = `card-${cardName.toLowerCase().replace(/\s+/g, '-')}.png`;
             link.href = dataUrl;
             link.click();
         } catch (err) {
-            console.error('Download error:', err);
+            console.error('oops, something went wrong!', err);
         } finally {
-            if (!isBatch) setIsDownloading(null);
+            setIsDownloading(null);
         }
     };
 
     const downloadAll = async () => {
         setIsDownloading('all');
         for (const card of filteredCards) {
-            await downloadCard(card.id, card.name.en, true);
-            await new Promise(resolve => setTimeout(resolve, 500));
+            await downloadCard(card.id, card.name.en);
+            // Small delay to prevent browser issues with many simultaneous downloads
+            await new Promise(resolve => setTimeout(resolve, 300));
         }
         setIsDownloading(null);
     };
 
     return (
-        <div className="flex flex-col h-full bg-slate-50">
+        <div className="space-y-8 animate-in fade-in slide-in-from-bottom-6 duration-700">
             {/* Header / Toolbar */}
-            <div className="bg-white border-b border-slate-200 p-6 shadow-sm sticky top-0 z-10">
-                <div className="max-w-7xl mx-auto">
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-                        <div>
-                            <h1 className="text-3xl font-black text-slate-900 tracking-tight">{cardsT.generatorTitle}</h1>
-                            <p className="text-slate-500 font-medium mt-1">{cardsT.generatorDescription}</p>
+            <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
+                <div>
+                    <h2 className="text-4xl font-black text-slate-900 tracking-tight mb-2 uppercase">{cardsT.generatorTitle}</h2>
+                    <p className="text-slate-400 font-medium text-sm">
+                        {filteredCards.length} {lang === 'es' ? 'cartas generadas en tiempo real' : 'cards generated in real-time'}
+                    </p>
+                </div>
+
+                <div className="flex flex-col items-end gap-4 shrink-0">
+                    {/* Primary Action: Download All */}
+                    <button
+                        onClick={downloadAll}
+                        disabled={isDownloading !== null || filteredCards.length === 0}
+                        className="flex items-center gap-3 px-8 py-4 bg-slate-950 text-white rounded-2xl font-black hover:bg-slate-800 transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none shadow-2xl shadow-slate-950/20 uppercase tracking-[0.15em] text-[10px]"
+                    >
+                        {isDownloading === 'all' ? (
+                            <Loader2 className="w-5 h-5 animate-spin" />
+                        ) : (
+                            <Download size={18} />
+                        )}
+                        {t.views.stickers.downloadAll}
+                    </button>
+
+                    {/* Filters Toolbar */}
+                    <div className="flex items-center gap-2 bg-white p-1.5 rounded-xl border border-slate-100 shadow-sm w-full md:w-auto">
+                        <div className="flex items-center gap-2 px-3 border-r border-slate-100">
+                            <Filter size={14} className="text-slate-400" />
                         </div>
 
-                        <div className="flex flex-wrap items-center gap-3">
-                            <button
-                                onClick={downloadAll}
-                                disabled={isDownloading !== null || filteredCards.length === 0}
-                                className="flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none shadow-lg shadow-slate-900/10"
-                            >
-                                {isDownloading === 'all' ? (
-                                    <Loader2 className="w-5 h-5 animate-spin" />
-                                ) : (
-                                    <Download size={20} />
-                                )}
-                                {t.views.stickers.downloadAll} ({filteredCards.length})
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className="flex flex-wrap items-center gap-4 mt-8 pt-6 border-t border-slate-100">
-                        <div className="flex items-center gap-2 text-slate-400 font-bold uppercase text-[11px] tracking-wider mr-2">
-                            <Filter size={14} />
-                            {cardsT.type}:
-                        </div>
-
-                        {/* Type Filter */}
                         <select
                             value={selectedType}
                             onChange={(e) => setSelectedType(e.target.value)}
-                            className="bg-white border border-slate-200 rounded-lg px-4 py-2 text-sm font-bold text-slate-700 outline-none focus:ring-2 focus:ring-slate-900/5 transition-all"
+                            className="bg-transparent text-xs font-bold text-slate-600 px-2 py-1.5 focus:outline-none cursor-pointer hover:bg-slate-50 rounded-lg transition-colors border-none ring-0 outline-none"
                         >
                             <option value="all">{cardsT.allTypes}</option>
                             {types.map(type => (
@@ -105,43 +102,42 @@ const CardGeneratorView: React.FC<CardGeneratorViewProps> = ({ lang, data, t }) 
                             ))}
                         </select>
 
+                        <div className="w-px h-6 bg-slate-100"></div>
+
                         {/* Search */}
-                        <div className="relative ml-auto">
-                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={16} />
+                        <div className="relative flex items-center px-1">
+                            <Search className="absolute left-3 text-slate-300" size={14} />
                             <input
                                 type="text"
                                 placeholder="..."
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
-                                className="pl-10 pr-4 py-2 bg-slate-100 border-none rounded-lg text-sm font-medium focus:ring-2 focus:ring-slate-200 outline-none transition-all w-64"
+                                className="pl-8 pr-3 py-1.5 bg-transparent border-none text-xs font-bold text-slate-600 focus:ring-0 outline-none w-32 md:w-48 placeholder-slate-300 transition-all hover:bg-slate-50 rounded-lg"
                             />
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* Content Area */}
-            <div className="flex-1 overflow-y-auto p-8">
-                <div className="max-w-7xl mx-auto">
-                    {filteredCards.length > 0 ? (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 justify-items-center">
-                            {filteredCards.map(card => (
-                                <div key={card.id} className="group flex flex-col items-center">
-                                    <div
-                                        id={`card-container-${card.id}`}
-                                        className="relative transform transition-transform duration-300 group-hover:scale-[1.02]"
-                                    >
+            {/* Grid Area */}
+            <div className="pt-4 overflow-x-auto">
+                {filteredCards.length > 0 ? (
+                    <div className="flex flex-wrap gap-12 justify-center pb-12">
+                        {filteredCards.map(card => (
+                            <div key={card.id} className="flex flex-col items-center">
+                                {/* Only this part handles the scale and restricted group */}
+                                <div className="relative transform scale-75 md:scale-90 lg:scale-100 origin-top transition-transform duration-300">
+                                    <div className="group relative w-[320px] h-[460px]">
                                         <Card card={card} lang={lang} t={cardsT} />
 
-                                        {/* Overlay Download Button */}
-                                        <div className="absolute inset-0 flex items-center justify-center bg-transparent group-hover:bg-slate-900/10 transition-colors z-20 rounded-lg">
+                                        {/* Overlay Download Button - Restricted EXACTLY to Card dimensions */}
+                                        <div className="absolute inset-0 flex items-center justify-center bg-slate-900/0 group-hover:bg-slate-900/10 transition-colors pointer-events-none rounded-2xl z-20">
                                             <button
                                                 onClick={(e) => {
                                                     e.stopPropagation();
                                                     downloadCard(card.id, card.name.en);
                                                 }}
-                                                className="bg-white text-slate-900 px-6 py-3 rounded-xl font-black shadow-2xl opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all hover:bg-slate-50 flex items-center gap-2 border border-slate-200 cursor-pointer pointer-events-auto"
-                                                title={t.views.stickers.download}
+                                                className="pointer-events-auto bg-white text-slate-900 px-6 py-3 rounded-xl font-black shadow-2xl opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all hover:bg-slate-50 flex items-center gap-2 border border-slate-200"
                                             >
                                                 {isDownloading === card.id ? (
                                                     <Loader2 className="w-5 h-5 animate-spin" />
@@ -152,21 +148,22 @@ const CardGeneratorView: React.FC<CardGeneratorViewProps> = ({ lang, data, t }) 
                                             </button>
                                         </div>
                                     </div>
-
-                                    <div className="mt-4 flex flex-col items-center">
-                                        <span className="text-slate-400 font-black text-[10px] tracking-widest uppercase mb-1">{card.id}</span>
-                                        <h3 className="font-bold text-slate-900 text-lg">{card.name[lang]}</h3>
-                                    </div>
                                 </div>
-                            ))}
-                        </div>
-                    ) : (
-                        <div className="h-96 flex flex-col items-center justify-center text-slate-300">
-                            <ImageIcon size={64} className="mb-4 opacity-20" />
-                            <p className="text-lg font-bold">{cardsT.noCardsFound}</p>
-                        </div>
-                    )}
-                </div>
+
+                                {/* Information below NOT part of the scaled group or overlay */}
+                                <div className="mt-4 flex flex-col items-center">
+                                    <span className="text-slate-400 font-black text-[10px] tracking-widest uppercase mb-1">{card.id}</span>
+                                    <h3 className="font-bold text-slate-800 text-sm md:text-base text-center max-w-[280px] leading-tight">{card.name[lang]}</h3>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                ) : (
+                    <div className="h-96 flex flex-col items-center justify-center bg-white rounded-[2.5rem] border-4 border-white shadow-xl shadow-slate-200/50 border-dashed">
+                        <ImageIcon size={48} className="mb-4 text-slate-200" />
+                        <p className="text-lg font-bold text-slate-300">{cardsT.noCardsFound}</p>
+                    </div>
+                )}
             </div>
         </div>
     );
