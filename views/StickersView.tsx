@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Unit, FactionCode } from '../types';
 import Sticker from '../components/Sticker';
 import { toPng } from 'html-to-image';
-import { Download, Filter, Grid, Image as ImageIcon, CheckCircle2 } from 'lucide-react';
+import { Download, Filter, Grid, Image as ImageIcon, CheckCircle2, Search } from 'lucide-react';
 
 interface StickersViewProps {
     lang: 'es' | 'en';
@@ -67,43 +67,41 @@ const StickersView: React.FC<StickersViewProps> = ({ lang, data, t }) => {
     };
 
     return (
-        <div className="flex flex-col h-full bg-slate-50">
+        <div className="space-y-8 animate-in fade-in slide-in-from-bottom-6 duration-700">
             {/* Header / Toolbar */}
-            <div className="bg-white border-b border-slate-200 p-6 shadow-sm sticky top-0 z-10">
-                <div className="max-w-7xl mx-auto">
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-                        <div>
-                            <h1 className="text-3xl font-black text-slate-900 tracking-tight">{stickersT.title}</h1>
-                            <p className="text-slate-500 font-medium mt-1">{stickersT.description}</p>
+            <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
+                <div>
+                    <h2 className="text-4xl font-black text-slate-900 tracking-tight mb-2 uppercase">{stickersT.title}</h2>
+                    <p className="text-slate-400 font-medium text-sm">
+                        {filteredUnits.length} {lang === 'es' ? 'stickers listos para impresión' : 'stickers ready for printing'}
+                    </p>
+                </div>
+
+                <div className="flex flex-col items-end gap-4 shrink-0">
+                    {/* Primary Action: Download All */}
+                    <button
+                        onClick={downloadAll}
+                        disabled={isDownloading !== null || filteredUnits.length === 0}
+                        className="flex items-center gap-3 px-8 py-4 bg-slate-950 text-white rounded-2xl font-black hover:bg-slate-800 transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none shadow-2xl shadow-slate-950/20 uppercase tracking-[0.15em] text-[10px]"
+                    >
+                        {isDownloading === 'all' ? (
+                            <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                        ) : (
+                            <Download size={18} />
+                        )}
+                        {stickersT.downloadAll}
+                    </button>
+
+                    {/* Filters Container */}
+                    <div className="flex items-center gap-2 bg-white p-1.5 rounded-xl border border-slate-100 shadow-sm">
+                        <div className="flex items-center gap-2 px-3 border-r border-slate-100">
+                            <Filter size={14} className="text-slate-400" />
                         </div>
 
-                        <div className="flex flex-wrap items-center gap-3">
-                            <button
-                                onClick={downloadAll}
-                                disabled={isDownloading !== null || filteredUnits.length === 0}
-                                className="flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none shadow-lg shadow-slate-900/10"
-                            >
-                                {isDownloading === 'all' ? (
-                                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                                ) : (
-                                    <Download size={20} />
-                                )}
-                                {stickersT.downloadAll} ({filteredUnits.length})
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className="flex flex-wrap items-center gap-4 mt-8 pt-6 border-t border-slate-100">
-                        <div className="flex items-center gap-2 text-slate-400 font-bold uppercase text-[11px] tracking-wider mr-2">
-                            <Filter size={14} />
-                            {defs.categories.Section}:
-                        </div>
-
-                        {/* Expansion Filter */}
                         <select
                             value={selectedExpansion}
                             onChange={(e) => setSelectedExpansion(e.target.value)}
-                            className="bg-white border border-slate-200 rounded-lg px-4 py-2 text-sm font-bold text-slate-700 outline-none focus:ring-2 focus:ring-slate-900/5 transition-all"
+                            className="bg-transparent text-xs font-bold text-slate-600 px-2 py-1.5 focus:outline-none cursor-pointer hover:bg-slate-50 rounded-lg transition-colors border-none ring-0 outline-none"
                         >
                             <option value="all">{stickersT.allExpansions}</option>
                             {expansions.map(exp => (
@@ -111,11 +109,12 @@ const StickersView: React.FC<StickersViewProps> = ({ lang, data, t }) => {
                             ))}
                         </select>
 
-                        {/* Faction Filter */}
+                        <div className="w-px h-6 bg-slate-100"></div>
+
                         <select
                             value={selectedFaction}
                             onChange={(e) => setSelectedFaction(e.target.value)}
-                            className="bg-white border border-slate-200 rounded-lg px-4 py-2 text-sm font-bold text-slate-700 outline-none focus:ring-2 focus:ring-slate-900/5 transition-all"
+                            className="bg-transparent text-xs font-bold text-slate-600 px-2 py-1.5 focus:outline-none cursor-pointer hover:bg-slate-50 rounded-lg transition-colors border-none ring-0 outline-none"
                         >
                             <option value="all">{stickersT.allFactions}</option>
                             {factions.map(fac => (
@@ -123,77 +122,71 @@ const StickersView: React.FC<StickersViewProps> = ({ lang, data, t }) => {
                             ))}
                         </select>
 
-                        {/* Rotation Type Selector */}
-                        <div className="flex items-center gap-2 ml-4">
-                            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Giro:</span>
-                            <select
-                                value={rotationType}
-                                onChange={(e) => setRotationType(e.target.value as 'cw' | 'ccw')}
-                                className="bg-white border border-slate-200 rounded-lg px-4 py-2 text-sm font-bold text-slate-700 outline-none focus:ring-2 focus:ring-slate-900/5 transition-all"
-                            >
-                                <option value="cw">Horario (CW)</option>
-                                <option value="ccw">Antihorario (CCW)</option>
-                            </select>
-                        </div>
+                        <div className="w-px h-6 bg-slate-100"></div>
 
-                        {/* Show Name Toggle */}
-                        <label className="flex items-center gap-2 ml-4 cursor-pointer select-none">
+                        <button
+                            onClick={() => setRotationType(rotationType === 'cw' ? 'ccw' : 'cw')}
+                            className="flex items-center gap-2 px-3 py-1.5 hover:bg-slate-50 rounded-lg transition-colors text-slate-600 group"
+                        >
+                            <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest group-hover:text-slate-600">Giro:</span>
+                            <span className="text-xs font-bold">{rotationType.toUpperCase()}</span>
+                        </button>
+
+                        <div className="w-px h-6 bg-slate-100"></div>
+
+                        <label className="flex items-center gap-2 px-3 py-1.5 hover:bg-slate-50 rounded-lg transition-colors cursor-pointer group">
                             <input
                                 type="checkbox"
                                 checked={showName}
                                 onChange={(e) => setShowName(e.target.checked)}
-                                className="w-4 h-4 rounded border-slate-300 text-slate-900 focus:ring-slate-900"
+                                className="w-4 h-4 rounded border-slate-300 text-slate-950 focus:ring-slate-950"
                             />
-                            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Mostrar Nombre</span>
+                            <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest group-hover:text-slate-600">Nombre</span>
                         </label>
-
-                        <div className="ml-auto text-slate-400 text-sm font-medium">
-                            {filteredUnits.length} {stickersT.title.toLowerCase()}
-                        </div>
                     </div>
                 </div>
             </div>
 
-            {/* Grid Area */}
-            <div className="flex-1 overflow-y-auto p-8">
-                <div className="max-w-7xl mx-auto">
-                    {filteredUnits.length > 0 ? (
-                        <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-12 justify-items-center">
-                            {filteredUnits.map(unit => (
-                                <div key={unit.id} className="group flex flex-col items-center">
-                                    <div className="relative transform transition-transform duration-300 group-hover:scale-[1.02]">
-                                        <Sticker unit={unit} lang={lang} rotationType={rotationType} showName={showName} />
+            {/* Grid Area with horizontal scroll safety for mobile */}
+            <div className="pt-4 overflow-x-auto">
+                {filteredUnits.length > 0 ? (
+                    <div className="flex flex-wrap gap-16 justify-center pb-12">
+                        {filteredUnits.map(unit => (
+                            <div key={unit.id} className="flex flex-col items-center">
+                                <div className="relative group transform scale-75 md:scale-90 lg:scale-100 origin-top transition-transform duration-300 h-[600px] md:h-[650px] lg:h-[700px]">
+                                    {/* The Sticker component contains the rotate controls and the 512px div */}
+                                    <Sticker unit={unit} lang={lang} rotationType={rotationType} showName={showName} />
 
-                                        {/* Overlay Download Button */}
-                                        <div className="absolute inset-0 flex items-center justify-center bg-slate-900/0 group-hover:bg-slate-900/10 transition-colors pointer-events-none rounded-lg">
-                                            <button
-                                                onClick={() => downloadSticker(unit.id, unit.name.en)}
-                                                className="pointer-events-auto bg-white text-slate-900 px-6 py-3 rounded-xl font-black shadow-2xl opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all hover:bg-slate-50 flex items-center gap-2 border border-slate-200"
-                                            >
-                                                {isDownloading === unit.id ? (
-                                                    <div className="w-5 h-5 border-2 border-slate-200 border-t-slate-900 rounded-full animate-spin" />
-                                                ) : (
-                                                    <Download size={20} />
-                                                )}
-                                                {stickersT.download}
-                                            </button>
-                                        </div>
+                                    {/* Overlay Download Button */}
+                                    <div className="absolute inset-0 top-[70px] flex items-center justify-center bg-slate-900/0 group-hover:bg-slate-900/10 transition-colors pointer-events-none rounded-lg h-[512px]">
+                                        <button
+                                            onClick={() => downloadSticker(unit.id, unit.name.en)}
+                                            className="pointer-events-auto bg-white text-slate-900 px-6 py-3 rounded-xl font-black shadow-2xl opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all hover:bg-slate-50 flex items-center gap-2 border border-slate-200"
+                                        >
+                                            {isDownloading === unit.id ? (
+                                                <div className="w-5 h-5 border-2 border-slate-200 border-t-slate-900 rounded-full animate-spin" />
+                                            ) : (
+                                                <Download size={20} />
+                                            )}
+                                            {stickersT.download}
+                                        </button>
                                     </div>
 
-                                    <div className="mt-4 flex flex-col items-center">
+                                    {/* Unit Info attached to scaled container */}
+                                    <div className="mt-8 flex flex-col items-center">
                                         <span className="text-slate-400 font-black text-[10px] tracking-widest uppercase mb-1">{unit.id}</span>
-                                        <h3 className="font-bold text-slate-900 text-lg">{unit.name[lang]}</h3>
+                                        <h3 className="font-bold text-slate-800 text-base md:text-xl text-center max-w-[300px] leading-tight">{unit.name[lang]}</h3>
                                     </div>
                                 </div>
-                            ))}
-                        </div>
-                    ) : (
-                        <div className="h-96 flex flex-col items-center justify-center text-slate-300">
-                            <ImageIcon size={64} className="mb-4 opacity-20" />
-                            <p className="text-lg font-bold">No se encontraron unidades</p>
-                        </div>
-                    )}
-                </div>
+                            </div>
+                        ))}
+                    </div>
+                ) : (
+                    <div className="h-96 flex flex-col items-center justify-center bg-white rounded-3xl border border-slate-100 shadow-sm border-dashed">
+                        <ImageIcon size={48} className="mb-4 text-slate-200" />
+                        <p className="text-lg font-bold text-slate-300">{lang === 'es' ? 'No se encontraron unidades' : 'No units found'}</p>
+                    </div>
+                )}
             </div>
         </div>
     );

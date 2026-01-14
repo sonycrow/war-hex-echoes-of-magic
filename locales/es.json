@@ -76,7 +76,7 @@
             "maneuverB": "Maniobra B",
             "allTypes": "Todos los Tipos",
             "noCardsFound": "No se encontraron cartas",
-            "placeholderArt": "Archivo Histórico",
+            "placeholderArt": "Archivo histórico",
             "cardTypes": {
                 "section": "Sección",
                 "tactic": "Táctica",
@@ -96,15 +96,15 @@
             "description": "Descripción"
         },
         "stickers": {
-            "title": "Generador de Pegatinas",
-            "description": "Genera pegatinas de estilo Columbia Games para tus bloques.",
-            "download": "Descargar Imagen",
-            "downloadAll": "Descargar Todas",
-            "allExpansions": "Todas las Expansiones",
-            "allFactions": "Todas las Facciones"
+            "title": "Pegatinas",
+            "description": "Genera pegatinas para tus bloques.",
+            "download": "Descargar imagen",
+            "downloadAll": "Descargar todas",
+            "allExpansions": "Todas las expansiones",
+            "allFactions": "Todas las facciones"
         },
         "mapEditor": {
-            "title": "Editor de Mapas",
+            "title": "Editor de mapas",
             "size": "Tamaño",
             "format": "Formato",
             "standard": "Estándar (13x9)",
