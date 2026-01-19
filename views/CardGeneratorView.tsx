@@ -31,7 +31,7 @@ const CardGeneratorView: React.FC<CardGeneratorViewProps> = ({ lang, data, t }) 
         });
     }, [data, selectedType, searchQuery, lang]);
 
-    const downloadCard = async (cardId: string, cardName: string) => {
+    const downloadCard = async (cardId: string) => {
         const element = document.getElementById(`card-${cardId}`);
         if (!element) return;
 
@@ -39,7 +39,7 @@ const CardGeneratorView: React.FC<CardGeneratorViewProps> = ({ lang, data, t }) 
         try {
             const dataUrl = await toPng(element, { quality: 1.0, pixelRatio: 2 });
             const link = document.createElement('a');
-            link.download = `card-${cardName.toLowerCase().replace(/\s+/g, '-')}.png`;
+            link.download = `card-${cardId}.png`;
             link.href = dataUrl;
             link.click();
         } catch (err) {
@@ -52,7 +52,7 @@ const CardGeneratorView: React.FC<CardGeneratorViewProps> = ({ lang, data, t }) 
     const downloadAll = async () => {
         setIsDownloading('all');
         for (const card of filteredCards) {
-            await downloadCard(card.id, card.name.en);
+            await downloadCard(card.id);
             // Small delay to prevent browser issues with many simultaneous downloads
             await new Promise(resolve => setTimeout(resolve, 300));
         }
@@ -135,7 +135,7 @@ const CardGeneratorView: React.FC<CardGeneratorViewProps> = ({ lang, data, t }) 
                                             <button
                                                 onClick={(e) => {
                                                     e.stopPropagation();
-                                                    downloadCard(card.id, card.name.en);
+                                                    downloadCard(card.id);
                                                 }}
                                                 className="pointer-events-auto bg-white text-slate-900 px-6 py-3 rounded-xl font-black shadow-2xl opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all hover:bg-slate-50 flex items-center gap-2 border border-slate-200"
                                             >

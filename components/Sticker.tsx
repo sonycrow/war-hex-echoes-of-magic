@@ -52,11 +52,7 @@ const Sticker: React.FC<StickerProps> = ({ unit, lang, rotationType = 'cw', show
     const rightVal = rotationType === 'cw' ? unit.strength - 3 : unit.strength - 1;
     const leftVal = rotationType === 'cw' ? unit.strength - 1 : unit.strength - 3;
 
-    const nameEn = unit.name.en.toLowerCase()
-        .replace(/\s+/g, '-')
-        .replace(/[^\w-]/g, '');
-
-    const imageUrl = `/assets/art/units/${unit.expansion}/${unit.expansion}_${unit.faction}_${nameEn}.png`;
+    const imageUrl = `/assets/art/units/${unit.expansion}/${unit.id}.png`;
 
     return (
         <div className="flex flex-col items-center gap-4">

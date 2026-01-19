@@ -14,16 +14,10 @@ const UnitsView: React.FC<UnitsViewProps> = ({ lang, data, t }) => {
     const defs = t.definitions;
 
     const processedData = React.useMemo(() => {
-        return data.map(u => {
-            const nameEn = u.name.en.toLowerCase()
-                .replace(/\s+/g, '-')     // spaces to hyphens
-                .replace(/[^\w-]/g, ''); // remove non-word chars except hyphens
-
-            return {
-                ...u,
-                imageUrl: `/assets/game/units/${u.expansion}/${u.expansion}_${u.faction}_${nameEn}.png`
-            };
-        });
+        return data.map(u => ({
+            ...u,
+            imageUrl: `/assets/game/units/${u.expansion}/${u.id}.png`
+        }));
     }, [data]);
 
     return (
@@ -68,7 +62,7 @@ const UnitsView: React.FC<UnitsViewProps> = ({ lang, data, t }) => {
                 { key: 'strength', label: viewsT.strength, sortable: true, render: (u) => <div className="w-8 h-8 flex items-center justify-center rounded bg-slate-100 text-slate-900 font-bold border border-slate-200">{u.strength}</div> },
                 { key: 'movement', label: 'MOV', sortable: true },
                 { key: 'range', label: 'RNG', sortable: true },
-                { key: 'cost', label: viewsT.cost, sortable: true, render: (u) => <GoldCoin value={u.cost} /> },
+                { key: 'cost', label: viewsT.cost, sortable: true, render: (u) => <GoldCoin value={Number(u.cost)} /> },
                 { key: 'rules', label: viewsT.special, render: (u) => <span className="text-xs text-slate-500 font-medium leading-relaxed">{u.rules[lang]}</span> },
             ]}
         />

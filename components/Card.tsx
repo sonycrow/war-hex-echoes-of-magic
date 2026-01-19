@@ -9,14 +9,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ card, lang, t }) => {
     const type = card.type.toLowerCase();
-    const isSpell = type === 'arcane';
-    const isTactic = type === 'tactic';
-    const isSection = type === 'section';
-
-    // Map categories to "Roles" for the footer strip
-    const roleText = isTactic ? t.cardTypes.tactic :
-        isSpell ? t.cardTypes.arcane :
-            t.cardTypes.section;
+    const roleText = t.cardTypes[type] || t.cardTypes.section;
 
     return (
         <div

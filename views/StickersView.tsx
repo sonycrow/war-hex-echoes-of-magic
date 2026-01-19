@@ -38,7 +38,7 @@ const StickersView: React.FC<StickersViewProps> = ({ lang, data, t }) => {
         });
     }, [data, selectedExpansion, selectedFaction]);
 
-    const downloadSticker = async (unitId: string, unitName: string) => {
+    const downloadSticker = async (unitId: string) => {
         const element = document.getElementById(`sticker-${unitId}`);
         if (!element) return;
 
@@ -46,7 +46,7 @@ const StickersView: React.FC<StickersViewProps> = ({ lang, data, t }) => {
         try {
             const dataUrl = await toPng(element, { quality: 1.0, pixelRatio: 2 });
             const link = document.createElement('a');
-            link.download = `sticker-${unitName.toLowerCase().replace(/\s+/g, '-')}.png`;
+            link.download = `sticker-${unitId}.png`;
             link.href = dataUrl;
             link.click();
         } catch (err) {
@@ -59,7 +59,7 @@ const StickersView: React.FC<StickersViewProps> = ({ lang, data, t }) => {
     const downloadAll = async () => {
         setIsDownloading('all');
         for (const unit of filteredUnits) {
-            await downloadSticker(unit.id, unit.name.en);
+            await downloadSticker(unit.id);
             // Small delay to prevent browser issues with many simultaneous downloads
             await new Promise(resolve => setTimeout(resolve, 300));
         }
@@ -160,7 +160,7 @@ const StickersView: React.FC<StickersViewProps> = ({ lang, data, t }) => {
                                     {/* Overlay Download Button */}
                                     <div className="absolute inset-0 top-[70px] flex items-center justify-center bg-slate-900/0 group-hover:bg-slate-900/10 transition-colors pointer-events-none rounded-lg h-[512px]">
                                         <button
-                                            onClick={() => downloadSticker(unit.id, unit.name.en)}
+                                            onClick={() => downloadSticker(unit.id)}
                                             className="pointer-events-auto bg-white text-slate-900 px-6 py-3 rounded-xl font-black shadow-2xl opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all hover:bg-slate-50 flex items-center gap-2 border border-slate-200"
                                         >
                                             {isDownloading === unit.id ? (
